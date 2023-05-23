@@ -1,0 +1,33 @@
+.journey-wrapper{
+  background: #3C88EF;
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "satoshi";
+}
+
+.journey-wrapper h1{
+  width: 1137px;
+  font-weight: 700;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+@media screen and (max-width: 768px) {
+  .journey-wrapper{
+    padding: 64px, 20px,
+  }
+  .journey-wrapper h1 {
+    width: 335px;
+    font-size: 32px;
+    justify-content: flex-start;
+  }
+
+}
