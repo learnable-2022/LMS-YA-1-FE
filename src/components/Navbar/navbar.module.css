@@ -1,0 +1,12 @@
+.Navbar {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  align-items: center;
+  background: #f7f7f7;
+  padding: 25px 10vw;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.096) 0px 19px 38px,
+    rgba(0, 0, 0, 0.096) 0px 15px 12px;
+}

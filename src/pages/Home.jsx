@@ -1,7 +1,13 @@
+import UserJourney from "../components/UserJourney/UserJourney";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
+
 const Home = () => {
   return (
     <div>
-      <h1> Home</h1>
+      <Navbar />
+      <UserJourney />
+      <Footer />
     </div>
   );
 };
