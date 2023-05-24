@@ -49,10 +49,7 @@ const About = () => {
               </div>
 
             </div>
-          </div>
-          
-          
-          
+          </div>      
           
           <div className='col-12 col-lg-6'>
             <div className='right'>
