@@ -5,6 +5,7 @@ import design from "./students.module.css";
 import TEST from "../../../assets/Tappi.png";
 import { useState } from "react";
 import StudentTable from "../../../components/StudentsTable/StudentsTable";
+import Footer from "../../../components/Footer/Footer";
 
 const Students = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -46,6 +47,7 @@ const Students = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
