@@ -4,6 +4,7 @@ import Elevate from "../components/Elevate/Elevate";
 import About from "./About";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero/Hero";
+import { Carousel } from  "../components/Carousel/Carousel";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Elevate />
       <Hero/>
       <UserJourney />
+      <Carousel />
       <Footer />
     </div>
   );
