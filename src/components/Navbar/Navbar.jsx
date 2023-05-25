@@ -7,8 +7,9 @@ const Navbar = () => {
   return (
     <div className={design.Navbar}>
       <img src={LOGO} alt="" />
-      <Link to='/signup'><Button content="Get started" /></Link>
-      
+      <Link to="/signup">
+        <Button content="Get started" />
+      </Link>
     </div>
   );
 };

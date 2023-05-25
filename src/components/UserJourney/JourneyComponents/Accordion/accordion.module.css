@@ -1,8 +1,7 @@
-
 .accordion-wrapper {
   width: 900px;
   padding-bottom: 44.8px;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #ffffff;
   margin-bottom: 28px;
   cursor: pointer;
   transition: all linear 0.3s;
@@ -17,10 +16,9 @@
   margin-bottom: 44px;
 }
 
-.accordion-wrapper .section-1 span{
+.accordion-wrapper .section-1 span {
   font-size: 43px;
 }
-
 
 .accordion-wrapper .section-2 {
   display: flex;
@@ -30,16 +28,13 @@
   margin-bottom: 0px;
 }
 
-
-
-@media screen and (max-width: 1080px){
-  .accordion-wrapper{
+@media screen and (max-width: 1080px) {
+  .accordion-wrapper {
     width: 85vw;
   }
 
-  .accordion-wrapper .section-1{
+  .accordion-wrapper .section-1 {
     width: 85vw;
-   
   }
 
   .accordion-wrapper .section-2 {
@@ -47,5 +42,4 @@
     justify-content: center;
     flex-direction: column;
   }
-
 }

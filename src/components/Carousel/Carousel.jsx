@@ -73,7 +73,7 @@ export const Carousel = () => {
           </button>
         </div>
       </div>
-      <div className={styles.carousel}>
+      <div className={styles["carousel"]}>
         <div
           className={styles.inner}
           style={{ transform: `translate(-${activeIndex * 100}%)` }}

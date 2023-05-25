@@ -1,10 +1,8 @@
 import UserJourney from "../components/UserJourney/UserJourney";
-import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import Elevate from "../components/Elevate/Elevate";
 import About from "./About";
-import { Carousel } from "../components/Carousel/Carousel";
-
+import Carousel from "../components/Carousel/Carousel";
 
 const Home = () => {
   return (
@@ -14,7 +12,6 @@ const Home = () => {
       <Elevate />
       <UserJourney />
       <Carousel />
-      <Footer />
     </div>
   );
 };

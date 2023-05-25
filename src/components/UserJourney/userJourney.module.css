@@ -1,6 +1,6 @@
-.journey-wrapper{
-  background: #3C88EF;
-  color: #FFFFFF;
+.journey-wrapper {
+  background: #3c88ef;
+  color: #ffffff;
   height: 100%;
   width: 100%;
   display: flex;
@@ -12,7 +12,7 @@
   font-family: "satoshi";
 }
 
-.journey-wrapper h1{
+.journey-wrapper h1 {
   font-weight: 700;
   font-size: 40px;
   text-align: center;
@@ -20,13 +20,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .journey-wrapper{
-    padding: 64px, 20px,
+  .journey-wrapper {
+    padding: 64px, 20px;
   }
   .journey-wrapper h1 {
     width: 335px;
     font-size: 32px;
     justify-content: flex-start;
   }
-
 }

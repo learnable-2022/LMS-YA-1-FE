@@ -1,0 +1,67 @@
+.student_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student_table {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.student_table select {
+  outline: none;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Grade {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.student_table thead > tr > th {
+  padding: 15px 0 25px 0;
+  cursor: pointer;
+}
+
+.student_table thead > tr > th:first-child {
+  padding-left: 25px;
+}
+
+.student_table thead > tr > th:nth-child(2) {
+  padding-left: 10px;
+}
+
+.student_table thead > tr > th:nth-child(3) {
+  padding-left: 7px;
+}
+
+.StudentTable_body tr:nth-child(odd) {
+  background: #e1e1e4;
+}
+
+.StudentTable_body tr > td {
+  padding: 15px;
+}
+
+.StudentTable_body tr > td:first-child {
+  padding: 15px 15px 15px 30px;
+  width: 30%;
+  border-radius: 5px 0 0 5px;
+}
+.StudentTable_body tr > td:last-child {
+  padding: 15px 15px 15px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.paginationItem {
+  color: #0a3775;
+}
+
+.paginationSelected {
+  background-color: "#0A3775";
+  color: "#FFF";
+}
