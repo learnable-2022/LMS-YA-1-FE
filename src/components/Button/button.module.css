@@ -8,10 +8,9 @@
   font-size: 15px;
 }
 
-
 .Button:hover {
   color: #0c4592;
   background: #fff;
   border: 1px solid #0c4592;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }

@@ -1,4 +1,4 @@
-button{
+/* button{
   border: none;
   cursor: pointer;
   border-radius: 10px;
@@ -8,6 +8,11 @@ button{
   align-items: center;
   font-size: 18px;
 }
+
+.arrow{
+  font-size: 20px;
+  margin-right: 4px;
+} */
 
 .arrow{
   font-size: 20px;

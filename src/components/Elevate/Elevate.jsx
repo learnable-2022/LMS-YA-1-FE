@@ -32,15 +32,15 @@ const Elevate = () => {
           All the features in Geek beta are completely free ($0) to use for a
           period of one year
         </p>
-        <Link to='/signup'>
-            <Button
-              content="Get started"
-              style={{
-                background: "#fff",
-                color: "#0C4592",
-                border: "1px solid #fff",
-              }}
-            />
+        <Link to="/signup">
+          <Button
+            content="Get started"
+            style={{
+              background: "#fff",
+              color: "#0C4592",
+              border: "1px solid #fff",
+            }}
+          />
         </Link>
       </div>
     </div>

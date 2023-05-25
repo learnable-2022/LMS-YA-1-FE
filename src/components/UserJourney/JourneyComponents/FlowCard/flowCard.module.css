@@ -1,5 +1,4 @@
-
-.flowCard{
+.flowCard {
   background: #ffff;
   color: black;
   width: 294px;
@@ -8,9 +7,9 @@
   border-radius: 10px;
 }
 
-.flowCard .number{
-  background: #3C88EF;
-  color: #E3EFFF;
+.flowCard .number {
+  background: #3c88ef;
+  color: #ffff;
   border-radius: 50%;
   height: 32px;
   width: 32px;
@@ -23,7 +22,7 @@
   margin-bottom: 23px;
 }
 
-.flowCard .title{
+.flowCard .title {
   width: 100%;
   font-size: 19px;
   margin-top: 12px;
@@ -31,15 +30,15 @@
   text-align: start;
 }
 
-.flowCard .description{
+.flowCard .description {
   font-size: 16px;
   width: 265px;
   line-height: 25px;
   letter-spacing: 0.4px;
 }
 
-@media screen and (max-width: 768px){
-  .flowCard{
+@media screen and (max-width: 768px) {
+  .flowCard {
     margin-bottom: 20px;
   }
 }

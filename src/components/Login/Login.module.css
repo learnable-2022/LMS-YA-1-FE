@@ -1,4 +1,4 @@
-.login-page {
+/* .login-page {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -38,7 +38,6 @@ form {
 }
 
 input {
-  /* margin-bottom: 10px; */
   padding: 10px;
   border-radius: 8px;
 }
@@ -130,4 +129,4 @@ img {
     top: 50%;
     transform: translateY(-50%);
   }
-}
+} */

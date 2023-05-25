@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Login.module.css";
 import Img from "../../assets/Login-img.png";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-import "../../assets/css/satoshi.css";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+// import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,7 +34,7 @@ const LoginPage = () => {
                 className={styles["password-toggle"]}
                 onClick={togglePasswordVisibility}
               >
-                <RemoveRedEyeIcon />
+                {/* <RemoveRedEyeIcon /> */}
               </span>
             </div>
             <p>

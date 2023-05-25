@@ -1,6 +1,4 @@
-C
-
-.main {
+/* .main {
   display: flex;
   background-color: #f7f7f7;
   width: 85%;
@@ -94,7 +92,6 @@ C
   margin-left: 10px;
 }
 
-/* Media Query */
 @media (max-width: 768px) {
   .main {
     flex-direction: column;
@@ -117,4 +114,4 @@ C
     width: 250px;
     padding: 0;
   }
-}
+} */
