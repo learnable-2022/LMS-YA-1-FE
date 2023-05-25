@@ -1,4 +1,4 @@
-/* .login-page {
+.login-page {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .logoArea h1 {
@@ -31,25 +31,26 @@
   height: 50px;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   margin-left: 80px;
 }
 
-input {
+.login-input {
+  margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
 }
-input[type="text"],
-input[type="password"] {
+.login-input[type="text"],
+.login-input[type="password"] {
   width: 60%;
 }
-label {
+.login-label {
   margin: 10px;
 }
 
-button {
+.login-button {
   padding: 10px;
   background-color: #565655;
   color: white;
@@ -57,6 +58,7 @@ button {
   cursor: pointer;
   border-radius: 8px;
   width: 90%;
+  margin-top: 30px;
 }
 .sign-up {
   color: #737373;
@@ -72,7 +74,7 @@ button {
   flex: 1;
 }
 
-img {
+.login-img {
   width: 100%;
   height: 100vh;
 }
@@ -83,8 +85,8 @@ img {
 
 .password-toggle {
   position: absolute;
-  left: 230px;
-  top: 50%;
+  left: 200px;
+  top: 40%;
   transform: translateY(-50%);
   cursor: pointer;
 }
@@ -110,23 +112,22 @@ img {
     margin-bottom: 20px;
   }
 
-  form {
+  .login-form {
     margin-left: 50px;
   }
 
-  input[type="text"],
-  input[type="password"] {
+  .login-input {
     width: 80%;
   }
 
-  button {
+  login-button {
     width: 90%;
   }
 
   .password-toggle {
     left: auto;
-    right: 55px;
-    top: 50%;
+    right: 100px;
+    top: 40%;
     transform: translateY(-50%);
   }
-} */
+}

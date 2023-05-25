@@ -5,7 +5,7 @@ import example2Icon from "../../assets/carousel2.png";
 import example3Icon from "../../assets/carousel1.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import "./Carousel.css";
+import styles from "./Carousel.module.css";
 
 export const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -44,19 +44,19 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="main">
-      <div className="text-section">
-        <h2 className="text-title">
+    <div className={styles.main}>
+      <div className={styles["text-section"]}>
+        <h2 className={styles["text-title"]}>
           What our customers <br /> say about us
         </h2>
-        <p className="text-description">
+        <p className={styles["text-description"]}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo
           nibh etiam placerat. Ut eget in neque nulla vivamus. In proin arcu id
           risus volutpat rutrum eget purus odio.
         </p>
-        <div className="carousel-buttons">
+        <div className={styles["carousel-buttons"]}>
           <button
-            className="carousel-arrow"
+            className={styles["carousel-arrow"]}
             onClick={() => {
               updateIndex(activeIndex - 1);
             }}
@@ -64,7 +64,7 @@ export const Carousel = () => {
             <ArrowBackIcon />
           </button>
           <button
-            className="carousel-arrow"
+            className={styles["carousel-arrow"]}
             onClick={() => {
               updateIndex(activeIndex + 1);
             }}
@@ -73,9 +73,9 @@ export const Carousel = () => {
           </button>
         </div>
       </div>
-      <div className="carousel">
+      <div className={styles["carousel"]}>
         <div
-          className="inner"
+          className={styles.inner}
           style={{ transform: `translate(-${activeIndex * 100}%)` }}
         >
           {items.map((item, index) => (
