@@ -2,6 +2,7 @@ import Elevate_Card from "./Elevate_Components/Elevate_Card_L/Elevate_Card_L";
 import Elevate_Card_D from "./Elevate_Components/Elevate_Card_D/Elevate_Card_D";
 import design from "./elevate.module.css";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const Elevate = () => {
   return (
@@ -31,14 +32,16 @@ const Elevate = () => {
           All the features in Geek beta are completely free ($0) to use for a
           period of one year
         </p>
-        <Button
-          content="Get started"
-          style={{
-            background: "#fff",
-            color: "#0C4592",
-            border: "1px solid #fff",
-          }}
-        />
+        <Link to='/signup'>
+            <Button
+              content="Get started"
+              style={{
+                background: "#fff",
+                color: "#0C4592",
+                border: "1px solid #fff",
+              }}
+            />
+        </Link>
       </div>
     </div>
   );

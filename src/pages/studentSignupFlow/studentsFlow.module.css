@@ -50,9 +50,70 @@
   font-weight: 400;
   color: #737373;
   margin-top: 8px;
-  margin-bottom: 70px;
+  margin-bottom: 8px;
 }
 
+.signup-pg .left-section .user-choice-container{
+  width: 460px;
+}
+.user-choice-container .instruction{
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  margin-bottom: 45px;
+  margin-left: 8px;
+}
+
+.user-choice-container figure{
+  height: 66px;
+  width: 66px;
+  border-radius: 10px;
+}
+
+.user-choice-container figure img{
+  height: 90%;
+}
+
+.user-choice-container .user-choice{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #737373;
+  margin-bottom: 10px;
+  height: 98px;
+  width: 476px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.user-choice-container .user-choice article{
+  height: 90%;
+  width: 295px;
+  margin-right: 60px;
+}
+
+.user-choice-container .user-choice .user{
+  width: 190px;
+  font-size: 24px;
+  font-size: 400;
+  color: black;
+  margin-bottom: 4px;
+}
+
+.user-choice-container .user-choice .intention{
+  font-size: 14px;
+  width: 350px;
+  color: #737373;
+}
+
+.user-choice-container .user-choice input{
+  color: blue;
+}
+
+.user-choice-container,
 .form-1{
   display: flex;
   flex-direction: column;
@@ -96,7 +157,7 @@
   color: #737373;
   margin-bottom: 30px;
 }
-
+.user-choice-container button,
 .form-3 button,
 .form-2 button,
 .form-1 button{
@@ -112,6 +173,7 @@
   transition: all 0.4s linear;
 }
 
+.user-choice-container button:hover
 .form-3 button:hover,
 .form-2 button:hover,
 .form-1 button:hover{

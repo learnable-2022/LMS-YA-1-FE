@@ -1,10 +1,8 @@
 import styles from './footer.module.css'
 import logo from '../../assets/geek-logo.png'
-import fabook from '../../assets/fb-vector.png'
-import tweep from '../../assets/tweet-vector.png'
-import linkdn from '../../assets/linkedin-vector.png'
-import Insta from '../../assets/Insta-vector.png'
+import { GrFacebookOption, GrTwitter, GrInstagram, GrLinkedin } from "react-icons/gr";
 import Button from '../UserJourney/JourneyComponents/Button/Button'
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -14,19 +12,21 @@ function Footer() {
 
         <div>
           <p>Redefining online education</p>
-          <Button
-            text="Get Started"
-            customStyle={{"backgroundColor": "#0C4592", "color":"#FFFFFF"}}
-            />
+            <Link to='/signup'>
+                <Button
+                  text="Get Started"
+                  customStyle={{"backgroundColor": "#0C4592", "color":"#FFFFFF"}}
+                />
+            </Link>
         </div>
       </section>
       <section className={styles['section-2']}>
 
         <figure className={styles['icon-container']}>
-          <img src={fabook} alt="icon" className={styles["social-media-icon"]}/>
-          <img src={tweep} alt="icon" className={styles["social-media-icon"]}/>
-          <img src={Insta} alt="icon" className={styles["social-media-icon"]}/>
-          <img src={linkdn} alt="icon" className={styles["social-media-icon"]}/>
+          <GrFacebookOption className={styles["social-media-icon"]}/>
+          <GrTwitter className={styles["social-media-icon"]} />
+          <GrInstagram className={styles["social-media-icon"]} />
+          <GrLinkedin className={styles["social-media-icon"]} />
         </figure>
 
         <div className={styles['legal-details-container']} >

@@ -2,12 +2,15 @@ import { useNavigate } from "react-router"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
+import user from '../../assets/user.png'
+import teacher from '../../assets/buildings.png'
+
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
 
 function SFlowII() {
     const navigate = useNavigate();
-    const nextPage = () => {
-      navigate('/student-signup-details-confirm')
+    const nextPage = (role) => {
+      role === "student" ? navigate('/student-signup-access-key') : navigate("/")
     }
 
 
@@ -20,18 +23,32 @@ function SFlowII() {
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
           <GoBackBTN/>
 
-          
-          <form className={styles['form-1']}>
-            <label htmlFor="token">Access key</label>
-            <input type="text" id="token" placeholder="Enter your access key"/>
-            <p>
-              Copy and paste your access key in the above field. If you didn’t get any access key, please reach out to the organization where you registered for the training.
-            </p>
-            <button onClick={nextPage}>
-              continue
-            </button>
-          </form>
+          <section className={styles["user-choice-container"]}>
+            <h1 className={styles["instruction"]}>Select your category</h1>
 
+            <div className={styles["user-choice"]} onClick={() => nextPage('student')}>
+              <figure>
+                <img src={user} alt="" />
+              </figure>
+              <article>
+                <p className={styles['user']}>I am a student</p>
+                <p className={styles['intention']}>I am signing up to join an internship program</p>
+              </article>
+              <input type="radio"/>
+            </div>
+
+            <div className={styles["user-choice"]} onClick={() => nextPage('teacher')}>
+              <figure>
+                <img src={teacher} alt="" />
+              </figure>
+              <article>
+                <p className={styles['user']}>I am an educator</p>
+                <p className={styles['intention']}>My organization runs tech internship programs</p>
+              </article>
+              <input type="radio"/>
+            </div>
+          </section>
+          
           <section className={styles['sign-up-footer']}>
 
             <div className={styles['progress-container']}>

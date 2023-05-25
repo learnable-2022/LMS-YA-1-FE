@@ -3,18 +3,19 @@
   background: #ffff;
   color: black;
   width: 294px;
-  height: 258px;
+  height: 235px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .flowCard .number{
   background: #3C88EF;
-  color: #ffff;
+  color: #E3EFFF;
   border-radius: 50%;
-  height: 48px;
-  width: 48px;
-  font-size: 16px;
+  height: 32px;
+  width: 32px;
+  font-size: 20px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +25,7 @@
 
 .flowCard .title{
   width: 100%;
-  font-size: 18px;
+  font-size: 19px;
   margin-top: 12px;
   margin-bottom: 10px;
   text-align: start;
@@ -32,7 +33,7 @@
 
 .flowCard .description{
   font-size: 16px;
-  width: 260px;
+  width: 265px;
   line-height: 25px;
   letter-spacing: 0.4px;
 }

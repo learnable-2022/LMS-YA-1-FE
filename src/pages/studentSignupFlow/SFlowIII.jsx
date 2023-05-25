@@ -1,9 +1,17 @@
+import { useNavigate } from "react-router"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
-import img from '../../assets/side-img.jpg'
+import img from '../../assets/side-img.png'
+import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
+
 
 
 function SFlowIII() {
+    const navigate = useNavigate();
+    const nextPage = () => {
+      navigate('/student-signup-create-password')
+    }
+
   return (
     <div className={styles['signup-pg']}>
 
@@ -11,6 +19,7 @@ function SFlowIII() {
           <img className={styles['logo']} src={logo} alt="logo" />
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
+          <GoBackBTN/>
 
           <form className={styles['form-2']}>
             <section>
@@ -35,7 +44,7 @@ function SFlowIII() {
               </div>
             </section>
 
-            <button>Yes, I’m the one</button>
+            <button onClick={nextPage}>Yes, I’m the one</button>
             <p>No, I’m not the one</p>
           </form>
 

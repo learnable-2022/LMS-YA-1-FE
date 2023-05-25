@@ -1,8 +1,9 @@
 import { useState } from "react"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
-import img from '../../assets/side-img.jpg'
-import pswdV from '../../assets/eye.png'
+import img from '../../assets/side-img.png'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
+import GoBackBTN from "../../components/GoBackBTN/GoBackBTN"
 
 
 function SFlowIV() {
@@ -16,6 +17,7 @@ function SFlowIV() {
           <img className={styles['logo']} src={logo} alt="logo" />
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
+          <GoBackBTN/>
 
           <form className={styles['form-3']}>
             <section>
@@ -35,11 +37,12 @@ function SFlowIV() {
                   id="password" 
                   placeholder="********"
                   />
-                <img 
-                  className={styles['view-pswd']}  
-                  src={pswdV} alt=""
-                  onClick={() => setShowPassword1(!showPassword1)}
-                  />
+                  {
+                    showPassword1 ? 
+                    (<FiEyeOff className={styles['view-pswd']} onClick={() => setShowPassword1(!showPassword1)} />)
+                    :
+                    (<FiEye className={styles['view-pswd']} onClick={() => setShowPassword1(!showPassword1)} />)
+                    }
               </div>
 
               <div className={styles['pswd-container']}>
@@ -49,11 +52,13 @@ function SFlowIV() {
                     id="passwordI"
                     placeholder="********"
                     />
-                  <img 
-                    className={styles['view-pswd']}
-                    src={pswdV} alt=""
-                    onClick={() => setShowPassword2(!showPassword2)}
-                    />
+                    {
+                      showPassword2 ? 
+                      (<FiEyeOff className={styles['view-pswd']} onClick={() => setShowPassword2(!showPassword2)} />)
+                      :
+                      (<FiEye className={styles['view-pswd']} onClick={() => setShowPassword2(!showPassword2)} />)
+                    }
+                  
                 </div>
             </section>
             <p>
