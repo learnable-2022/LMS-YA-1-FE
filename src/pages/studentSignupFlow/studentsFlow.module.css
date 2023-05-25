@@ -659,72 +659,6 @@
   cursor: pointer;
 }
 
-/*----------------------------------Mobile---------------------------------------------*/
-@media screen and (max-width: 768px) {
-  .signup-pg {
-    flex-direction: column;
-    height: 100vh;
-  }
-
-  .right-section {
-    display: none;
-    background: #f7f7f7;
-  }
-
-  .signup-pg .left-section {
-    width: 100%;
-    display: block;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .signup-pg .left-section .logo {
-    height: 60px;
-    width: 50px;
-  }
-
-  .signup-pg .left-section .title {
-    width: 100%;
-    font-size: 38px;
-  }
-
-  /*---------------------------------------------------------------------------------------------------------*/
-  .form-2,
-  .form-1 {
-    width: 100%;
-  }
-
-  .form-1 input {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 11px 24px;
-  }
-
-  .form-2 button,
-  .form-1 button {
-    height: 42px;
-  }
-
-  .form-2 section,
-  .form-3 section {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form-2 input,
-  .form-3 input {
-    padding: 11px 24px;
-    width: 90%;
-  }
-
-  .form-3 p {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
   .form-3 p .checkbox {
     margin-bottom: 8px;
     display: block;
@@ -739,4 +673,3 @@
   .sign-up-footer p {
     text-align: center;
   }
-}

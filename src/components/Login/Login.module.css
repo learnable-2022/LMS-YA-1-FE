@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 /* .login-page {
+=======
+.login-page {
+>>>>>>> 6853c357ce7d3435d6c6fe2059c8983c9705a172
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -20,7 +24,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .logoArea h1 {
@@ -33,15 +37,17 @@
   height: 50px;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   margin-left: 80px;
 }
 
-input {
+.login-input {
+  margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
+<<<<<<< HEAD
 } *
 
 input[type="text"],
@@ -50,10 +56,18 @@ input[type="password"] {
 }
 
 label {
+=======
+}
+.login-input[type="text"],
+.login-input[type="password"] {
+  width: 60%;
+}
+.login-label {
+>>>>>>> 6853c357ce7d3435d6c6fe2059c8983c9705a172
   margin: 10px;
 }
 
-button {
+.login-button {
   padding: 10px;
   background-color: #565655;
   color: white;
@@ -61,6 +75,7 @@ button {
   cursor: pointer;
   border-radius: 8px;
   width: 90%;
+  margin-top: 30px;
 }
 
 .sign-up {
@@ -78,7 +93,7 @@ button {
   flex: 1;
 }
 
-img {
+.login-img {
   width: 100%;
   height: 100vh;
 }
@@ -89,8 +104,8 @@ img {
 
 .password-toggle {
   position: absolute;
-  left: 230px;
-  top: 50%;
+  left: 200px;
+  top: 40%;
   transform: translateY(-50%);
   cursor: pointer;
 }
@@ -117,26 +132,28 @@ img {
     margin-bottom: 20px;
   }
 
-  form {
+  .login-form {
     margin-left: 50px;
   }
 
-  input[type="text"],
-  input[type="password"] {
+  .login-input {
     width: 80%;
   }
 
-  button {
+  login-button {
     width: 90%;
   }
 
   .password-toggle {
     left: auto;
-    right: 55px;
-    top: 50%;
+    right: 100px;
+    top: 40%;
     transform: translateY(-50%);
   }
 }
+<<<<<<< HEAD
 
 */
 
+=======
+>>>>>>> 6853c357ce7d3435d6c6fe2059c8983c9705a172
