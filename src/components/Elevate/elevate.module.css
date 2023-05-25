@@ -1,0 +1,49 @@
+.Elevate_wrapper {
+  padding:   70px 10vw;
+}
+
+.Elevate_wrapper h1 {
+  text-align: center;
+  font-weight: 700;
+  color: #565655;
+  font-size: 48px;
+  line-height: 67px;
+  letter-spacing: -0.02em;
+}
+
+.Elevate_flex {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.Affordable_pricing{
+    background-color: #0C4592;
+    align-items: center;
+    text-align: center;
+    padding: 70px 50px;
+    margin-top: 50px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.Affordable_pricing p{
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+@media (max-width:1102px){
+    .Elevate_flex{
+        flex-direction: column;
+    }  
+}
+@media (max-width:700px){
+    .Elevate_wrapper h1{
+     font-size: 30px;
+     line-height: 47px;
+     letter-spacing: -0.02em;
+    }  
+}
+
