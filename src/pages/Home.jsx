@@ -2,6 +2,7 @@ import UserJourney from "../components/UserJourney/UserJourney";
 import Navbar from "../components/Navbar/Navbar";
 import Elevate from "../components/Elevate/Elevate";
 import About from "./About";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <About />
       <Elevate />
       <UserJourney />
+      <Footer />
     </div>
   );
 };
