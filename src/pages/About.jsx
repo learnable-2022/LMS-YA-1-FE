@@ -4,7 +4,7 @@ import "../App.css";
 const About = () => {
   return (
     <div>
-      <div className="container-fluid">
+      {/* <div className="container-fluid">
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="left">
@@ -54,7 +54,7 @@ const About = () => {
               <div className="card-item">
                 <div className="card-left">
                   <div className="my-icon bg-primary text-light">
-                    {/* <HiOutlineUserGroup /> */}
+                    <HiOutlineUserGroup />
                   </div>
                 </div>
                 <div className="card-right">
@@ -93,7 +93,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

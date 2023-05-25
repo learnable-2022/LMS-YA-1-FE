@@ -1,0 +1,367 @@
+.signup-pg {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-between;
+  width: 100%;
+  background: #f7f7f7;
+}
+
+.signup-pg .right-section {
+  width: 45vw;
+  background-position: fixed;
+  background-position: left;
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+.signup-pg .right-section img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.signup-pg .left-section {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.signup-pg .left-section .logo {
+  height: 87.65px;
+  width: 69px;
+}
+
+.signup-pg .left-section .title {
+  width: 473px;
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.signup-pg .left-section .subtitle {
+  width: 299px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #737373;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.signup-pg .left-section .user-choice-container {
+  width: 460px;
+}
+.user-choice-container .instruction {
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  margin-bottom: 45px;
+  margin-left: 8px;
+}
+
+.user-choice-container figure {
+  height: 66px;
+  width: 66px;
+  border-radius: 10px;
+}
+
+.user-choice-container figure img {
+  height: 90%;
+}
+
+.user-choice-container .user-choice {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #737373;
+  margin-bottom: 10px;
+  height: 98px;
+  width: 476px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.user-choice-container .user-choice article {
+  height: 90%;
+  width: 295px;
+  margin-right: 60px;
+}
+
+.user-choice-container .user-choice .user {
+  width: 190px;
+  font-size: 24px;
+  font-size: 400;
+  color: black;
+  margin-bottom: 4px;
+}
+
+.user-choice-container .user-choice .intention {
+  font-size: 14px;
+  width: 350px;
+  color: #737373;
+}
+
+.user-choice-container .user-choice input {
+  color: blue;
+}
+
+.user-choice-container,
+.form-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  width: 52%;
+  margin-bottom: 100px;
+}
+
+.form-3 section div label,
+.form-2 section div label,
+.form-1 label {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 12px;
+}
+
+.form-3 section div input,
+.form-2 section div input,
+.form-1 input {
+  width: 372px;
+  border-radius: 10px;
+  padding: 12px 24px;
+  border: 1px solid #737373;
+  color: #737373;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.form-1 p {
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  color: #737373;
+  margin-bottom: 30px;
+}
+.user-choice-container button,
+.form-3 button,
+.form-2 button,
+.form-1 button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 49px;
+  background: #565655;
+  border: none;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  transition: all 0.4s linear;
+}
+
+.user-choice-container button:hover .form-3 button:hover,
+.form-2 button:hover,
+.form-1 button:hover {
+  opacity: 0.7;
+}
+
+.form-3,
+.form-2 {
+  margin-bottom: 70px;
+}
+/*----------------------------------------------------------------------------------*/
+.form-3 section,
+.form-2 section {
+  display: grid;
+  grid-template-columns: 237px 237px;
+  row-gap: 12px;
+  column-gap: 12px;
+  margin-bottom: 45px;
+}
+
+.form-3 section div,
+.form-2 section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form-3 section div input,
+.form-2 section div input {
+  width: 100%;
+}
+
+.form-2 p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #565655;
+  margin-top: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.form-3 p {
+  transform: translateY(-42px);
+  text-align: left;
+  height: 22px;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  color: #565655;
+}
+
+.form-3 .pswd-container {
+  position: relative;
+}
+.form-3 .view-pswd {
+  position: absolute;
+  bottom: 26px;
+  height: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.form-3 p .checkbox {
+  border-radius: 5px;
+  border: 2px solid #0c4592;
+  margin-right: 8px;
+}
+
+/*----------------------------------------------------------------------------------*/
+
+.sign-up-footer {
+  width: 52%;
+}
+
+.sign-up-footer .progress-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.sign-up-footer .current,
+.sign-up-footer .progress {
+  height: 8px;
+  width: 50px;
+  background: #d9d9d9;
+  margin-right: 10px;
+}
+
+.sign-up-footer .current {
+  background: #909090;
+}
+
+.sign-up-footer p {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  color: #737373;
+  letter-spacing: 0.6px;
+}
+
+.sign-up-footer .login-link {
+  margin-left: 2px;
+  color: black;
+  cursor: pointer;
+}
+
+/*----------------------------------Mobile---------------------------------------------*/
+@media screen and (max-width: 768px) {
+  .signup-pg {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .right-section {
+    display: none;
+    background: #f7f7f7;
+  }
+
+  .signup-pg .left-section {
+    width: 100%;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .signup-pg .left-section .logo {
+    height: 60px;
+    width: 50px;
+  }
+
+  .signup-pg .left-section .title {
+    width: 100%;
+    font-size: 38px;
+  }
+
+  /*---------------------------------------------------------------------------------------------------------*/
+  .form-2,
+  .form-1 {
+    width: 100%;
+  }
+
+  .form-1 input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 11px 24px;
+  }
+
+  .form-2 button,
+  .form-1 button {
+    height: 42px;
+  }
+
+  .form-2 section,
+  .form-3 section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-2 input,
+  .form-3 input {
+    padding: 11px 24px;
+    width: 90%;
+  }
+
+  .form-3 p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-3 p .checkbox {
+    margin-bottom: 8px;
+    display: block;
+    align-self: left;
+    transform: translateX(-159px);
+  }
+
+  /*-----------------------------------------------------------------------------------------*/
+  .sign-up-footer {
+    width: 100%;
+  }
+  .sign-up-footer p {
+    text-align: center;
+  }
+}
