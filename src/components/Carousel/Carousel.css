@@ -1,4 +1,4 @@
-C
+/*
 
 .main {
   display: flex;
@@ -94,7 +94,7 @@ C
   margin-left: 10px;
 }
 
-/* Media Query */
+
 @media (max-width: 768px) {
   .main {
     flex-direction: column;
@@ -118,3 +118,5 @@ C
     padding: 0;
   }
 }
+
+*/

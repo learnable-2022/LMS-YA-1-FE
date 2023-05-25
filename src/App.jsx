@@ -7,12 +7,14 @@ import SFlowI from "./pages/studentSignupFlow/SFlowI";
 import SFlowII from "./pages/studentSignupFlow/SFlowII";
 import SFlowIII from "./pages/studentSignupFlow/SFlowIII";
 import SFlowIV from "./pages/studentSignupFlow/SFlowIV";
+import Home2 from "./pages/Home2";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/2" element={<Home2 />} />
         <Route path='/signup' element={<SFlowI/>}/>
         <Route path='/student-signup-access-key' element={<SFlowII/>}/>
         <Route path='/student-signup-details-confirm' element={<SFlowIII/>}/>

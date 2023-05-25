@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 import Img from "../../assets/Login-img.png";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-import "../../assets/css/satoshi.css";
+// import "../../assets/css/satoshi.css";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 const LoginPage = () => {
