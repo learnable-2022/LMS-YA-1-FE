@@ -5,6 +5,7 @@ import Elevate from "../components/Elevate/Elevate";
 import About from "./About";
 import { Carousel } from "../components/Carousel/Carousel";
 
+
 const Home = () => {
   return (
     <div>

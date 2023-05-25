@@ -1,0 +1,15 @@
+button{
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-bottom: 70px;
+  background: #f7f7f7;
+  align-items: center;
+  font-size: 18px;
+}
+
+.arrow{
+  font-size: 20px;
+  margin-right: 4px;
+}

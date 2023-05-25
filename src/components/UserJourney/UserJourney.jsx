@@ -2,6 +2,7 @@ import Accordion from "./JourneyComponents/Accordion/Accordion";
 import Button from "./JourneyComponents/Button/Button";
 import FlowCard from "./JourneyComponents/FlowCard/FlowCard";
 import styles from "./userJourney.module.css";
+import { Link } from "react-router-dom";
 
 const teacherJourney = [
   {
@@ -69,7 +70,9 @@ function UserJourney() {
         ))}
       </Accordion>
 
-      <Button text="Get Started" />
+      <Link to='/signup'><Button text="Get Started" /></Link>
+
+      
     </div>
   );
 }
