@@ -9,10 +9,10 @@ import { Carousel } from "../components/Carousel/Carousel";
 const Home = () => {
   return (
     <div>
-      {/* <Navbar /> */}
-      {/* <About /> */}
-      {/* <Elevate /> */}
-      {/* <UserJourney /> */}
+      <Navbar />
+      <About />
+      <Elevate />
+      <UserJourney />
       <Carousel />
       <Footer />
     </div>

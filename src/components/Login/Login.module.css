@@ -31,26 +31,26 @@
   height: 50px;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   margin-left: 80px;
 }
 
-input {
+.login-input {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
 }
-input[type="text"],
-input[type="password"] {
+.login-input[type="text"],
+.login-input[type="password"] {
   width: 60%;
 }
-label {
+.login-label {
   margin: 10px;
 }
 
-button {
+.login-button {
   padding: 10px;
   background-color: #565655;
   color: white;
@@ -74,7 +74,7 @@ button {
   flex: 1;
 }
 
-img {
+.login-img {
   width: 100%;
   height: 100vh;
 }
@@ -112,16 +112,15 @@ img {
     margin-bottom: 20px;
   }
 
-  form {
+  .login-form {
     margin-left: 50px;
   }
 
-  input[type="text"],
-  input[type="password"] {
+  .login-input {
     width: 80%;
   }
 
-  button {
+  login-button {
     width: 90%;
   }
 

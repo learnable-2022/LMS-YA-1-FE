@@ -1,7 +1,7 @@
 .main {
   display: flex;
   background-color: #f7f7f7;
-  width: 85%;
+  width: 100%;
 }
 
 .text-section {
@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   height: 50px;
-  /* background-color: #fff; */
+  background-color: #fff;
 }
 
 .carousel-item-text {

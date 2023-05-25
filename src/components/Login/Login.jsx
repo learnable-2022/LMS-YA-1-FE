@@ -21,12 +21,21 @@ const LoginPage = () => {
             <h1>Login</h1>
             <p>Sign up as either a student or facilitator</p>
           </div>
-          <form>
-            <label htmlFor="">Username</label>
-            <input type="text" placeholder="Victor" />
-            <label htmlFor="">Password</label>
+          <form className={styles["login-form"]}>
+            <label htmlFor="" className={styles["login-label"]}>
+              Username
+            </label>
+            <input
+              className={styles["login-input"]}
+              type="text"
+              placeholder="Victor"
+            />
+            <label htmlFor="" className={styles["login-label"]}>
+              Password
+            </label>
             <div className={styles["password-input-container"]}>
               <input
+                className={styles["login-input"]}
                 type={showPassword ? "text" : "password"}
                 placeholder="*********"
               />
@@ -41,7 +50,9 @@ const LoginPage = () => {
               <input type="checkbox" />
               <span> Remember me</span>
             </p>
-            <button type="submit">Login</button>
+            <button type="submit" className={styles["login-button"]}>
+              Login
+            </button>
           </form>
           <div className={styles["login-footer"]}>
             <p>
@@ -50,7 +61,7 @@ const LoginPage = () => {
           </div>
         </div>
         <div className={styles["image-section"]}>
-          <img src={Img} alt="Login Image" />
+          <img src={Img} className={styles["login-img"]} alt="Login Image" />
         </div>
       </div>
     </div>
