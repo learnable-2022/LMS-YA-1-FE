@@ -5,6 +5,7 @@
 
 .student_table {
   text-align: left;
+  margin-bottom: 50px;
 }
 
 .student_table select {
