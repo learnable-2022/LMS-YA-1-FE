@@ -1,8 +1,4 @@
-<<<<<<<<< Temporary merge branch 1
 .login-page {
-=========
-/* .login-page {
->>>>>>>>> Temporary merge branch 2
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -41,11 +37,8 @@
   margin-left: 80px;
 }
 
-input {
-<<<<<<<<< Temporary merge branch 1
-  /* margin-bottom: 10px; */
-=========
->>>>>>>>> Temporary merge branch 2
+.login-input {
+  margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
 }
@@ -137,8 +130,4 @@ input {
     top: 40%;
     transform: translateY(-50%);
   }
-<<<<<<<<< Temporary merge branch 1
 }
-=========
-} */
->>>>>>>>> Temporary merge branch 2

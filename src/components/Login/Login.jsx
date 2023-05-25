@@ -1,18 +1,9 @@
-<<<<<<<<< Temporary merge branch 1
 import React, { useState } from "react";
-=========
-import { useState } from "react";
->>>>>>>>> Temporary merge branch 2
 import styles from "./Login.module.css";
 import Img from "../../assets/Login-img.png";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-<<<<<<<<< Temporary merge branch 1
-import "../../assets/css/satoshi.css";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-=========
-// import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
->>>>>>>>> Temporary merge branch 2
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -52,11 +43,7 @@ const LoginPage = () => {
                 className={styles["password-toggle"]}
                 onClick={togglePasswordVisibility}
               >
-<<<<<<<<< Temporary merge branch 1
                 <RemoveRedEyeIcon />
-=========
-                {/* <RemoveRedEyeIcon /> */}
->>>>>>>>> Temporary merge branch 2
               </span>
             </div>
             <p>
