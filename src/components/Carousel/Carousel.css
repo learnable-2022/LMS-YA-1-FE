@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 /*
 
 .main {
+=======
+/* .main {
+>>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
   display: flex;
   background-color: #f7f7f7;
   width: 85%;
@@ -94,7 +98,10 @@
   margin-left: 10px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
 @media (max-width: 768px) {
   .main {
     flex-direction: column;
@@ -117,6 +124,10 @@
     width: 250px;
     padding: 0;
   }
+<<<<<<< HEAD
 }
 
 */
+=======
+} */
+>>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203

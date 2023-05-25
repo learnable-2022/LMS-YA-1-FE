@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 /*
 .login-page {
+=======
+/* .login-page {
+>>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -40,7 +44,10 @@ form {
 }
 
 input {
+<<<<<<< HEAD
   margin-bottom: 10px; 
+=======
+>>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
   padding: 10px;
   border-radius: 8px;
 } *
@@ -137,6 +144,10 @@ img {
     top: 50%;
     transform: translateY(-50%);
   }
+<<<<<<< HEAD
 }
 
 */
+=======
+} */
+>>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
