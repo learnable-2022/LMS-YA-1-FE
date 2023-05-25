@@ -1,15 +1,19 @@
-import UserJourney from '../components/UserJourney/UserJourney'
-import Footer from  '../components/Footer/Footer'
-import Hero from  '../components/Hero/Hero'
 
+import UserJourney from "../components/UserJourney/UserJourney";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import Elevate from "../components/Elevate/Elevate";
+import About from "./About";
 
 const Home = () => {
   return (
-    <div>
-      <Hero/>
-      <UserJourney/>
-      <Footer/>
-      
+   <div>
+      <Navbar />
+      <About/>
+      <Elevate />
+      <UserJourney />
+      <Footer />
+
     </div>
   );
 };
