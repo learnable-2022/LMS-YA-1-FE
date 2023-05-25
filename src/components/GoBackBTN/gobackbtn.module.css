@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 .go-back-btn{
-=======
-/* button{
->>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
   border: none;
   cursor: pointer;
   border-radius: 10px;
@@ -16,7 +12,7 @@
 .arrow{
   font-size: 20px;
   margin-right: 4px;
-} */
+} 
 
 .arrow{
   font-size: 20px;

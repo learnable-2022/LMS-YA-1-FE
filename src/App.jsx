@@ -7,7 +7,7 @@ import SFlowI from "./pages/studentSignupFlow/SFlowI";
 import SFlowII from "./pages/studentSignupFlow/SFlowII";
 import SFlowIII from "./pages/studentSignupFlow/SFlowIII";
 import SFlowIV from "./pages/studentSignupFlow/SFlowIV";
-import Home2 from "./pages/Home2";
+
 
 function App() {
   return (

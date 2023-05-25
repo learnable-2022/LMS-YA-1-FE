@@ -3,12 +3,7 @@ import styles from "./Login.module.css";
 import Img from "../../assets/Login-img.png";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-// import "../../assets/css/satoshi.css";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-=======
 // import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
->>>>>>> 12f8f7b3a6093c3d1d6fde8d0b21ebdb4c791203
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
