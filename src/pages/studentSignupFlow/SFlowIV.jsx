@@ -1,9 +1,14 @@
+import { useState } from "react"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.jpg'
+import pswdV from '../../assets/eye.png'
 
 
 function SFlowIV() {
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
+
   return (
     <div className={styles['signup-pg']}>
 
@@ -23,14 +28,32 @@ function SFlowIV() {
                 {/*Acting as a layout (design trick) placeholder*/}
               </div>
 
-              <div>
+              <div className={styles['pswd-container']}>
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" placeholder="********"/>
+                <input 
+                  type={showPassword1 ? "text" : "password"} 
+                  id="password" 
+                  placeholder="********"
+                  />
+                <img 
+                  className={styles['view-pswd']}  
+                  src={pswdV} alt=""
+                  onClick={() => setShowPassword1(!showPassword1)}
+                  />
               </div>
 
-              <div>
+              <div className={styles['pswd-container']}>
                   <label htmlFor="passwordI">Confirm password</label>
-                  <input type="password" id="passwordI" placeholder="********"/>
+                  <input 
+                    type={showPassword2 ? "text" : "password"} 
+                    id="passwordI"
+                    placeholder="********"
+                    />
+                  <img 
+                    className={styles['view-pswd']}
+                    src={pswdV} alt=""
+                    onClick={() => setShowPassword2(!showPassword2)}
+                    />
                 </div>
             </section>
             <p>

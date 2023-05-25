@@ -4,7 +4,7 @@
   align-items: top;
   justify-content: space-between;
   width: 100%;
-  /*background: #A7A7A7; */
+  background: #f7f7f7;
 }
 
 .signup-pg .right-section{
@@ -165,6 +165,17 @@
   color: #565655;
 }
 
+.form-3 .pswd-container{
+  position: relative;
+}
+.form-3 .view-pswd{
+  position: absolute;
+  bottom: 26px;
+  height: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
 .form-3 p .checkbox{
   border-radius: 5px;
   border: 2px solid #0C4592;
@@ -212,4 +223,91 @@
   color: black;
   cursor: pointer;
   
+}
+
+
+
+/*----------------------------------Mobile---------------------------------------------*/
+@media screen and (max-width: 768px) {
+
+  .signup-pg {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .right-section {
+      display: none;
+      background: #f7f7f7;
+  }
+
+  .signup-pg .left-section{
+    width: 100%;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .signup-pg .left-section .logo{
+    height: 60px;
+    width: 50px;
+  }
+
+  .signup-pg .left-section .title{
+    width: 100%;
+    font-size: 38px;
+  }
+  
+ /*---------------------------------------------------------------------------------------------------------*/
+ .form-2, 
+ .form-1{
+    width: 100%;
+    
+  }
+
+  .form-1 input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 11px 24px;
+  }
+
+  .form-2 button,
+  .form-1 button{
+    height: 42px;
+  }
+
+  .form-2 section,
+  .form-3 section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-2 input,
+  .form-3 input{
+    padding: 11px 24px;
+    width: 90%;
+  }
+
+  .form-3 p{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-3 p .checkbox{
+     margin-bottom: 8px;
+     display: block;
+     align-self: left;
+     transform: translateX(-159px);
+    }
+
+  /*-----------------------------------------------------------------------------------------*/
+  .sign-up-footer{
+    width: 100%;
+  }
+  .sign-up-footer p{
+    text-align: center;
+  }
+
 }
