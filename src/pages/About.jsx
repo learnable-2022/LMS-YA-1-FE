@@ -1,4 +1,4 @@
-import '../App.css'
+// import '../App.css'
 import { HiOutlineUserGroup } from 'react-icons/hi';
 
 const About = () => {
