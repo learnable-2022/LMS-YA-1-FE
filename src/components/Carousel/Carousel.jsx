@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CarouselItem } from "./CarouselItem";
+import CarouselItem from "./CarouselItem";
 import example1Icon from "../../assets/carousel1.png";
 import example2Icon from "../../assets/carousel2.png";
 import example3Icon from "../../assets/carousel1.png";
@@ -7,7 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import styles from "./Carousel.module.css";
 
-export const Carousel = () => {
+const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const items = [
     {
@@ -86,3 +86,5 @@ export const Carousel = () => {
     </div>
   );
 };
+
+export default Carousel;
