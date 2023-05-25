@@ -2,7 +2,7 @@ import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import styles from "./Carousel.module.css";
 
-export const CarouselItem = ({ item, width }) => {
+const CarouselItem = ({ item, width }) => {
   return (
     <div className={styles["carousel-item"]} style={{ width: width }}>
       <div></div>
@@ -22,3 +22,5 @@ export const CarouselItem = ({ item, width }) => {
     </div>
   );
 };
+
+export default CarouselItem;
