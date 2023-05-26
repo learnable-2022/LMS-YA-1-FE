@@ -1,17 +1,18 @@
 import UserJourney from "../components/UserJourney/UserJourney";
-import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import Elevate from "../components/Elevate/Elevate";
 import About from "../components/About/About";
-
+import Footer from "../components/Footer/Footer";
+import Coursel from "../components/Carousel/Carousel";
 
 const Home = () => {
   return (
-   <div>
+    <div>
       <Navbar />
-      <About/>
+      <About />
       <Elevate />
       <UserJourney />
+      <Coursel />
       <Footer />
     </div>
   );
