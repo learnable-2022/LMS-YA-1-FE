@@ -1,0 +1,59 @@
+.about{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .about-lt-info{
+    margin: 2rem 6rem;
+    padding: 2rem 2px;
+  }
+  .about-lt-info > p{
+    text-align: justify;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #565655;
+  }
+  .info-title{
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 67px;
+    letter-spacing: -0.02em;
+    color: #565655;
+  }
+  .info-title > span{
+    color: #3C88EF;
+  }
+  .cards{
+    display: flex;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .card-rt-title{
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  .about-rt-images{
+    margin-top: 6rem;
+  }
+  .card-rt > p{
+    font-size: 18px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  .card-lt > img{
+    margin: 1.3rem 0rem;
+  }
+  @media (max-width: 1102px){
+    .about{
+      flex-direction: column;
+    }
+  }
+  
+  
+ 
