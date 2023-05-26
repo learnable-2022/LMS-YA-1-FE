@@ -1,4 +1,3 @@
-
 .login-page {
 
   display: flex;
@@ -45,10 +44,12 @@
   padding: 10px;
   border-radius: 8px;
 }
+
 .login-input[type="text"],
 .login-input[type="password"] {
   width: 60%;
 }
+
 .login-label {
   margin: 10px;
 }

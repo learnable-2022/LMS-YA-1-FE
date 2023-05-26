@@ -1,4 +1,6 @@
-import { useNavigate } from "react-router"
+import { useNavigate, Link } from "react-router-dom"
+import { useState } from 'react'
+
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
@@ -8,25 +10,32 @@ import teacher from '../../assets/buildings.png'
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
 
 function SFlowII() {
+
+    const [selectedOption, setSelectedOption] = useState('');
     const navigate = useNavigate();
-    const nextPage = (role) => {
-      role === "student" ? navigate('/student-signup-access-key') : navigate("/")
+
+    const handleChange = (e) => {
+      setSelectedOption(e.target.value)
+    }
+
+    const nextPage = () => {
+      selectedOption === "student" ? navigate('/student-signup-access-key') : navigate("/")
     }
 
 
   return (
-    <div className={styles['signup-pg']}>
+    <div className={styles['signup-pg-1']}>
 
-      <div className={styles['left-section']}>
+      <div className={styles['left-section-1']}>
           <img className={styles['logo']} src={logo} alt="logo" />
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
           <GoBackBTN/>
 
-          <section className={styles["user-choice-container"]}>
-            <h1 className={styles["instruction"]}>Select your category</h1>
+          <section className={styles["user-choice-container-1"]}>
+            <h1 className={styles["instruction-1"]}>Select your category</h1>
 
-            <div className={styles["user-choice"]} onClick={() => nextPage('student')}>
+            <div className={styles["user-choice"]} >
               <figure>
                 <img src={user} alt="" />
               </figure>
@@ -34,10 +43,10 @@ function SFlowII() {
                 <p className={styles['user']}>I am a student</p>
                 <p className={styles['intention']}>I am signing up to join an internship program</p>
               </article>
-              <input type="radio"/>
+              <input className={styles['radio']} type="radio" value='student' checked={selectedOption === 'student'} onChange={handleChange} />
             </div>
 
-            <div className={styles["user-choice"]} onClick={() => nextPage('teacher')}>
+            <div className={styles["user-choice"]} >
               <figure>
                 <img src={teacher} alt="" />
               </figure>
@@ -45,8 +54,10 @@ function SFlowII() {
                 <p className={styles['user']}>I am an educator</p>
                 <p className={styles['intention']}>My organization runs tech internship programs</p>
               </article>
-              <input type="radio"/>
+              <input type="radio" value='teacher' checked={selectedOption === 'teacher'} onChange={handleChange}/>
+              
             </div>
+            <button className={styles['next-btn']} onClick={nextPage}>Next</button>
           </section>
           
           <section className={styles['sign-up-footer']}>
@@ -59,7 +70,13 @@ function SFlowII() {
             </div>
 
 
-           <p>Already have an account? <span className={styles['login-link']}> Login</span></p>
+           <p>Already have an account?
+              <span >
+                <Link to='/login' className={styles['login-link']}>
+                   Login
+                </Link>
+              </span>
+            </p>
           </section>
       
       </div>
@@ -68,7 +85,7 @@ function SFlowII() {
 
 
 
-      <figure className={styles['right-section']}>
+      <figure className={styles['right-section-1']}>
         <img src={img} alt="" />
       </figure>    
     </div>

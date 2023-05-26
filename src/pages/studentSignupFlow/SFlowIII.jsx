@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router"
+import { useNavigate, Link } from "react-router-dom"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
@@ -13,9 +13,9 @@ function SFlowIII() {
     }
 
   return (
-    <div className={styles['signup-pg']}>
+    <div className={styles['signup-pg-1']}>
 
-      <div className={styles['left-section']}>
+      <div className={styles['left-section-1']}>
           <img className={styles['logo']} src={logo} alt="logo" />
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
@@ -45,7 +45,7 @@ function SFlowIII() {
             </section>
 
             <button onClick={nextPage}>Yes, I’m the one</button>
-            <p>No, I’m not the one</p>
+            {/*<p>No, I’m not the one</p>*/}
           </form>
 
           <section className={styles['sign-up-footer']}>
@@ -58,12 +58,18 @@ function SFlowIII() {
             </div>
 
 
-           <p>Already have an account? <span className={styles['login-link']}> Login</span></p>
+           <p>Already have an account?
+              <span >
+                <Link to='/login' className={styles['login-link']}>
+                   Login
+                </Link>
+              </span>
+            </p>
           </section>
       
       </div>
 
-      <figure className={styles['right-section']}>
+      <figure className={styles['right-section-1']}>
         <img src={img} alt="" />
       </figure>    
     </div>

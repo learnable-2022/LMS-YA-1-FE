@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useState } from "react"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
@@ -11,9 +12,9 @@ function SFlowIV() {
   const [showPassword2, setShowPassword2] = useState(false);
 
   return (
-    <div className={styles['signup-pg']}>
+    <div className={styles['signup-pg-1']}>
 
-      <div className={styles['left-section']}>
+      <div className={styles['left-section-1']}>
           <img className={styles['logo']} src={logo} alt="logo" />
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
@@ -61,9 +62,10 @@ function SFlowIV() {
                   
                 </div>
             </section>
-            <p>
-              <input className={styles['checkbox']} type="checkbox" required />By signing up, you agree to our terms & privacy policy
-            </p>
+            <div className={styles['checkbox-container']}>
+              <input className={styles['checkbox']} type="checkbox" required />
+              <p>By signing up, you agree to our terms & privacy policy</p> 
+            </div>
 
             <button>Yes, I’m the one</button>
           </form>
@@ -78,12 +80,18 @@ function SFlowIV() {
             </div>
 
 
-           <p>Already have an account? <span className={styles['login-link']}> Login</span></p>
+           <p>Already have an account?
+              <span >
+                <Link to='/login' className={styles['login-link']}>
+                   Login
+                </Link>
+              </span>
+            </p>
           </section>
       
       </div>
 
-      <figure className={styles['right-section']}>
+      <figure className={styles['right-section-1']}>
         <img src={img} alt="" />
       </figure>    
     </div>
