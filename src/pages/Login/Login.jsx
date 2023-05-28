@@ -12,6 +12,26 @@ const LoginPage = () => {
     setShowPassword(!showPassword);
   };
 
+  const handleSubmit = (e, prev) => {
+    e.preventDefault()
+    
+    fetch("https://lms-zwhm.onrender.com/api/v1/auth/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json"  },
+      body: JSON.stringify({ userName: 'kixic',  password: '123456'}),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.error(error));
+  }
+
+   
+   
+
+
+
   return (
     <div>
       <div className={styles["login-page"]}>
@@ -21,7 +41,7 @@ const LoginPage = () => {
             <h1>Login</h1>
             <p>Sign up as either a student or facilitator</p>
           </div>
-          <form className={styles["login-form"]}>
+          <form className={styles["login-form"]} onSubmit={handleSubmit}>
             <label htmlFor="" className={styles["login-label"]}>
               Username
             </label>

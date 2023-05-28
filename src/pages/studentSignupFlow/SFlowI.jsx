@@ -6,7 +6,6 @@ import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
 import user from '../../assets/user.png'
 import teacher from '../../assets/buildings.png'
-
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
 
 function SFlowII() {
@@ -19,7 +18,11 @@ function SFlowII() {
     }
 
     const nextPage = () => {
-      selectedOption === "student" ? navigate('/student-signup-access-key') : navigate("/")
+      if(selectedOption === "student"){
+        navigate('/student-signup-access-key')
+      }else if(selectedOption === "teacher"){
+        navigate("/login")
+      }
     }
 
 

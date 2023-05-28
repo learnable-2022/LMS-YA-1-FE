@@ -230,7 +230,11 @@
   margin-top: 22px;
   height: 20px;
   cursor: pointer;
-  background: red;
+  transition: all 0.4s linear;
+}
+
+.form-2 p:hover{
+ font-weight: 700;
 }
 
 .left-section-1 .form-3 .checkbox-container{
@@ -253,14 +257,10 @@
   color: #565655;
 }
 
-.form-3 .pswd-container{
-  position: relative;
-}
+
 .form-3 .view-pswd{
-  position: absolute;
-  bottom: 26px;
-  height: 15px;
-  right: 20px;
+  margin-left: 210px;
+  transform: translateY(-40px);
   cursor: pointer;
 }
 
@@ -451,4 +451,61 @@
     text-align: center;
   }
 
+}
+
+
+
+/*----------------------------------------------------------------------------------------------*/
+.left-section-1 .form-3 div .suggestions {
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.29rem;
+  position: relative;
+  bottom: -10px;
+  text-align: left;
+  z-index: 9999;
+}
+
+.left-section-1 .form-3 div .suggestions .svg {
+  margin-right: 0.25rem;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.successmsg,
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.successmsg {
+  background-color: #7f56d9;
 }
