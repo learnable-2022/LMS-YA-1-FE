@@ -1,17 +1,16 @@
-.btn{
+.btn {
   background: hsl(0, 0%, 100%);
   padding: 10px 32px;
   width: 229px;
   border-radius: 8px;
   border: 1px solid #fff;
-  color: #3C88EF;
+  color: #3c88ef;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  font-family: "satoshi";
   transition: all 0.4s linear;
 }
 
-.btn:hover{
+.btn:hover {
   opacity: 0.7;
 }

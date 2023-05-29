@@ -1,11 +1,17 @@
-import styles from './button.module.css'
+import styles from "./button.module.css";
+import PropTypes from "prop-types";
 
-function Button({text, customStyle}) {
+function Button({ text, customStyle }) {
   return (
-    <button style={customStyle} className={styles['btn']}>
+    <button style={customStyle} className={styles["btn"]}>
       {text}
     </button>
-  )
+  );
 }
 
-export default Button
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  CustomStyle: PropTypes.object,
+};
+
+export default Button;

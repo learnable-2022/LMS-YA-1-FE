@@ -1,5 +1,5 @@
 .footer{
-  padding: 100px 150px;
+  padding: 100px 10vw;
   background: #F7F7F7;
 }
 
@@ -37,8 +37,9 @@
 
 
 .footer .section-2 .icon-container .social-media-icon{
-  width: 24px;
+ 
   margin: 4px;
+  font-size: 25px;
   color: #9ca3af;
 }
 
@@ -58,7 +59,7 @@
 
   @media screen and (max-width: 768px){
     .footer{
-      padding: 32px 20px;
+      padding: 32px 10vw;
     }
 
     .footer .section-1,
