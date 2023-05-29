@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState, useContext, useRef, useEffect } from "react"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
@@ -6,8 +6,9 @@ import img from '../../assets/side-img.png'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN"
 import UserContext from "../../context/UserContext"
-import { Password } from "@mui/icons-material"
+import { CircularProgress } from "@mui/material"
 import { MdOutlineCancel, MdCheck, MdInfoOutline } from 'react-icons/md'
+import axios from 'axios'
 
 const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PASSWORD_REGEX =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -21,9 +22,11 @@ function SFlowIV() {
   const [showPassword2, setShowPassword2] = useState(false);
 
   const { user } = useContext(UserContext);
+  const navigate = useNavigate()
 
   const userRef = useRef();
   const errRef = useRef();
+  const successRef = useRef();
 
   const [userName, setUserName] = useState('');
   const [validUserName, setValidUserName] = useState(false);
@@ -43,7 +46,7 @@ function SFlowIV() {
   const [matchFocus, setMatchFocus] = useState(false);
 
   const [errMessage, setErrMessage] = useState("");
-  const [success, setSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -68,31 +71,48 @@ function SFlowIV() {
     setErrMessage("");
   }, [userName, address, password, matchPasword]);
 
-
-
-
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
+    try{
+      setLoading(true)
+      user['userName'] = userName
+      user['password'] = password
+      user['eth'] = address
+      console.log(user)
 
-    user['userName'] = userName
-    user['password'] = password
-    user['eth'] = address
-    console.log(user)
+      const response = await axios.post(
+        SIGNUP_URL,
+        JSON.stringify(user),
+        { 
+          headers: { "Content-Type": "application/json" }
+        });
+        
+        setSuccessMessage('Created successfully')
+        successRef.current.focus()
+      }catch (err){
+        setLoading(false)
+        if(!err?.response){
+          setErrMessage('No Server Response');
+        }else if(err.response?.status === 409){
+          setErrMessage("Username or Email Taken");
+        }else{
+          setErrMessage('Registration Failed');
+        }
+        errRef.current.focus()
+      }
+  };
 
-    
-    fetch("https://lms-zwhm.onrender.com/api/v1/users/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json"  },
-      body: JSON.stringify(user),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => console.error(error));
-  }
-
+  
+  useEffect(() => {
+      setTimeout(() => {
+          if(successMessage){
+            navigate("/login");
+      }
+          setSuccessMessage('');
+      }, 3000);
+  }, [successMessage, navigate]);
 
 
 
@@ -107,10 +127,18 @@ function SFlowIV() {
 
           <p
             ref={errRef}
-            className={errMessage? styles.errMsg : styles.offscreen}
+            className={errMessage? styles.errmsg : styles.offscreen}
             aria-live="assertive"
             >
               {errMessage}
+          </p>
+
+          <p
+            ref={successRef}
+            className={successMessage? styles.successmsg : styles.offscreen}
+            aria-live="assertive"
+            >
+              {successMessage}
           </p>
 
           <form className={styles['form-3']}  onSubmit={handleSubmit}>
@@ -255,9 +283,10 @@ function SFlowIV() {
               <p>By signing up, you agree to our terms & privacy policy</p> 
             </div>
 
-            <button disabled={!validUserName ||  !validAddress || !validPassword || !validMatch ? true : false} >Yes, I’m the one</button>
+            <button disabled={!validUserName ||  !validAddress || !validPassword || !validMatch ? true : false} >
+              {loading? <CircularProgress style={{ color: "#fff" }} size={23} /> : "Yes, I’m the one"}
+            </button>
           </form>
-
           <section className={styles['sign-up-footer']}>
 
             <div className={styles['progress-container']}>

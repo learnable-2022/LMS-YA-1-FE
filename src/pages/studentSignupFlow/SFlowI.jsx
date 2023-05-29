@@ -6,10 +6,8 @@ import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
 import user from '../../assets/user.png'
 import teacher from '../../assets/buildings.png'
-import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
 
 function SFlowII() {
-
     const [selectedOption, setSelectedOption] = useState('');
     const navigate = useNavigate();
 
@@ -33,7 +31,7 @@ function SFlowII() {
           <img className={styles['logo']} src={logo} alt="logo" />
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
-          <GoBackBTN/>
+
 
           <section className={styles["user-choice-container-1"]}>
             <h1 className={styles["instruction-1"]}>Select your category</h1>
@@ -66,8 +64,8 @@ function SFlowII() {
           <section className={styles['sign-up-footer']}>
 
             <div className={styles['progress-container']}>
-                <div className={styles['progress']}></div>
                 <div className={styles['current']}></div>
+                <div className={styles['progress']}></div>
                 <div className={styles['progress']}></div>
                 <div className={styles['progress']}></div>
             </div>

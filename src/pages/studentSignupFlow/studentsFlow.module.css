@@ -8,8 +8,7 @@
 }
 
 .signup-pg-1 .right-section-1{
-  width: 45vw;
-  
+  width: 45vw;  
 }
 
 .signup-pg-1 .right-section-1 img{
@@ -50,6 +49,7 @@
 
 .signup-pg-1 .left-section-1 .user-choice-container-1{
   width: 490px;
+  margin-top: 55px;
 }
 .left-section-1 .user-choice-container-1 .instruction-1{
   font-weight: 600;
@@ -440,7 +440,8 @@
   }
 
   .form-3 .view-pswd{
-    bottom: 19px;
+   transform: translateY(-32px);
+   margin-left: 350px;
   }
 
   /*-----------------------------------------------------------------------------------------*/
@@ -497,7 +498,7 @@
   font-weight: bolder;
 }
 
-.successmsg,
+
 .errmsg {
   background-color: lightpink;
   color: firebrick;
@@ -506,6 +507,11 @@
   margin-bottom: 0.5rem;
 }
 
-.successmsg {
-  background-color: #7f56d9;
+.successmsg{
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: green;
+  color: #fff;
 }
+

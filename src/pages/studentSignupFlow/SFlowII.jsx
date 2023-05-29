@@ -1,55 +1,66 @@
 import { useNavigate, Link,  } from "react-router-dom"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState,  useRef  } from "react"
 import styles from "./studentsFlow.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
 import UserContext from "../../context/UserContext"
 import { CircularProgress } from "@mui/material"
+import axios from 'axios';
+
+const ACCESS_KEY_ENDPOINT = "https://lms-zwhm.onrender.com/api/v1/testUsers/" 
 
 function SFlowII() {
   const navigate = useNavigate();
 
-  const {user, setUser} = useContext(UserContext);
+  const errRef = useRef()
+  const successRef = useRef()
+
+  const { user } = useContext(UserContext);
   const [accessKey, setAccessKey] = useState('');
   const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const [successMessage, setSuccessMessage] = useState(false)
+  const [errMessage, setErrMessage] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setLoading(true)
-    console.log(accessKey)
+    try{
+      setLoading(true)
+      console.log(accessKey)
 
+      const response = await axios.get(
+          ACCESS_KEY_ENDPOINT + accessKey,
+          {
+            headers : { "Content-Type": "application/json"  }
+          }
+      )
+      const apiResponse = response.data.data
+      user.firstName = apiResponse.firstName
+      user.lastName =  apiResponse.lastName
+      user.email =  apiResponse.email
+      user.learningTrack = apiResponse.learningTrack
+      setSuccessMessage('Verified successfully');
 
-
-    fetch("https://lms-zwhm.onrender.com/api/v1/testUsers/" + accessKey, {
-      method: "GET",
-      headers: { "Content-Type": "application/json"  },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-
-        user.firstName = data.data.firstName
-        user.lastName =  data.data.lastName
-        user.email =  data.data.email
-        user.learningTrack = data.data.learningTrack
-        setSuccess(data.success)
-        setTimeout(() => {
+      setTimeout(() => {
           if(user.firstName){
             navigate('/student-signup-details-confirm')
-          }
-          setSuccess(false);
-        }, 5000);
+        }
+          setSuccessMessage('');
+        }, 3000);
+      console.log(user)
+      successRef.current.focus()
+    }catch(err){
+      setLoading(false)
+      if(!err.response){
+        setErrMessage("No Server reponse")
+      }else{
+        setErrMessage("Invalid Key")
+      }
+      errMessage.current.focus()
+    }
+  }  
 
-        console.log(data)
-      })
-      .catch((error) => console.error(error));
-
-  }
-
-  
-  console.log(user)
   
     
     
@@ -64,13 +75,28 @@ function SFlowII() {
           <h1 className={styles['title']}>Create your account</h1>
           <p className={styles['subtitle']}>Sign up as either a student or facilitator</p>
           <GoBackBTN/>
+          <p
+            ref={errRef}
+            className={errMessage? styles.errmsg : styles.offscreen}
+            aria-live="assertive"
+            >
+              {errMessage}
+          </p>
 
+          <p
+            ref={successRef}
+            className={successMessage? styles.successmsg : styles.offscreen}
+            aria-live="assertive"
+            >
+              {successMessage}
+          </p>
           
           <form className={styles['form-1']} onSubmit={handleSubmit}>
             <label htmlFor="token">Access key</label>
             <input 
               type="text" 
-              id="token" 
+              id="token"
+              autoComplete="off"
               placeholder="Enter your access key"
               value={accessKey}
               required
@@ -79,7 +105,9 @@ function SFlowII() {
             <p>
               Copy and paste your access key in the above field. If you didn’t get any access key, please reach out to the organization where you registered for the training.
             </p>
-            <button>{loading? <CircularProgress style={{ color: "#fff" }} size={23} /> : "continue"}</button>
+            <button>
+                 {loading? <CircularProgress style={{ color: "#fff" }} size={23} /> : "continue"}
+            </button>
           </form>
 
           <section className={styles['sign-up-footer']}>
