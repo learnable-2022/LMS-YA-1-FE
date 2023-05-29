@@ -11,7 +11,6 @@ const Home = () => {
       <Navbar />
       <About />
       <Elevate />
-      <Hero/>
       <UserJourney />
       <Coursel />
       <Footer />
