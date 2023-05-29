@@ -1,3 +1,4 @@
+
 .main {
   display: flex;
   background-color: #f7f7f7;
@@ -37,6 +38,7 @@
   transition: transform 0.3s;
   /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05); */
 }
+
 
 .carousel-item {
   display: inline-flex;

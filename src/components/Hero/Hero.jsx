@@ -16,7 +16,7 @@ function Hero() {
        
        <button className={styles['btn']}> Get Started
     
-            </button>
+       </button>
        
       
       </div>

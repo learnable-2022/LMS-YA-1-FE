@@ -1,4 +1,5 @@
 import styles from './flowCard.module.css'
+import PropTypes from "prop-types";
 
 function FlowCard({number, journey, description}) {
   return (
@@ -9,5 +10,12 @@ function FlowCard({number, journey, description}) {
     </div>
   )
 }
+
+
+FlowCard.propTypes = {
+  number: PropTypes.number.isRequired,
+  journey: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default FlowCard

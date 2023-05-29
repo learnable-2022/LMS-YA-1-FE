@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './accordion.module.css'
+import PropTypes from "prop-types";
 
 function Accordion({title, children}) {
   const [collapse, setCollapse] = useState(false)
@@ -22,5 +23,10 @@ function Accordion({title, children}) {
       </div>
   )
 }
+
+Accordion.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.array.isRequired,
+};
 
 export default Accordion

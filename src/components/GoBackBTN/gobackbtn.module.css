@@ -1,18 +1,20 @@
-/* button{
+.go-back-btn{
   border: none;
   cursor: pointer;
   border-radius: 10px;
   font-weight: 700;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
   background: #f7f7f7;
   align-items: center;
   font-size: 18px;
+  display: flex;
+  flex-direction: row;
 }
 
 .arrow{
   font-size: 20px;
   margin-right: 4px;
-} */
+} 
 
 .arrow{
   font-size: 20px;
