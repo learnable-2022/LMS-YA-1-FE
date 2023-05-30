@@ -1,27 +1,29 @@
-import styles from './hero.module.css'
-import logo from '../../assets/Group 8838.png'
+import design from "./hero.module.css";
+import Button from "../Button/Button";
+import { Link } from "react-router-dom";
+import RIGHT from "../../assets/H-BG-Combo.png";
 function Hero() {
-    return (
-      <div className={styles['h1']}>
-       <h1 className={styles['hero']}><b>
-        Redefining Online Education.
-       </b></h1>
-       <p className={styles['hero2']}>
-       
-        Experience the future of Online Education with
-        Seamless Teachings and Engaging Learning on a 
-        Single All-In-One Platform with Greek.
-       </p>
-       <img className={styles['logo']} src={logo} alt={styles["logo"]} />
-       
-       <button className={styles['btn']}> Get Started
-    
-       </button>
-       
-      
+  return (
+    <div className={design.Hero_wrapper}>
+      <div className={design.Margin}></div>
+      <div className={design.Hero_inner}>
+        <div className={design.Hero_left}>
+          <h1 className="">Redefining Online Education.</h1>
+          <p className="">
+            Experience the future of Online Education with Seamless Teachings
+            and Engaging Learning on a Single All-In-One Platform with{" "}
+            <span>Geek</span> .
+          </p>
+          <Link to="/signup">
+            <Button content="Get started" />
+          </Link>
+        </div>
+        <div className={design.Hero_right}>
+          <img src={RIGHT} />
+        </div>
       </div>
-    )
-  }
-  
-  export default Hero
-  
+    </div>
+  );
+}
+
+export default Hero;
