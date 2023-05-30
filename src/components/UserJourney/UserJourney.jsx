@@ -51,21 +51,23 @@ function UserJourney() {
       <h1>How to start your journey with Geek</h1>
 
       <Accordion title="I am an Educator">
-        {teacherJourney.map((item) => (
+        {teacherJourney.map((item, index) => (
           <FlowCard
             number={item.number}
             journey={item.journey}
             description={item.description}
+            key={index}
           />
         ))}
       </Accordion>
 
       <Accordion title="I am a Student">
-        {studentJourney.map((item) => (
+        {studentJourney.map((item, index) => (
           <FlowCard
             number={item.number}
             journey={item.journey}
             description={item.description}
+            key={index}
           />
         ))}
       </Accordion>

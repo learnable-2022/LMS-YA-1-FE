@@ -9,7 +9,7 @@ function GoBackBTN() {
     }
   return (
     
-    <button onClick={goBack}>
+    <button className={styles['go-back-btn']} onClick={goBack}>
       <BsFillArrowLeftCircleFill
         className={styles['arrow']}
       /> 

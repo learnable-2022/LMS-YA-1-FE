@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.css";
 import Img from "../../assets/Login-img.png";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-// import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,6 +11,26 @@ const LoginPage = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const handleSubmit = (e, prev) => {
+    e.preventDefault()
+    
+    fetch("https://lms-zwhm.onrender.com/api/v1/auth/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json"  },
+      body: JSON.stringify({ userName: 'kixic',  password: '123456'}),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.error(error));
+  }
+
+   
+   
+
+
 
   return (
     <div>
@@ -21,12 +41,21 @@ const LoginPage = () => {
             <h1>Login</h1>
             <p>Sign up as either a student or facilitator</p>
           </div>
-          <form>
-            <label htmlFor="">Username</label>
-            <input type="text" placeholder="Victor" />
-            <label htmlFor="">Password</label>
+          <form className={styles["login-form"]} onSubmit={handleSubmit}>
+            <label htmlFor="" className={styles["login-label"]}>
+              Username
+            </label>
+            <input
+              className={styles["login-input"]}
+              type="text"
+              placeholder="Victor"
+            />
+            <label htmlFor="" className={styles["login-label"]}>
+              Password
+            </label>
             <div className={styles["password-input-container"]}>
               <input
+                className={styles["login-input"]}
                 type={showPassword ? "text" : "password"}
                 placeholder="*********"
               />
@@ -34,14 +63,16 @@ const LoginPage = () => {
                 className={styles["password-toggle"]}
                 onClick={togglePasswordVisibility}
               >
-                {/* <RemoveRedEyeIcon /> */}
+                <RemoveRedEyeIcon />
               </span>
             </div>
             <p>
               <input type="checkbox" />
               <span> Remember me</span>
             </p>
-            <button type="submit">Login</button>
+            <button type="submit" className={styles["login-button"]}>
+              Login
+            </button>
           </form>
           <div className={styles["login-footer"]}>
             <p>
@@ -50,7 +81,7 @@ const LoginPage = () => {
           </div>
         </div>
         <div className={styles["image-section"]}>
-          <img src={Img} alt="Login Image" />
+          <img src={Img} className={styles["login-img"]} alt="Login Image" />
         </div>
       </div>
     </div>
@@ -58,3 +89,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

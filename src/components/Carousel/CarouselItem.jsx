@@ -1,13 +1,14 @@
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
+import styles from "./Carousel.module.css";
 
-export const CarouselItem = ({ item, width }) => {
+const CarouselItem = ({ item, width }) => {
   return (
-    <div className="carousel-item" style={{ width: width }}>
+    <div className={styles["carousel-item"]} style={{ width: width }}>
       <div></div>
-      <img className="carousel-img" src={item.icon} />
-      <div className="carousel-item-text">
-        <span className="carousel-icons">
+      <img className={styles["carousel-img"]} src={item.icon} />
+      <div className={styles["carousel-item-text"]}>
+        <span className={styles["carousel-icons"]}>
           <StarIcon />
           <StarIcon />
           <StarIcon />
@@ -15,9 +16,11 @@ export const CarouselItem = ({ item, width }) => {
           <StarIcon />
         </span>
         <div>{item.description}</div>
-        <h3 className="carousel-item-name">{item.name}</h3>
-        <p className="carousel-item-title">{item.title}</p>
+        <h3 className={styles["carousel-item-name"]}>{item.name}</h3>
+        <p className={styles["carousel-item-title"]}>{item.title}</p>
       </div>
     </div>
   );
 };
+
+export default CarouselItem;

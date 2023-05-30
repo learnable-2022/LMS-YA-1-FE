@@ -15,7 +15,7 @@ const Elevate_Card_D = ({ style, title, text }) => {
 Elevate_Card_D.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  style: PropTypes.object.isRequired,
+  style: PropTypes.object,
 };
 
 export default Elevate_Card_D;
