@@ -1,11 +1,40 @@
+.Students_search {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  margin-bottom: 40px;
+}
+
+.Students_search input,
+.Students_search select {
+  border: 1px solid #e1e1e4;
+  border-radius: 7px;
+  outline: none;
+  padding: 12px;
+  /* text-align: center; */
+  cursor: text;
+  margin-top: 20px;
+}
+
+.Students_search input {
+  width: 40%;
+}
+
+.Students_search select {
+  padding: 12px 20px;
+  width: 20%;
+  cursor: pointer;
+}
+
 .student_table {
-  width: 100%;
+  width: 97%;
   border-collapse: collapse;
 }
 
 .student_table {
   text-align: left;
   margin-bottom: 50px;
+  /* margin-right: 200px; */
 }
 
 .student_table select {
@@ -39,8 +68,14 @@
   padding-left: 7px;
 }
 
-.StudentTable_body tr:nth-child(odd) {
-  background: #e1e1e4;
+.StudentTable_body tr {
+  border-bottom: 1px solid #cfd0d4;
+  cursor: pointer;
+}
+
+.StudentTable_body tr:hover {
+  background: #cfd0d4;
+  transition: 0.7s ease;
 }
 
 .StudentTable_body tr > td {
@@ -64,4 +99,13 @@
 .paginationSelected {
   background-color: "#0A3775";
   color: "#FFF";
+}
+
+.learningPathDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+  /* background-color: red; */
 }

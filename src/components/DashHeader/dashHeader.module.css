@@ -1,17 +1,12 @@
-.DashHeader {
-  background: #fcfcfc;
-}
-
 .DashHeader_divide {
   background-color: #fff;
-  padding-top: 130px;
 }
 
 .DashHeader_right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 3px 10vw;
+  padding: 30px;
   gap: 10px;
 }
 
