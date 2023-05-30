@@ -18,6 +18,16 @@ const StudentTable = () => {
   //   }));
 
   //   const classes = useStyles();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleDropdownChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   const [nameFilter, setNameFilter] = useState("");
   const [learningPathFilter, setLearningPathFilter] = useState("");
@@ -45,10 +55,10 @@ const StudentTable = () => {
   ];
 
   const learningPathOptions = [
-    { label: "Frontend", value: "Frontend" },
-    { label: "Backend", value: "Backend" },
-    { label: "Web3", value: "Web3" },
-    { label: "Product Design", value: "Product Design" },
+    { label: "Frontend", value: "Frontend", color: "red" },
+    { label: "Backend", value: "Backend", color: "yellow" },
+    { label: "Web3", value: "Web3", color: "green" },
+    { label: "Product Design", value: "Product Design", color: "orange" },
   ];
 
   const taskOptions = [
@@ -67,7 +77,16 @@ const StudentTable = () => {
         (taskFilter === "" || taskFilter === student.task)
       );
     })
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .filter((student) => {
+      if (selectedOption && selectedOption !== "") {
+        return (
+          student.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          student.learningPath === selectedOption
+        );
+      } else {
+        return student.name.toLowerCase().includes(searchQuery.toLowerCase());
+      }
+    });
 
   const studentsPerPage = 10;
   const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
@@ -82,6 +101,22 @@ const StudentTable = () => {
   };
   return (
     <div>
+      <div className={design.Students_search}>
+        <input
+          type="text"
+          placeholder="Search student's name..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+        <select value={selectedOption} onChange={handleDropdownChange}>
+          <option value="">Select Learning Path</option>
+          {learningPathOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
       <table className={design.student_table}>
         <thead>
           <tr>
@@ -108,7 +143,7 @@ const StudentTable = () => {
                 ))}
               </select>
             </th>
-            <th>
+            {/* <th>
               <select value={taskFilter} onChange={handleTaskFilterChange}>
                 <option value="">Task</option>
                 {taskOptions.map((option) => (
@@ -117,7 +152,8 @@ const StudentTable = () => {
                   </option>
                 ))}
               </select>
-            </th>
+            </th> */}
+            <th className={design.Grade}>Total scores</th>
             <th className={design.Grade}>Grade</th>
           </tr>
         </thead>
@@ -125,8 +161,18 @@ const StudentTable = () => {
           {getCurrentPageStudents().map((student, index) => (
             <tr key={index}>
               <td>{student.name}</td>
-              <td>{student.learningPath}</td>
-              <td>{student.task}</td>
+              <td>
+                {student.learningPath}
+                <span
+                  className={design.learningPathDot}
+                  style={{
+                    backgroundColor: learningPathOptions.find(
+                      (option) => option.value === student.learningPath
+                    ).color,
+                  }}
+                ></span>
+              </td>
+              <td>{student.totalScore}</td>
               <td>{student.grade}</td>
             </tr>
           ))}

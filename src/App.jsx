@@ -7,6 +7,7 @@ import SFlowI from "./pages/studentSignupFlow/SFlowI";
 import SFlowII from "./pages/studentSignupFlow/SFlowII";
 import SFlowIII from "./pages/studentSignupFlow/SFlowIII";
 import SFlowIV from "./pages/studentSignupFlow/SFlowIV";
+import StudentDetails from "./pages/Admin/StudentDetails/StudentDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/students" element={<Students />} />
+        <Route path="/students/:id" element={<StudentDetails />} />
         <Route path="/signup" element={<SFlowI />} />
         <Route path="/student-signup-access-key" element={<SFlowII />} />
         <Route path="/student-signup-details-confirm" element={<SFlowIII />} />
