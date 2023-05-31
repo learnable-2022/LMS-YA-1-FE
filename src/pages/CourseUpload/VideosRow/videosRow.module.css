@@ -1,0 +1,47 @@
+.videos-row{
+  padding: 20px 4vw;
+  background: white;
+}
+
+.videos-row span {
+  font-weight: 400;
+}
+
+.videos-row h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.videos-row .videos-container-title{
+  background: #F8F8F9;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #6E737F;
+  margin-top: 15px;
+}
+
+.videos-row .videos-container-title span{
+  font-weight: 600;
+  font-size: 16px;
+  color: #6E737F;
+}
+
+.learning-material{
+  margin-left: 28px;
+  margin-right: 320px;
+}
+
+.file-name{
+  margin-right: 320px;
+}
+
+
+
+
+

@@ -1,0 +1,43 @@
+.not-added{
+  background: #eceaea;
+  height: 85vh;
+  padding: 20px 4vw;
+}
+
+.not-added span {
+  font-weight: 400;
+}
+
+.not-added h1{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.not-added .icon-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.not-added .icon-section figure img {
+  height: 240px;
+  width: 240px;
+}
+
+
+
+.not-added .icon-section  h1{
+  font-size: 32px;
+  font-weight: 700;
+  color: #252D3F;
+  margin-bottom: 11px;
+  margin-top: 12px;
+}
+
+.not-added .icon-section p{
+  font-size: 24px;
+  font-weight: 700;
+  color: #6E737F;
+}

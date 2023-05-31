@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router"
-import styles from "../../eduReg.module.css"
+import styles from "./eduReg.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";

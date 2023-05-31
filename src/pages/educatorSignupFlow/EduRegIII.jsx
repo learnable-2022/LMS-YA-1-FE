@@ -1,7 +1,7 @@
-import styles from "../..eduReg.module.css"
+import styles from "./eduReg.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import GoBackBTN from "../../components/GoBackBTN/GoBackBTN";
 
 

@@ -1,0 +1,67 @@
+.thumbnail-card{
+  height: 100%;
+  width: 280px;
+  margin-right: 18px;
+  margin-bottom: 20px;
+  background: #fff;
+
+}
+
+.thumbnail-card figure{
+  width: 280px;
+  height: 183px;
+}
+
+.thumbnail-card figure img{
+  width: 100%;
+}
+
+.thumbnail-card section{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0px 20px;
+}
+
+.thumbnail-card .time-frame{
+  color: #9EA2AA;
+}
+
+.thumbnail-card section span{
+  color: #0C4592;
+  cursor: pointer;
+}
+
+.thumbnail-card h1{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #252D3F;
+  margin: 12px;
+  padding: 2px;
+}
+
+.thumbnail-card button{
+  color: #0c4592;
+  background: #fff;
+  border: 1px solid #0c4592;
+  border-radius: 8px;
+  padding: 9px 65px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 20px;
+  transition: 0.4s ease;
+  
+  margin-bottom: 15px;
+}
+
+.thumbnail-card button span{
+  margin-right: 10px;
+}
+
+.thumbnail-card button:hover{
+  border: 1px solid #0c4592;
+  background: #0c4592;
+  color: #fff;
+}
