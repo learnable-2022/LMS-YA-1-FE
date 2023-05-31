@@ -92,7 +92,7 @@ const Sidebar = () => {
             <div className={design.Sidebar_tabs_inner}>
               <img src={Enrolled} />
 
-              <h3>Enrolled Courses</h3>
+              <h3>Courses</h3>
             </div>{" "}
           </Link>
         </div>

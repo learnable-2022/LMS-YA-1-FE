@@ -8,14 +8,19 @@ import SFlowII from "./pages/studentSignupFlow/SFlowII";
 import SFlowIII from "./pages/studentSignupFlow/SFlowIII";
 import SFlowIV from "./pages/studentSignupFlow/SFlowIV";
 import StudentDetails from "./pages/Admin/StudentDetails/StudentDetails";
+// import Apps from "./components/Modals/Test/Test";
+import AddWeek from "./components/Modals/AddWeek/AddWeek";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/test-me" element={<Apps />} /> */}
+        <Route path="/test-me" element={<AddWeek />} />
         <Route path="/students" element={<Students />} />
-        <Route path="/students/:id" element={<StudentDetails />} />
+        <Route path="/students-details" element={<StudentDetails />} />
+        {/* <Route path="/students/:id" element={<StudentDetails />} /> */}
         <Route path="/signup" element={<SFlowI />} />
         <Route path="/student-signup-access-key" element={<SFlowII />} />
         <Route path="/student-signup-details-confirm" element={<SFlowIII />} />
