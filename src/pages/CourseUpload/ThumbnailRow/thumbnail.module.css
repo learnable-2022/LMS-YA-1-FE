@@ -4,6 +4,7 @@
 
 .thumbnail-row span {
   font-weight: 400;
+  cursor: pointer;
 }
 
 .thumbnail-row h1 {

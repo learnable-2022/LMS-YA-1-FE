@@ -13,6 +13,7 @@
   margin-bottom: 36px;
 }
 
+
 .videos-row .videos-container-title{
   background: #F8F8F9;
   display: flex;
@@ -24,6 +25,7 @@
   font-size: 16px;
   color: #6E737F;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .videos-row .videos-container-title span{
@@ -32,13 +34,20 @@
   color: #6E737F;
 }
 
-.learning-material{
+
+.videos-container-title .learning-material{
   margin-left: 28px;
-  margin-right: 320px;
+  width: 230px;
 }
 
-.file-name{
-  margin-right: 320px;
+.videos-container-title .file-name{
+  margin-left: 30px;
+  width: 51%;
+}
+
+
+.videos-container-title .date{
+  margin-left: 8px;
 }
 
 
