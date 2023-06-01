@@ -3,10 +3,10 @@ import Students from './pages/Admin/Students/Students';
 import Home from './pages/Home/Home';
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/Login/Login';
-import SFlowI from './pages/studentSignupFlow/SFlowI';
-import SFlowII from './pages/studentSignupFlow/SFlowII';
-import SFlowIII from './pages/studentSignupFlow/SFlowIII';
-import SFlowIV from './pages/studentSignupFlow/SFlowIV';
+import SFlowI from './pages/Student/studentSignupFlow/SFlowI';
+import SFlowII from './pages/Student/studentSignupFlow/SFlowII';
+import SFlowIII from './pages/Student/studentSignupFlow/SFlowIII';
+import SFlowIV from './pages/Student/studentSignupFlow/SFlowIV';
 import StudentDetails from './pages/Admin/StudentDetails/StudentDetails';
 
 function App() {
