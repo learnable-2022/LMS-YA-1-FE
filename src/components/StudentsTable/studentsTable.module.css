@@ -84,7 +84,7 @@
 
 .StudentTable_body tr > td:first-child {
   padding: 15px 15px 15px 30px;
-  width: 30%;
+  /* width: 30%; */
   border-radius: 5px 0 0 5px;
 }
 .StudentTable_body tr > td:last-child {
@@ -108,4 +108,21 @@
   border-radius: 50%;
   margin-left: 5px;
   /* background-color: red; */
+}
+
+.user_profile {
+  width: 35px;
+  margin-right: 8px;
+}
+
+.user_flex {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.pageIt {
+  margin: 20px 30px 100px 0;
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,7 +1,7 @@
-import design from './button.module.css';
+import design from './addButton.module.css';
 import PropTypes from 'prop-types';
 
-const Button = ({ style, content, onClick, id }) => {
+const AddButton = ({ style, content, onClick, id }) => {
   return (
     <button id={id} style={style} className={design.Button} onClick={onClick}>
       {content}
@@ -9,11 +9,11 @@ const Button = ({ style, content, onClick, id }) => {
   );
 };
 
-Button.propTypes = {
+AddButton.propTypes = {
   content: PropTypes.string.isRequired,
   style: PropTypes.object,
   id: PropTypes.object,
   onClick: PropTypes.func,
 };
 
-export default Button;
+export default AddButton;

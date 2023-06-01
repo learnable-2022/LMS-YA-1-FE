@@ -1,0 +1,58 @@
+.Students_body {
+  display: flex;
+  gap: 50px;
+  /* margin: 20px 10vw 70px 10vw; */
+}
+
+.Students_main {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.cards {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.card_item {
+  width: 20%;
+  background: #ffffff;
+  border: 1px solid rgba(12, 69, 146, 0.1);
+  box-shadow: 0px 16px 32px rgba(43, 53, 116, 0.04);
+  border-radius: 8px;
+  color: #0c4592;
+  padding: 15px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card_top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.card_top span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.card_item_last {
+  width: 30%;
+  color: #fff;
+  background: #0c4592;
+  box-shadow: 0px 16px 32px rgba(43, 53, 116, 0.04);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card_item_last h3 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 134.02%;
+}
