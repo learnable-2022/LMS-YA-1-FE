@@ -1,6 +1,6 @@
 import styles from './videoUploadPreview.module.css'
-import { FaPencilAlt } from 'react-icons/fa'
 import { RiEyeLine, RiDeleteBin6Line } from  'react-icons/ri'
+import PropTypes from 'prop-types'
 import AddBTN from '../AddBTN/AddBTN'
 
 function VideoUploadPreview({videoPrev, fileName, date }) {
@@ -18,6 +18,12 @@ function VideoUploadPreview({videoPrev, fileName, date }) {
       <p className={styles['date']}>{date}</p>
     </div>
   )
+}
+
+VideoUploadPreview.propTypes = {
+  videoPrev: PropTypes.string.isRequired,
+  fileName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
 }
 
 export default VideoUploadPreview

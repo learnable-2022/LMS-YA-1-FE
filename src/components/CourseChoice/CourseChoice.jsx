@@ -22,7 +22,7 @@ function CourseChoice({icon,  text, goTo}) {
 }
 
 CourseChoice.propTypes = {
-  goTo: PropTypes.string,
+  goTo: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
 };

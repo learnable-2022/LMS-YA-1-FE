@@ -3,8 +3,22 @@
   background: white;
 }
 
+.videos-row nav{
+  margin-bottom: 20px;
+}
+
+.videos-row nav  span{
+  color: #0C4592;
+  border-bottom: 2px solid #0C4592;
+  background: #ffff;
+  padding: 8px 24px;
+  width: 98px;
+  height: 40px;
+}
+
 .videos-row span {
   font-weight: 400;
+  cursor: pointer;
 }
 
 .videos-row h1 {

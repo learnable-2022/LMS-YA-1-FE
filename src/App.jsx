@@ -34,7 +34,7 @@ function App() {
           <Route path="thumbnail-row/:pathName" element={<ThumbnailRow />} />
           <Route path="notAdded/:pathName" element={<NotAdded />} />
           <Route path="videoNotAdded/:pathName" element={<VideoNotAdded />} />
-          <Route path="videos-row" element={<VideosRow />} />
+          <Route path="videos-row/:pathName" element={<VideosRow />} />
         </Route>
       </Routes>
     </>

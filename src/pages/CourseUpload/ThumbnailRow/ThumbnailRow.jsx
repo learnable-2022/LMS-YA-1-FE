@@ -1,10 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import ThumbnailCard from '../../../components/ThumbnailCard/ThumbnailCard'
 import styles from './thumbnail.module.css'
-import thumbnail from '../../../assets/designP.png'
 import productDesign from '../../../data/productDesign'
 import frontEnd from '../../../data/frontEnd'
-import NotAdded from '../NotAdded/NotAdded'
+import AddBTN from '../../../components/AddBTN/AddBTN';
+
+
+
 function ThumbnailRow() {
   const navigate = useNavigate()
   const { pathName } = useParams()
@@ -28,6 +30,7 @@ function ThumbnailRow() {
                 setTimeout(() => navigate(`/courses/notAdded/${pathName}`) , 10)
            }
         </section>
+        <AddBTN />
     </div>
   )
 }

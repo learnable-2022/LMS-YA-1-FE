@@ -1,7 +1,15 @@
 import styles from './thumbnailCard.module.css'
 import { FaPencilAlt } from 'react-icons/fa'
+import { useNavigate, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function ThumbnailCard({img, timeFrame, courseTitle  }) {
+  const navigate = useNavigate()
+  const { pathName }  = useParams()
+
+  const addVideos = () => {
+    navigate('/courses/videos-row/' + pathName)
+  }
   return (
     <div className={styles['thumbnail-card']}>
       <figure>
@@ -15,10 +23,16 @@ function ThumbnailCard({img, timeFrame, courseTitle  }) {
 
       <h1>{courseTitle}</h1>
       
-        <button> <span>&#43;</span> Add videos</button>
+        <button onClick={addVideos}> <span>&#43;</span> Add videos</button>
   
     </div>
   )
+}
+
+ThumbnailCard.propTypes  = {
+  img: PropTypes.string.isRequired,
+  timeFrame: PropTypes.string.isRequired,
+  courseTitle: PropTypes.string.isRequired
 }
 
 export default ThumbnailCard

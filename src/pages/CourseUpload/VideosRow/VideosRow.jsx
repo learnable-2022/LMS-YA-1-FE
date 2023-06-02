@@ -1,15 +1,33 @@
 import styles from './videosRow.module.css'
 import VideoUploadPreview from '../../../components/VideoUploadPreview/VideoUploadPreview'
 import VIDEOPREV from  '../../../assets/videoPreview.png'
+import { useParams, useNavigate } from 'react-router-dom';
+import  productDesign from  '../../../data/productDesignVideo'
+import AddBTN from '../../../components/AddBTN/AddBTN';
 
 function VideosRow() {
+  const navigate = useNavigate()
+  const  { pathName } = useParams()
+
+
+
+  let data;
+  if(pathName === "Product design" ){
+    data = productDesign
+  }
+
+
+
+
   return (
     <div className={styles['videos-row']}>
-      <h1> <span> Courses &gt; Product Design </span> &gt;  week 1</h1>
+      <h1> 
+        <span onClick={() => navigate('/courses')} > Courses &gt;   </span> 
+        <span onClick={() => navigate('/courses/thumbnail-row/' + pathName)}>{ pathName }</span> &gt;  week 1
+      </h1>
 
       <nav>
          <span>videos</span>
-         <span>Tasks</span>
       </nav>
 
       <article className={styles['videos-container-title']}>
@@ -31,7 +49,14 @@ function VideosRow() {
             date='25 February 2023'
             />
 
+          {data?
+            data.map((item, index) => 
+                (<VideoUploadPreview videoPrev={item.videoPrev} fileName={item.fileName} date={item.date} key={index} />)
+                ):
+                setTimeout(() => navigate(`/courses/VideoNotAdded/${pathName}`) , 10)
+          }
       </section>
+      <AddBTN />
     </div>
   )
 }

@@ -11,7 +11,7 @@ function NotAdded( ) {
     <div className={styles['not-added']}>
       <h1> 
         <span onClick={() => navigate('/courses')}> Courses </span> &gt;
-        <span onClick={() => navigate('/courses/thumbnail-row/Product design')}> Product design </span> &gt; Week 1
+        <span onClick={() => navigate('/courses/thumbnail-row/' + pathName )}> { pathName } </span> &gt; Week 1
 
       </h1>
 
