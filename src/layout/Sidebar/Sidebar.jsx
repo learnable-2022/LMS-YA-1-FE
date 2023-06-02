@@ -87,7 +87,7 @@ const Sidebar = () => {
           <Link
             className={design.Sidebar_tabs}
             to="/courses"
-            style={activeItem === "leaderboard" ? activeLinkStyle : {}}
+            style={activeItem === "courses" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Enrolled} />

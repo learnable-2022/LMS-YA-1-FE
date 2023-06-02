@@ -2,6 +2,7 @@ import { useState } from "react";
 import design from "./studentsTable.module.css";
 import students from "../../data/Mock_Student";
 import Pagination from "@mui/material/Pagination";
+import PROFILE from "../../assets/Tappi.png";
 // import { makeStyles } from "@mui/styles";
 
 const StudentTable = () => {
@@ -160,7 +161,10 @@ const StudentTable = () => {
         <tbody className={design.StudentTable_body}>
           {getCurrentPageStudents().map((student, index) => (
             <tr key={index}>
-              <td>{student.name}</td>
+              <td className={design.user_flex}>
+                <img src={PROFILE} alt="" className={design.user_profile} />
+                {student.name}
+              </td>
               <td>
                 {student.learningPath}
                 <span
@@ -178,19 +182,22 @@ const StudentTable = () => {
           ))}
         </tbody>
       </table>
-      <Pagination
-        // classes={{ ul: classes.pagination }}
-        count={totalPages}
-        page={currentPage}
-        onChange={handlePageChange}
-        shape="rounded"
-        classes={{
-          ul: design.pagination,
-          root: design.paginationRoot,
-          item: design.paginationItem,
-          selected: design.paginationSelected,
-        }}
-      />
+      <div className={design.pageIt}>
+        <div></div>
+        <Pagination
+          // classes={{ ul: classes.pagination }}
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+          shape="rounded"
+          classes={{
+            ul: design.pagination,
+            root: design.paginationRoot,
+            item: design.paginationItem,
+            selected: design.paginationSelected,
+          }}
+        />
+      </div>
     </div>
   );
 };

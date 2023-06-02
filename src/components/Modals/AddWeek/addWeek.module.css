@@ -1,0 +1,23 @@
+.AddWeek {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 550px;
+  /* background: #ca36362d; */
+  border-radius: 8px;
+  padding: 50px;
+}
+
+.AddWeek input {
+  border: 1px solid #9ea2aa;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0 40px 0;
+}
+
+.AddWeek input[type='text']:focus {
+  border: 1.9px solid grey;
+  outline: none;
+  color: #252d3f;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.04);
+}

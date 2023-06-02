@@ -1,7 +1,7 @@
 import "./App.css";
 import Students from "./pages/Admin/Students/Students";
 import Home from "./pages/Home/Home";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/Login/Login";
 import SFlowI from "./pages/studentSignupFlow/SFlowI";
 import SFlowII from "./pages/studentSignupFlow/SFlowII";
