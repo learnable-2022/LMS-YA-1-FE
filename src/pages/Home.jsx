@@ -4,6 +4,7 @@ import Elevate from "../components/Elevate/Elevate";
 import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
 import Coursel from "../components/Carousel/Carousel";
+import ElevateYourJourney from "../components/ElevateYourJourney/ElevateYourJourney";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Elevate />
       <UserJourney />
       <Coursel />
+      <ElevateYourJourney />
       <Footer />
     </div>
   );

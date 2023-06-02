@@ -15,7 +15,9 @@ const CarouselItem = ({ item, width }) => {
           <StarIcon />
           <StarIcon />
         </span>
-        <div>{item.description}</div>
+        <div className={styles["carousel-item-description"]}>
+          {item.description}
+        </div>
         <h3 className={styles["carousel-item-name"]}>{item.name}</h3>
         <p className={styles["carousel-item-title"]}>{item.title}</p>
       </div>
