@@ -5,22 +5,8 @@ const frontEnd = [
     timeFrame : 'week 1',
     img : IMAGE2,
     courseTitle : 'Fundamentals of Web Technologies (HTML, CSS and JAVASCRIPT)',
+    videos: []
     },
-    { 
-    timeFrame : 'week 1',
-    img : IMAGE2,
-    courseTitle : 'Fundamentals of Web Technologies (HTML, CSS and JAVASCRIPT)',
-    },
-    { 
-    timeFrame : 'week 1',
-    img : IMAGE2,
-    courseTitle : 'Fundamentals of Web Technologies (HTML, CSS and JAVASCRIPT)',
-    },
-    { 
-    timeFrame : 'week 1',
-    img : IMAGE2,
-    courseTitle : 'Fundamentals of Web Technologies (HTML, CSS and JAVASCRIPT)',
-    }
 ]
 
 export default frontEnd

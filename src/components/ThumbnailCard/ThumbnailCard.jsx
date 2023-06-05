@@ -8,7 +8,7 @@ function ThumbnailCard({img, timeFrame, courseTitle  }) {
   const { pathName }  = useParams()
 
   const addVideos = () => {
-    navigate('/courses/videos-row/' + pathName)
+    navigate('/courses/videos-row/' + pathName + '/' + timeFrame)
   }
   return (
     <div className={styles['thumbnail-card']}>
@@ -22,9 +22,7 @@ function ThumbnailCard({img, timeFrame, courseTitle  }) {
       </section>
 
       <h1>{courseTitle}</h1>
-      
         <button onClick={addVideos}> <span>&#43;</span> Add videos</button>
-  
     </div>
   )
 }

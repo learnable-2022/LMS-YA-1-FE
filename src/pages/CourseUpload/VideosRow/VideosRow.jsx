@@ -1,29 +1,49 @@
 import styles from './videosRow.module.css'
 import VideoUploadPreview from '../../../components/VideoUploadPreview/VideoUploadPreview'
-import VIDEOPREV from  '../../../assets/videoPreview.png'
 import { useParams, useNavigate } from 'react-router-dom';
-import  productDesign from  '../../../data/productDesignVideo'
 import AddBTN from '../../../components/AddBTN/AddBTN';
+import UploadVideo from '../../../components/Modals/UploadVideo/UploadVideo';
+import { useState, useContext } from 'react';
+import UserContext from '../../../context/UserContext';
 
 function VideosRow() {
+  const [isVisible, setIsVisible] = useState(false)
   const navigate = useNavigate()
-  const  { pathName } = useParams()
-
-
-
+  const  { pathName, week } = useParams()
+  const { courses } = useContext(UserContext)
+  
   let data;
   if(pathName === "Product design" ){
-    data = productDesign
+   courses.productDesign.map((item) => {
+        if(item.timeFrame === week){
+          data = item.videos
+        }
+      })
+  }else if (pathName === "Frontend"){
+    courses.frontend.map((item) => {
+        if(item.timeFrame === week){
+          data = item.videos
+        }
+      })
+  }else if(pathName === 'Backend'){
+    courses.backend.map((item) => {
+        if(item.timeFrame === week){
+          data = item.videos
+        }
+      })
+  }else if(pathName === "Web 3"){
+    courses.web3.map((item) => {
+        if(item.timeFrame === week){
+          data = item.videos
+        }
+      })
   }
-
-
-
 
   return (
     <div className={styles['videos-row']}>
       <h1> 
         <span onClick={() => navigate('/courses')} > Courses &gt;   </span> 
-        <span onClick={() => navigate('/courses/thumbnail-row/' + pathName)}>{ pathName }</span> &gt;  week 1
+        <span onClick={() => navigate('/courses/thumbnail-row/' + pathName)}>{ pathName }</span> &gt;  { week }
       </h1>
 
       <nav>
@@ -38,6 +58,8 @@ function VideosRow() {
       </article>
 
       <section className={styles['videos-container']}>
+        {
+          /*
         <VideoUploadPreview 
             videoPrev={VIDEOPREV} 
             fileName='Introduction-and-principles-of-design.mp4'
@@ -48,15 +70,17 @@ function VideosRow() {
             fileName='Introduction-and-principles-of-design.mp4'
             date='25 February 2023'
             />
+            */
 
-          {data?
+            data.length !== 0?
             data.map((item, index) => 
                 (<VideoUploadPreview videoPrev={item.videoPrev} fileName={item.fileName} date={item.date} key={index} />)
                 ):
-                setTimeout(() => navigate(`/courses/VideoNotAdded/${pathName}`) , 10)
-          }
+                setTimeout(() => navigate(`/courses/VideoNotAdded/${pathName}/${week}`) , 10)
+        }
       </section>
-      <AddBTN />
+      <AddBTN onClick={() => setIsVisible(true)} />
+      {isVisible ? <UploadVideo handleShow={() => setIsVisible(false)}  /> : null }
     </div>
   )
 }

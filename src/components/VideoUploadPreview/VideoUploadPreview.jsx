@@ -7,7 +7,18 @@ function VideoUploadPreview({videoPrev, fileName, date }) {
   return (
     <div className={styles['upload-card']}>
       <input type="checkbox" />
-      <img src={videoPrev} alt="videoPreview" />
+      {
+        /*
+          <img src={videoPrev} alt="videoPreview" />
+        */
+      }
+      
+
+      <video controls>
+          <source src={URL.createObjectURL(videoPrev)} />
+      </video>
+      
+
       <section className={styles['file-name-container']}>
         <p className={styles['file-name']}>{fileName}</p>
         <div>
@@ -21,7 +32,7 @@ function VideoUploadPreview({videoPrev, fileName, date }) {
 }
 
 VideoUploadPreview.propTypes = {
-  videoPrev: PropTypes.string.isRequired,
+  videoPrev: PropTypes.object.isRequired,
   fileName: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired
 }

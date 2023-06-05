@@ -5,27 +5,7 @@ const productDesign = [
     timeFrame : 'week 1',
     img : IMAGE,
     courseTitle : 'Principles of design and how to use them',
-  },
-  { 
-    timeFrame : 'week 1',
-    img : IMAGE,
-    courseTitle : 'Principles of design and how to use them',
-  },
-  { 
-    timeFrame : 'week 1',
-    img : IMAGE,
-    courseTitle : 'Principles of design and how to use them',
-  },
-
-  { 
-    timeFrame : 'week 1',
-    img : IMAGE,
-    courseTitle : 'Principles of design and how to use them',
-  },
-  { 
-    timeFrame : 'week 1',
-    img : IMAGE,
-    courseTitle : 'Principles of design and how to use them',
+    videos : []
   }
 ]
 

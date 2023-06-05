@@ -15,6 +15,8 @@ import VideoNotAdded from './pages/CourseUpload/VideoNotAdded/VideoNotAdded'
 import ThumbnailRow from "./pages/CourseUpload/ThumbnailRow/ThumbnailRow";
 import VideosRow from "./pages/CourseUpload/VideosRow/VideosRow";
 
+import Test from './components/Modals/Test/Test'
+
 
 
 function App() {
@@ -29,12 +31,13 @@ function App() {
         <Route path="/student-signup-details-confirm" element={<SFlowIII />} />
         <Route path="/student-signup-create-password" element={<SFlowIV />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/test" element={<Test />} />
         <Route path="/courses" element={<Layout />} >
           <Route path="" element={<CoursePgI />} />
           <Route path="thumbnail-row/:pathName" element={<ThumbnailRow />} />
           <Route path="notAdded/:pathName" element={<NotAdded />} />
-          <Route path="videoNotAdded/:pathName" element={<VideoNotAdded />} />
-          <Route path="videos-row/:pathName" element={<VideosRow />} />
+          <Route path="videoNotAdded/:pathName/:week" element={<VideoNotAdded />} />
+          <Route path="videos-row/:pathName/:week" element={<VideosRow />} />
         </Route>
       </Routes>
     </>

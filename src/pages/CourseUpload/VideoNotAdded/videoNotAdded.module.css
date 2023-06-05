@@ -2,6 +2,7 @@
   background: #eceaea;
   height: 85vh;
   padding: 20px 4vw;
+  position: relative;
 }
 
 .not-added span {

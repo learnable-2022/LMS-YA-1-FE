@@ -12,10 +12,16 @@
   border-bottom:  1px solid #9EA2AA;
 }
 
-.upload-card img{
+.upload-card video{
   margin-left: 30px;
   height: 100%;
   width: 227.69px;
+  background: #252D3F;
+}
+
+.upload-card video source{
+  width: 227.69px;
+
 }
 .upload-card .file-name-container{
   margin-left: 30px;

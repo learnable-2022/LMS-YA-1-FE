@@ -1,6 +1,7 @@
 .videos-row{
   padding: 20px 4vw;
   background: white;
+  position: relative;
 }
 
 .videos-row nav{
