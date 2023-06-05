@@ -10,9 +10,13 @@ import {
   Certification,
   Settings,
   Logout,
+  LOGO,
 } from "../../assets/sideIcons.js";
 
 const Sidebar = () => {
+  const reloadPage = () => {
+    window.location.reload();
+  };
   const [activeItem, setActiveItem] = useState("");
   const location = useLocation();
 
@@ -49,6 +53,7 @@ const Sidebar = () => {
 
   return (
     <div className={design.Sidebar_wrapper}>
+      <img src={LOGO} className={design.SideLogo} onClick={reloadPage} />
       <div className={design.menuItems}>
         {" "}
         <div>
@@ -81,13 +86,13 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="leaderboard"
-            style={activeItem === "leaderboard" ? activeLinkStyle : {}}
+            to="/courses"
+            style={activeItem === "courses" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Enrolled} />
 
-              <h3>Enrolled Courses</h3>
+              <h3>Courses</h3>
             </div>{" "}
           </Link>
         </div>

@@ -6,18 +6,18 @@ const DashHeader = ({ img, name, position }) => {
       <div className={design.DashHeader_divide}></div>
       <div className={design.DashHeader_right}>
         <img src="" alt="bell" />
+        <img src={img} className={design.DashHeader_user} />
         <div>
           <h3>{name}</h3>
           <p>{position}</p>
         </div>
-        <img src={img} className={design.DashHeader_user} />
       </div>
     </div>
   );
 };
 
 DashHeader.propTypes = {
-  img: PropTypes.object,
+  img: PropTypes.string,
   name: PropTypes.string,
   position: PropTypes.string,
 };

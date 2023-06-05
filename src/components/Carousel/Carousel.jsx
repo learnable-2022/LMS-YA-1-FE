@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CarouselItem from "./CarouselItem";
 import example1Icon from "../../assets/carousel1.png";
 import example2Icon from "../../assets/carousel2.png";

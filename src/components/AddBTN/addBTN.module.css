@@ -1,0 +1,22 @@
+.Button {
+  background: #0c4592;
+  border-radius: 50%;
+  color: #ffffff;
+  height: 72px;
+  width: 72px;
+  border: 1px solid #0c4592;
+  cursor: pointer;
+  font-size: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 94%;
+}
+
+.Button:hover {
+  color: #0c4592;
+  background: #fff;
+  border: 1px solid #0c4592;
+  transition: 0.4s ease;
+}
