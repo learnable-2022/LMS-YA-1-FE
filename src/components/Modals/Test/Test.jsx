@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const VideoModal = ({ onSubmit }) => {
   const [week, setWeek] = useState("");
@@ -202,7 +202,16 @@ const Apps = () => {
 
   const handleVideoUpload = (video) => {
     setVideos([...videos, video]);
+    console.log(video);
   };
+
+  useEffect(
+    () => {
+      console.log(videos)
+    },
+  [videos])
+
+
 
   return (
     <div>
