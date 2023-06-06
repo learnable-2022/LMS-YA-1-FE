@@ -1,14 +1,13 @@
 .main {
   display: flex;
   background-color: #f7f7f7;
-  width: 100%;
+  padding: 100px 10vw 0 10vw;
 }
 
 .text-section {
-  width: 350px;
+  width: 50%;
   background-color: #f7f7f7;
-  padding: 20px;
-  margin-left: 100px;
+  padding: 20px 0;
 }
 
 .text-title {
@@ -42,7 +41,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  /* height: 50px; */
   background-color: #fff;
 }
 
@@ -77,6 +76,7 @@
 
 .carousel-buttons {
   display: flex;
+  margin-top: 20px;
 }
 
 .carousel-icons {

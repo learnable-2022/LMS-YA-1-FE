@@ -2,8 +2,18 @@
   width: 25%;
   padding: 20px 0px 0 20px;
   background: #0c4592;
-  border-radius: 8px;
   transition: width 0.3s ease;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.SideLogo {
+  margin-bottom: 50px;
+  padding: 10px;
+  width: 150px;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .Sidebar_img_wrapper {
@@ -21,7 +31,7 @@
   display: flex;
   align-items: center;
   color: #fff;
-  padding: 15px 10px;
+  padding: 10px;
   margin-bottom: 20px;
   text-decoration: none;
   border-radius: 8px 0 0 8px;

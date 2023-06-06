@@ -1,24 +1,11 @@
 import { useState } from "react";
-import design from "./studentsTable.module.css";
+import design from "./CertificateTable.module.css";
 import students from "../../data/Mock_Student";
 import Pagination from "@mui/material/Pagination";
 import PROFILE from "../../assets/Tappi.png";
-// import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
 
-const StudentTable = () => {
-  //   const useStyles = makeStyles(() => ({
-  //     pagination: {
-  //       "& .MuiPaginationItem-root": {
-  //         backgroundColor: "transparent",
-  //         "&.Mui-selected": {
-  //           backgroundColor: "#0A3775",
-  //           color: "#FFF",
-  //         },
-  //       },
-  //     },
-  //   }));
-
-  //   const classes = useStyles();
+const CertficateTable = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -62,12 +49,6 @@ const StudentTable = () => {
     { label: "Product Design", value: "Product Design", color: "orange" },
   ];
 
-  const taskOptions = [
-    { label: "Project 1", value: "Project 1" },
-    { label: "Project 2", value: "Project 2" },
-    { label: "Project 3", value: "Project 3" },
-    { label: "Project 4", value: "Project 4" },
-  ];
   const filteredStudents = students
     .filter((student) => {
       const nameStart = student.name.charAt(0).toLowerCase();
@@ -91,6 +72,7 @@ const StudentTable = () => {
 
   const studentsPerPage = 10;
   const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
+
   const getCurrentPageStudents = () => {
     const startIndex = (currentPage - 1) * studentsPerPage;
     const endIndex = startIndex + studentsPerPage;
@@ -100,6 +82,7 @@ const StudentTable = () => {
   const handlePageChange = (event, page) => {
     setCurrentPage(page);
   };
+
   return (
     <div>
       <div className={design.Students_search}>
@@ -144,40 +127,60 @@ const StudentTable = () => {
                 ))}
               </select>
             </th>
-            {/* <th>
-              <select value={taskFilter} onChange={handleTaskFilterChange}>
-                <option value="">Task</option>
-                {taskOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </th> */}
-            <th className={design.Grade}>Total scores</th>
-            <th className={design.Grade}>Grade</th>
+            <th>
+              <span>Cohort</span>
+            </th>
+            <th>
+              <span>Status</span>
+            </th>
           </tr>
         </thead>
         <tbody className={design.StudentTable_body}>
           {getCurrentPageStudents().map((student, index) => (
             <tr key={index}>
-              <td className={design.user_flex}>
-                <img src={PROFILE} alt="" className={design.user_profile} />
-                {student.name}
+              <Link
+                style={{ textDecoration: "none", color: "black" }}
+                to={`/upload?name=${encodeURIComponent(student.name)}`}
+              >
+                <td className={design.user_flex}>
+                  <img src={PROFILE} alt="" className={design.user_profile} />
+
+                  {student.name}
+                </td>
+              </Link>
+              <td>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={`/upload/${student.name}`}
+                >
+                  {student.learningPath}
+                  <span
+                    className={design.learningPathDot}
+                    style={{
+                      backgroundColor: learningPathOptions.find(
+                        (option) => option.value === student.learningPath
+                      ).color,
+                    }}
+                  ></span>
+                </Link>
               </td>
               <td>
-                {student.learningPath}
-                <span
-                  className={design.learningPathDot}
-                  style={{
-                    backgroundColor: learningPathOptions.find(
-                      (option) => option.value === student.learningPath
-                    ).color,
-                  }}
-                ></span>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={`/upload/${student.name}`}
+                >
+                  {student.Cohort}
+                </Link>
               </td>
-              <td>{student.totalScore}</td>
-              <td>{student.grade}</td>
+
+              <td>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={`/upload/${student.name}`}
+                >
+                  <span>{student.Status}</span>
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -185,7 +188,6 @@ const StudentTable = () => {
       <div className={design.pageIt}>
         <div></div>
         <Pagination
-          // classes={{ ul: classes.pagination }}
           count={totalPages}
           page={currentPage}
           onChange={handlePageChange}
@@ -202,4 +204,4 @@ const StudentTable = () => {
   );
 };
 
-export default StudentTable;
+export default CertficateTable;

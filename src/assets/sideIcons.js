@@ -5,6 +5,7 @@ import Students from "./students.png";
 import Certification from "./certification.png";
 import Settings from "./settings.png";
 import Logout from "./logout.png";
+import LOGO from "./SideLOGO.png";
 
 export {
   Dashboard,
@@ -14,4 +15,5 @@ export {
   Certification,
   Settings,
   Logout,
+  LOGO,
 };

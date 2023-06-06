@@ -44,13 +44,12 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  background-color: #f8f8f9;
 }
 
-.Grade {
-  font-size: 18px;
-  font-weight: 600;
+.student_table thead > tr {
+  background-color: #f8f8f9;
 }
-
 .student_table thead > tr > th {
   padding: 15px 0 25px 0;
   cursor: pointer;
@@ -61,7 +60,7 @@
 }
 
 .student_table thead > tr > th:nth-child(2) {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .student_table thead > tr > th:nth-child(3) {
@@ -79,7 +78,7 @@
 }
 
 .StudentTable_body tr > td {
-  padding: 15px;
+  padding: 8px;
 }
 
 .StudentTable_body tr > td:first-child {
@@ -89,7 +88,12 @@
 }
 .StudentTable_body tr > td:last-child {
   padding: 15px 15px 15px 0;
-  border-radius: 0 5px 5px 0;
+}
+.StudentTable_body tr > td:last-child span {
+  border-radius: 20px;
+  padding: 8px 15px;
+  background-color: #f5b9b1;
+  text-align: center;
 }
 
 .paginationItem {

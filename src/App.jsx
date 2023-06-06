@@ -6,7 +6,9 @@ import SFlowI from "./pages/studentSignupFlow/SFlowI";
 import SFlowII from "./pages/studentSignupFlow/SFlowII";
 import SFlowIII from "./pages/studentSignupFlow/SFlowIII";
 import SFlowIV from "./pages/studentSignupFlow/SFlowIV";
-
+import StudentDetails from "./pages/Admin/StudentDetails/StudentDetails";
+import Certification from "./pages/Certification/Certification";
+import CerticateUpload from "./pages/Certification/CertificateUpload";
 
 function App() {
   return (
@@ -14,11 +16,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/students" element={<Students />} />
+        <Route path="/students-details" element={<StudentDetails />} />
+        {/* <Route path="/students/:id" element={<StudentDetails />} /> */}
         <Route path="/signup" element={<SFlowI />} />
         <Route path="/student-signup-access-key" element={<SFlowII />} />
         <Route path="/student-signup-details-confirm" element={<SFlowIII />} />
         <Route path="/student-signup-create-password" element={<SFlowIV />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/certificate" element={<Certification />} />
+        <Route path="/upload" element={<CerticateUpload />} />
       </Routes>
     </>
   );
