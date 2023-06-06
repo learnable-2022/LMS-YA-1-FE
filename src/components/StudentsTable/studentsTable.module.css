@@ -73,6 +73,12 @@
   cursor: pointer;
 }
 
+.StudentTable_body a {
+  text-decoration: none;
+  color: inherit;
+  /* color: #0D162A; */
+}
+
 .StudentTable_body tr:hover {
   background: #cfd0d4;
   transition: 0.7s ease;
@@ -97,8 +103,8 @@
 }
 
 .paginationSelected {
-  background-color: "#0A3775";
-  color: "#FFF";
+  background-color: '#0A3775';
+  color: '#FFF';
 }
 
 .learningPathDot {

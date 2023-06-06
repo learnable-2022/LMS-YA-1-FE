@@ -1,6 +1,6 @@
 .Students_body {
   display: flex;
-  gap: 50px;
+  /* gap: 50px; */
   /* margin: 20px 10vw 70px 10vw; */
 }
 
@@ -8,6 +8,11 @@
   display: flex;
   flex-direction: column;
   width: 75%;
+}
+
+.Students_main h2 {
+  padding-left: 50px;
+  margin-top: 40px;
 }
 
 .Students_search {
@@ -38,5 +43,6 @@
 }
 
 .Students_table {
+  padding-left: 50px;
   margin-top: 10px;
 }
