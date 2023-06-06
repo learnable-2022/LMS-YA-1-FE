@@ -37,6 +37,8 @@ const Sidebar = () => {
       setActiveItem('students');
     } else if (location.pathname === '/dashboard/leaderboard') {
       setActiveItem('leaderboard');
+    } else if (location.pathname === '/courses') {
+      setActiveItem('courses');
     } else if (location.pathname === '/dashboard/settings') {
       setActiveItem('settings');
     }
@@ -88,8 +90,8 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to='leaderboard'
-            style={activeItem === 'leaderboard' ? activeLinkStyle : {}}
+            to='/courses'
+            style={activeItem === 'courses' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Enrolled} />

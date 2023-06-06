@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "../../eduReg.module.css"
+import styles from "./eduReg.module.css"
 import logo from '../../assets/geek-union.png'
 import img from '../../assets/side-img.png'
 import { FiEye, FiEyeOff } from 'react-icons/fi'

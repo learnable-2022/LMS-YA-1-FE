@@ -3,9 +3,12 @@
   flex-direction: column;
   gap: 30px;
   width: 550px;
-  /* background: #ca36362d; */
   border-radius: 8px;
-  padding: 50px;
+  padding: 30px 50px;
+  position: absolute;
+  top: 15%;
+  left: 24%;
+  background: #ffff;
 }
 
 .UploadVideo input {
