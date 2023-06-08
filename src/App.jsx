@@ -9,6 +9,14 @@ import SFlowIV from "./pages/studentSignupFlow/SFlowIV";
 import StudentDetails from "./pages/Admin/StudentDetails/StudentDetails";
 import Certification from "./pages/Certification/Certification";
 import CerticateUpload from "./pages/Certification/CertificateUpload";
+import Layout from "./pages/CourseUpload/DashboardLayout/DashboardLayout";
+import CoursePgI from "./pages/CourseUpload/CoursePgI/CoursePgI";
+import NotAdded from "./pages/CourseUpload/NotAdded/NotAdded";
+import VideoNotAdded from "./pages/CourseUpload/VideoNotAdded/VideoNotAdded";
+import ThumbnailRow from "./pages/CourseUpload/ThumbnailRow/ThumbnailRow";
+import VideosRow from "./pages/CourseUpload/VideosRow/VideosRow";
+import Test from "./components/Modals/Test/Test";
+import ImageRow from "./pages/Certification/ImageRow/ImageRow";
 
 function App() {
   return (
@@ -18,13 +26,26 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/students-details" element={<StudentDetails />} />
         {/* <Route path="/students/:id" element={<StudentDetails />} /> */}
+        <Route path="/students/:id" element={<StudentDetails />} />
         <Route path="/signup" element={<SFlowI />} />
         <Route path="/student-signup-access-key" element={<SFlowII />} />
         <Route path="/student-signup-details-confirm" element={<SFlowIII />} />
         <Route path="/student-signup-create-password" element={<SFlowIV />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/certificate" element={<Certification />} />
+        <Route path="/certificate/ImageRow/" element={<ImageRow />} />
         <Route path="/upload" element={<CerticateUpload />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/courses" element={<Layout />}>
+          <Route path="" element={<CoursePgI />} />
+          <Route path="thumbnail-row/:pathName" element={<ThumbnailRow />} />
+          <Route path="notAdded/:pathName" element={<NotAdded />} />
+          <Route
+            path="videoNotAdded/:pathName/:week"
+            element={<VideoNotAdded />}
+          />
+          <Route path="videos-row/:pathName/:week" element={<VideosRow />} />
+        </Route>
       </Routes>
     </>
   );

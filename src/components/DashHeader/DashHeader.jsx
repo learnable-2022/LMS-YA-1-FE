@@ -18,7 +18,7 @@ const DashHeader = ({ img, name, position }) => {
 };
 
 DashHeader.propTypes = {
-  img: PropTypes.object,
+  img: PropTypes.string,
   name: PropTypes.string,
   position: PropTypes.string,
 };

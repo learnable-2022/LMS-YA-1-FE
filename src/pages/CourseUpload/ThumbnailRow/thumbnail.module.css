@@ -1,0 +1,23 @@
+.thumbnail-row{
+  padding: 20px 4vw;
+  position: relative;
+}
+
+.thumbnail-row span {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.thumbnail-row h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.thumbnail-row .thumbnails-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
