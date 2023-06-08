@@ -8,22 +8,25 @@ import SFlowII from './pages/Student/studentSignupFlow/SFlowII';
 import SFlowIII from './pages/Student/studentSignupFlow/SFlowIII';
 import SFlowIV from './pages/Student/studentSignupFlow/SFlowIV';
 import StudentDetails from './pages/Admin/StudentDetails/StudentDetails';
-import Layout from './pages/CourseUpload/DashboardLayout/DashboardLayout';
-import CoursePgI from './pages/CourseUpload/CoursePgI/CoursePgI';
-import NotAdded from './pages/CourseUpload/NotAdded/NotAdded';
-import VideoNotAdded from './pages/CourseUpload/VideoNotAdded/VideoNotAdded';
-import ThumbnailRow from './pages/CourseUpload/ThumbnailRow/ThumbnailRow';
-import VideosRow from './pages/CourseUpload/VideosRow/VideosRow';
+import Layout from './pages/Admin/CourseUpload/DashboardLayout/DashboardLayout';
+import CoursePgI from './pages/Admin/CourseUpload/CoursePgI/CoursePgI';
+import NotAdded from './pages/Admin/CourseUpload/NotAdded/NotAdded';
+import VideoNotAdded from './pages/Admin/CourseUpload/VideoNotAdded/VideoNotAdded';
+import ThumbnailRow from './pages/Admin/CourseUpload/ThumbnailRow/ThumbnailRow';
+import VideosRow from './pages/Admin/CourseUpload/VideosRow/VideosRow';
 
 import students from './data/Mock_Student';
 import AddWeek from './components/Modals/AddWeek/AddWeek';
 import UploadVideo from './components/Modals/UploadVideo/UploadVideo';
+import Dashboard from './pages/Admin/Dashboard/Dashboard';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+
+        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/students' element={<Students />} />
         <Route
           path='/student-details/:name'

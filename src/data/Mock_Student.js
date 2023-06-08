@@ -10,7 +10,7 @@ const students = [
     name: 'Gianna',
     learningPath: 'Backend',
     task: 'Project 2',
-    grade: '72',
+    grade: '40',
     totalScore: 234,
   },
   {
@@ -31,7 +31,7 @@ const students = [
     name: 'Mirna',
     learningPath: 'Web3',
     task: 'Project 2',
-    grade: '90',
+    grade: '33',
     totalScore: 218,
   },
   {
@@ -66,7 +66,7 @@ const students = [
     name: 'Janeva',
     learningPath: 'Frontend',
     task: 'Project 4',
-    grade: '88',
+    grade: '42',
     totalScore: 291,
   },
   {
@@ -99,16 +99,16 @@ const students = [
   },
   {
     name: 'Elle',
-    learningPath: 'Frontend',
+    learningPath: 'Web3',
     task: 'Project 1',
-    grade: '81',
+    grade: '23',
     totalScore: 183,
   },
   {
     name: 'Kylie',
     learningPath: 'Product Design',
     task: 'Project 4',
-    grade: '76',
+    grade: '23',
     totalScore: 119,
   },
   {
@@ -134,9 +134,9 @@ const students = [
   },
   {
     name: 'Cristi',
-    learningPath: 'Product Design',
+    learningPath: 'Web3',
     task: 'Project 3',
-    grade: '76',
+    grade: '12',
     totalScore: 182,
   },
   {
@@ -150,19 +150,19 @@ const students = [
     name: 'Gayle',
     learningPath: 'Frontend',
     task: 'Project 4',
-    grade: '67',
+    grade: '35',
     totalScore: 267,
   },
   {
     name: 'Marissa',
     learningPath: 'Backend',
     task: 'Project 1',
-    grade: '89',
+    grade: '34',
     totalScore: 123,
   },
   {
     name: 'Jolene',
-    learningPath: 'Backend',
+    learningPath: 'Web3',
     task: 'Project 1',
     grade: '34',
     totalScore: 290,
@@ -171,7 +171,7 @@ const students = [
     name: 'Zonnya',
     learningPath: 'Product Design',
     task: 'Project 1',
-    grade: '67',
+    grade: '55',
     totalScore: 190,
   },
   {
@@ -185,14 +185,14 @@ const students = [
     name: 'Katerina',
     learningPath: 'Backend',
     task: 'Project 2',
-    grade: '90',
+    grade: '23',
     totalScore: 214,
   },
   {
     name: 'Rita',
     learningPath: 'Product Design',
     task: 'Project 4',
-    grade: '82',
+    grade: '63',
     totalScore: 123,
   },
   {

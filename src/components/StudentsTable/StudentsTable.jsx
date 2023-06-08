@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import design from './studentsTable.module.css';
 import students from '../../data/Mock_Student';
+import design from './studentsTable.module.css';
 import Pagination from '@mui/material/Pagination';
 import PROFILE from '../../assets/Tappi.png';
 // import PropTypes from 'prop-types';

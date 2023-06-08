@@ -7,7 +7,7 @@
 .Students_main {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 80%;
 }
 
 .Students_main h2 {

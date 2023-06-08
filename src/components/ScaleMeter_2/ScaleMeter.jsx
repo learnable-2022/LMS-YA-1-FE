@@ -1,22 +1,17 @@
 import { useState, useEffect } from 'react';
+import './style.css';
 import PropTypes from 'prop-types';
-
-const ScaleMeter = ({
+const ScaleMeter2 = ({
   number,
   meterColor,
   progressColor,
   width,
-  height,
   title,
   className,
   progressClass,
   meterClass,
-  coverClass,
-  paragraphStyle,
-  titleStyle,
 }) => {
   const [scaleWidth, setScaleWidth] = useState(0);
-
   useEffect(() => {
     setScaleWidth(number);
   }, [number]);
@@ -27,9 +22,7 @@ const ScaleMeter = ({
 
   const meterStyle = {
     backgroundColor: `${meterColor}`,
-    height: `${height}`,
-    borderTopLeftRadius: '150px',
-    borderTopRightRadius: '150px',
+    height: '20px',
     width: `${width}`,
     overflow: 'hidden',
   };
@@ -43,31 +36,24 @@ const ScaleMeter = ({
 
   return (
     <div style={backgroundStyle} className={className}>
-      <h3 style={titleStyle}>{title}</h3>
+      <h3>{title}</h3>
       <div style={meterStyle} className={meterClass}>
         <div style={progressStyle} className={progressClass}></div>
-        <div className={coverClass}>
-          {' '}
-          <p className={paragraphStyle}>{number}%</p>
-        </div>
       </div>
+      <p>{number}%</p>
     </div>
   );
 };
 
-ScaleMeter.propTypes = {
+ScaleMeter2.propTypes = {
   number: PropTypes.object,
   className: PropTypes.object,
-  coverClass: PropTypes.object,
-  titleStyle: PropTypes.object,
-  paragraphStyle: PropTypes.object,
   meterClass: PropTypes.object,
   progressClass: PropTypes.object,
   meterColor: PropTypes.string,
   progressColor: PropTypes.string,
   width: PropTypes.string,
-  height: PropTypes.string,
   title: PropTypes.string,
 };
 
-export default ScaleMeter;
+export default ScaleMeter2;
