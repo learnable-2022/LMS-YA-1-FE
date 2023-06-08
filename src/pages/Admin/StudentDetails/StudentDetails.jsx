@@ -10,6 +10,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ScaleMeter from '../../../components/ScaleMeter/ScaleMeter';
 import MyTable from '../../../components/DetailTable/DetailTable';
 import { useParams, useNavigate } from 'react-router-dom';
+import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
 
 const StudentDetails = ({ students }) => {
   const { name } = useParams();
@@ -54,10 +55,14 @@ const StudentDetails = ({ students }) => {
                     <ScaleMeter
                       className={design.first_meter}
                       title='Grade'
-                      width='200px'
+                      width='250px'
+                      height='120px'
+                      titleStyle={{ marginBottom: '30px' }}
                       number={number}
                       meterColor='#BED7FA'
                       progressColor='#0C4592'
+                      coverClass={design.coverage}
+                      paragraphStyle={design.paragraphStyling}
                     />
                     <div className={design.Student_card_right}>
                       <div className={design.card_inner}>
@@ -76,7 +81,7 @@ const StudentDetails = ({ students }) => {
                             <h4>Tasks Completed</h4>
                           </div>
                         </div>
-                        <ScaleMeter
+                        <ScaleMeter2
                           className={design.progress}
                           width='200px'
                           meterClass={design.meterClass}

@@ -1,0 +1,71 @@
+.learningPathDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.student_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.student_table {
+  margin-top: 20px;
+}
+
+.student_table thead > tr > th {
+  background: #f8f8f9;
+  padding: 15px 0 15px 15px;
+  border: 0;
+  text-align: left;
+  color: #6e737f;
+}
+
+.StudentTable_body tr {
+  cursor: pointer;
+}
+
+.StudentTable_body tr > td {
+  padding: 15px;
+}
+
+.StudentTable_body tr:hover {
+  background: #cfd0d4;
+  transition: 0.7s ease;
+}
+
+.user_profile {
+  width: 35px;
+  margin-right: 8px;
+}
+
+.user_flex {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.StudentTable_body tr:last-child {
+  border-bottom: 1px solid #cfd0d4;
+}
+
+.DashTable_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DashTable_bottom p {
+  display: flex;
+  align-items: center;
+  color: #0c4592;
+  cursor: pointer;
+}
+
+.DashTable_bottom p:hover {
+  transition: 0.4s ease;
+  text-decoration: underline;
+  color: red;
+}

@@ -1,0 +1,49 @@
+.DashChart {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  /* align-items: self-end; */
+  /* justify-content: space-between;*/
+  height: 250px;
+  padding: 10px 35px;
+}
+
+.DashChart_items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: scaleY(-1);
+}
+
+.DashChart_items p {
+  transform: scaleY(-1);
+}
+
+.DashCart_User {
+  transform: scaleY(-1);
+  width: 50px;
+}
+
+.rotate {
+  width: 75px;
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  /* gap: 20px; */
+  align-items: center;
+  border-radius: 0px 0px 24px 24px;
+  padding: 15px 0;
+  /* width: 500px; */
+  /* transform: rotate(180deg); */
+}
+
+.rotate p {
+  transform: scaleY(-1);
+}
+
+.star {
+  /* width: 30px; */
+  object-fit: cover;
+}
