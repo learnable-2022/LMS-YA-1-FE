@@ -105,27 +105,13 @@ const CertficateTable = () => {
         <thead>
           <tr>
             <th>
-              <select value={nameFilter} onChange={handleNameFilterChange}>
-                <option value="">Name</option>
-                {nameOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+              <span>Name</span>
             </th>
             <th>
-              <select
-                value={learningPathFilter}
-                onChange={handleLearningPathFilterChange}
-              >
-                <option value="">Learning Path</option>
-                {learningPathOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+           
+                <span >Learning Path</span>
+              
+             
             </th>
             <th>
               <span>Cohort</span>

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import design from "./dashHeader.module.css";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import ConnectButton from "../ConnectButton/ConnectButton";
 const DashHeader = ({ img, name, position }) => {
   return (
     <div className={design.DashHeader}>
@@ -12,6 +13,7 @@ const DashHeader = ({ img, name, position }) => {
           <h3>{name}</h3>
           <p>{position}</p>
         </div>
+        <ConnectButton />
       </div>
     </div>
   );
