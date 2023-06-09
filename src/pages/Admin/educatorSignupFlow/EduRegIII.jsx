@@ -1,13 +1,13 @@
 import styles from './eduReg.module.css';
-import logo from '../../assets/geek-union.png';
-import img from '../../assets/side-img.png';
+import logo from '../../../assets/geek-union.png';
+import img from '../../../assets/EduSignup.png';
 import { Link, useNavigate } from 'react-router-dom';
 import GoBackBTN from '../../../components/GoBackBTN/GoBackBTN';
 
 function EduRegIII() {
   const navigate = useNavigate();
   const nextPage = () => {
-    navigate('educator-signup-create-password');
+    navigate('/educator-signup-create-password');
   };
 
   return (
@@ -20,7 +20,7 @@ function EduRegIII() {
         </p>
         <GoBackBTN />
 
-        <form className={styles['form-3']}>
+        <form className={styles['form-33']}>
           <div className={styles['form-3-otp']}>
             <input type='text' placeholder='5' maxLength={1} />
             <input type='text' placeholder='5' maxLength={1} />
@@ -44,7 +44,12 @@ function EduRegIII() {
           </div>
           <p>
             Already have an account?{' '}
-            <span className={styles['login-link']}> Login</span>
+            <span className={styles['login-link']}>
+              {' '}
+              <Link to='/login' className={styles['login-link']}>
+                Login
+              </Link>
+            </span>
           </p>
         </section>
       </div>

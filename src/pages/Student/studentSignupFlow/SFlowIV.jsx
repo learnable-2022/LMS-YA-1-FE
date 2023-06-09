@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useContext, useRef, useEffect } from 'react';
 import styles from './studentsFlow.module.css';
 import logo from '../../../assets/geek-union.png';
-import img from '../../../assets/side-img.png';
+import img from '../../../assets/StudentSignup.png';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import GoBackBTN from '../../../components/GoBackBTN/GoBackBTN';
 import UserContext from '../../../context/UserContext';

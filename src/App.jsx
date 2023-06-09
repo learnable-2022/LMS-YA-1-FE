@@ -19,6 +19,9 @@ import students from './data/Mock_Student';
 import AddWeek from './components/Modals/AddWeek/AddWeek';
 import UploadVideo from './components/Modals/UploadVideo/UploadVideo';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
+import EduRegII from './pages/Admin/educatorSignupFlow/EduRegII';
+import EduRegIII from './pages/Admin/educatorSignupFlow/EduRegIII';
+import EduRegIV from './pages/Admin/educatorSignupFlow/EduRegIV';
 
 function App() {
   return (
@@ -34,6 +37,11 @@ function App() {
         />
         <Route path='/test' element={<AddWeek />} />
         <Route path='/test2' element={<UploadVideo />} />
+
+        <Route path='/edu-signup' element={<EduRegII />} />
+        <Route path='/educator-enter-otp' element={<EduRegIII />} />
+        <Route path='/educator-signup-create-password' element={<EduRegIV />} />
+
         <Route path='/signup' element={<SFlowI />} />
         <Route path='/student-signup-access-key' element={<SFlowII />} />
         <Route path='/student-signup-details-confirm' element={<SFlowIII />} />

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import styles from './studentsFlow.module.css';
 import logo from '../../../assets/geek-union.png';
-import img from '../../../assets/side-img.png';
+import img from '../../../assets/StudentSignup.png';
 import user from '../../../assets/user.png';
 import teacher from '../../../assets/buildings.png';
 
@@ -19,7 +19,7 @@ function SFlowII() {
     if (selectedOption === 'student') {
       navigate('/student-signup-access-key');
     } else if (selectedOption === 'teacher') {
-      navigate('/login');
+      navigate('/edu-signup');
     }
   };
 
