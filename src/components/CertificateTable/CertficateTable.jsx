@@ -153,7 +153,17 @@ const CertficateTable = () => {
                   style={{ textDecoration: "none", color: "black" }}
                   to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
-                  <span>{student.Status}</span>
+                  <span
+                    style={{
+                      backgroundColor: "#F5B9B1",
+                      borderRadius: "20px",
+                      padding: "10px",
+                      width: "30px",
+                      height: "30px",
+                    }}
+                  >
+                    {student.Status}
+                  </span>
                 </Link>
               </td>
             </tr>
