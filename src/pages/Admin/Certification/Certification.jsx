@@ -1,10 +1,11 @@
 import DashHeader from '../../../components/DashHeader/DashHeader';
 import Sidebar from '../../../layout/Sidebar/Sidebar';
-import design from './students.module.css';
 import TEST from '../../../assets/Tappi.png';
-import StudentTable from '../../../components/StudentsTable/StudentsTable';
+import design from './Cetification.module.css';
+import CertficateTable from '../../../components/CertificateTable/CertficateTable';
+import { Link } from 'react-router-dom';
 
-const Students = () => {
+const Certification = () => {
   return (
     <div>
       <div className={design.Students_inner}>
@@ -16,10 +17,16 @@ const Students = () => {
               position='Program Co-ordinator'
               img={TEST}
             />
-            <h2>Students</h2>
+
+            <Link
+              to='/certificate'
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <h2>Certificates</h2>
+            </Link>
 
             <div className={design.Students_table}>
-              <StudentTable />
+              <CertficateTable />
             </div>
           </div>
         </div>
@@ -27,5 +34,4 @@ const Students = () => {
     </div>
   );
 };
-
-export default Students;
+export default Certification;

@@ -39,6 +39,8 @@ const Sidebar = () => {
       setActiveItem('leaderboard');
     } else if (location.pathname === '/courses') {
       setActiveItem('courses');
+    } else if (location.pathname === '/certificate') {
+      setActiveItem('certificate');
     } else if (location.pathname === '/dashboard/settings') {
       setActiveItem('settings');
     }
@@ -116,14 +118,14 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to='settings'
-            style={activeItem === 'settings' ? activeLinkStyle : {}}
+            to='/certificate'
+            style={activeItem === 'certificate' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Certification} />
 
-              <h3>Certification</h3>
-            </div>{' '}
+              <h3>Certificates</h3>
+            </div>
           </Link>
         </div>
         <div>
@@ -136,9 +138,9 @@ const Sidebar = () => {
               <img src={Settings} />
 
               <h3>Settings</h3>
-            </div>{' '}
+            </div>
           </Link>
-        </div>{' '}
+        </div>
         <div className={design.Sidebar_tabs} onClick={handleLogout}>
           <img src={Logout} /> <h3>Log out</h3>
         </div>

@@ -2,6 +2,7 @@ import design from './dashTable.module.css';
 import PROFILE from '../../assets/Tappi.png';
 import EastIcon from '@mui/icons-material/East';
 import students from '../../data/Mock_Student';
+import { Link } from 'react-router-dom';
 
 const DashTable = () => {
   const visibleStudents = students.slice(0, 10);
@@ -49,12 +50,14 @@ const DashTable = () => {
       </table>
       <div className={design.DashTable_bottom}>
         <div></div>
-        <p>
-          View all{' '}
-          <span style={{ margin: '10px 0 0 10px' }}>
-            <EastIcon />
-          </span>
-        </p>
+        <Link to='/students' style={{ textDecoration: 'none' }}>
+          <p>
+            View all{' '}
+            <span style={{ margin: '10px 0 0 10px' }}>
+              <EastIcon />
+            </span>
+          </p>
+        </Link>
       </div>
     </div>
   );

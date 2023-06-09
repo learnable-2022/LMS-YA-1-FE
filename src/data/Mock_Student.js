@@ -5,6 +5,8 @@ const students = [
     task: 'Project 4',
     grade: '60',
     totalScore: 290,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Gianna',
@@ -12,6 +14,8 @@ const students = [
     task: 'Project 2',
     grade: '40',
     totalScore: 234,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Lindi',
@@ -19,6 +23,8 @@ const students = [
     task: 'Project 1',
     grade: '60',
     totalScore: 149,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Thekla',
@@ -26,6 +32,8 @@ const students = [
     task: 'Project 2',
     grade: '45',
     totalScore: 115,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Mirna',
@@ -33,6 +41,8 @@ const students = [
     task: 'Project 2',
     grade: '33',
     totalScore: 218,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Yelena',
@@ -40,6 +50,8 @@ const students = [
     task: 'Project 3',
     grade: '23',
     totalScore: 150,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Mireille',
@@ -47,6 +59,8 @@ const students = [
     task: 'Project 2',
     grade: '65',
     totalScore: 120,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Carita',
@@ -54,6 +68,8 @@ const students = [
     task: 'Project 2',
     grade: '47',
     totalScore: 169,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Devondra',
@@ -61,6 +77,8 @@ const students = [
     task: 'Project 1',
     grade: '30',
     totalScore: 226,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Janeva',
@@ -68,6 +86,8 @@ const students = [
     task: 'Project 4',
     grade: '42',
     totalScore: 291,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Pamelina',
@@ -75,6 +95,8 @@ const students = [
     task: 'Project 4',
     grade: '41',
     totalScore: 129,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Josephina',
@@ -82,6 +104,8 @@ const students = [
     task: 'Project 1',
     grade: '93',
     totalScore: 140,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Ericha',
@@ -89,6 +113,8 @@ const students = [
     task: 'Project 3',
     grade: '50',
     totalScore: 209,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Sharron',
@@ -96,6 +122,8 @@ const students = [
     task: 'Project 4',
     grade: '58',
     totalScore: 176,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Elle',
@@ -103,6 +131,8 @@ const students = [
     task: 'Project 1',
     grade: '23',
     totalScore: 183,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Kylie',
@@ -110,6 +140,8 @@ const students = [
     task: 'Project 4',
     grade: '23',
     totalScore: 119,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Almeria',
@@ -117,6 +149,8 @@ const students = [
     task: 'Project 3',
     grade: '39',
     totalScore: 290,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Shana',
@@ -124,6 +158,8 @@ const students = [
     task: 'Project 4',
     grade: '34',
     totalScore: 220,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Adore',
@@ -131,6 +167,8 @@ const students = [
     task: 'Project 2',
     grade: '56',
     totalScore: 231,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Cristi',
@@ -138,6 +176,8 @@ const students = [
     task: 'Project 3',
     grade: '12',
     totalScore: 182,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Jemima',
@@ -145,6 +185,8 @@ const students = [
     task: 'Project 2',
     grade: '56',
     totalScore: 256,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Gayle',
@@ -152,6 +194,8 @@ const students = [
     task: 'Project 4',
     grade: '35',
     totalScore: 267,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Marissa',
@@ -159,6 +203,8 @@ const students = [
     task: 'Project 1',
     grade: '34',
     totalScore: 123,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Jolene',
@@ -166,6 +212,8 @@ const students = [
     task: 'Project 1',
     grade: '34',
     totalScore: 290,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Zonnya',
@@ -173,6 +221,8 @@ const students = [
     task: 'Project 1',
     grade: '55',
     totalScore: 190,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Miquela',
@@ -180,6 +230,8 @@ const students = [
     task: 'Project 3',
     grade: '34',
     totalScore: 178,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Katerina',
@@ -187,6 +239,8 @@ const students = [
     task: 'Project 2',
     grade: '23',
     totalScore: 214,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Rita',
@@ -194,6 +248,8 @@ const students = [
     task: 'Project 4',
     grade: '63',
     totalScore: 123,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Ulrica',
@@ -201,6 +257,8 @@ const students = [
     task: 'Project 3',
     grade: '56',
     totalScore: 134,
+    Cohort: 2022,
+    Status: "Null",
   },
   {
     name: 'Christel',
@@ -208,6 +266,8 @@ const students = [
     task: 'Project 4',
     grade: '33',
     totalScore: 233,
+    Cohort: 2022,
+    Status: "Null",
   },
 ];
 export default students;

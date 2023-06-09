@@ -1,0 +1,60 @@
+.not-added {
+  height: 85vh;
+  padding: 10px 2vw;
+  position: relative;
+}
+
+.not-added span {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.not-added h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.not-added .icon-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.not-added .icon-section figure img {
+  height: 240px;
+  width: 240px;
+}
+
+.not-added .icon-section h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #252d3f;
+  margin-bottom: 11px;
+  margin-top: 12px;
+}
+
+.not-added .icon-section p {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6e737f;
+}
+
+.upload-btn {
+  background-color: #0c4592;
+  color: white;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.upload-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}

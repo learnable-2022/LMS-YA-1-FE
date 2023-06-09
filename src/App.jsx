@@ -1,4 +1,7 @@
-import './App.css';
+import Certification from './pages/Admin/Certification/Certification';
+import CerticateUpload from './pages/Admin/Certification/CertificateUpload';
+// import Test from "./components/Modals/Test/Test";
+import ImageRow from './pages/Admin/Certification/ImageRow/ImageRow';
 import Students from './pages/Admin/Students/Students';
 import Home from './pages/Home/Home';
 import { Routes, Route } from 'react-router-dom';
@@ -19,6 +22,7 @@ import students from './data/Mock_Student';
 import AddWeek from './components/Modals/AddWeek/AddWeek';
 import UploadVideo from './components/Modals/UploadVideo/UploadVideo';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
+
 import EduRegII from './pages/Admin/educatorSignupFlow/EduRegII';
 import EduRegIII from './pages/Admin/educatorSignupFlow/EduRegIII';
 import EduRegIV from './pages/Admin/educatorSignupFlow/EduRegIV';
@@ -57,6 +61,9 @@ function App() {
           />
           <Route path='videos-row/:pathName/:week' element={<VideosRow />} />
         </Route>
+        <Route path='/certificate' element={<Certification />} />
+        <Route path='/certificate/ImageRow/' element={<ImageRow />} />
+        <Route path='/upload' element={<CerticateUpload />} />
       </Routes>
     </>
   );
