@@ -1,3 +1,4 @@
+
 import Certification from "./pages/Certification/Certification";
 import CerticateUpload from "./pages/Certification/CertificateUpload";
 // import Test from "./components/Modals/Test/Test";
@@ -23,11 +24,12 @@ import AddWeek from "./components/Modals/AddWeek/AddWeek";
 import UploadVideo from "./components/Modals/UploadVideo/UploadVideo";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 
+
 function App() {
   return (
     <>
-      {" "}
       <Routes>
+
         <Route path="/" element={<Home />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
@@ -52,6 +54,7 @@ function App() {
             element={<VideoNotAdded />}
           />
           <Route path="videos-row/:pathName/:week" element={<VideosRow />} />
+     
         </Route>
         <Route path="/certificate" element={<Certification />} />
         <Route path="/certificate/ImageRow/" element={<ImageRow />} />
