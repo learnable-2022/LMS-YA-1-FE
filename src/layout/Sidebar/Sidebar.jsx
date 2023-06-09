@@ -117,7 +117,7 @@ const Sidebar = () => {
           <Link
             className={design.Sidebar_tabs}
             to="/certificate"
-            style={activeItem === "settings" ? activeLinkStyle : {}}
+            style={activeItem === "certificate" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Certification} />
