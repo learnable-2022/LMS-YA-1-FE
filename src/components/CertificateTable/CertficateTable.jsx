@@ -1,13 +1,13 @@
-import { useState } from "react";
-import design from "./CertificateTable.module.css";
-import students from "../../data/Mock_Student";
-import Pagination from "@mui/material/Pagination";
-import PROFILE from "../../assets/Tappi.png";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import design from './CertificateTable.module.css';
+import students from '../../data/Mock_Student';
+import Pagination from '@mui/material/Pagination';
+import PROFILE from '../../assets/Tappi.png';
+import { Link } from 'react-router-dom';
 
 const CertficateTable = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -17,9 +17,9 @@ const CertficateTable = () => {
     setSelectedOption(event.target.value);
   };
 
-  const [nameFilter, setNameFilter] = useState("");
-  const [learningPathFilter, setLearningPathFilter] = useState("");
-  const [taskFilter, setTaskFilter] = useState("");
+  const [nameFilter, setNameFilter] = useState('');
+  const [learningPathFilter, setLearningPathFilter] = useState('');
+  const [taskFilter, setTaskFilter] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleNameFilterChange = (event) => {
@@ -35,24 +35,24 @@ const CertficateTable = () => {
   };
 
   const learningPathOptions = [
-    { label: "Frontend", value: "Frontend", color: "red" },
-    { label: "Backend", value: "Backend", color: "yellow" },
-    { label: "Web3", value: "Web3", color: "green" },
-    { label: "Product Design", value: "Product Design", color: "orange" },
+    { label: 'Frontend', value: 'Frontend', color: 'red' },
+    { label: 'Backend', value: 'Backend', color: 'yellow' },
+    { label: 'Web3', value: 'Web3', color: 'green' },
+    { label: 'Product Design', value: 'Product Design', color: 'orange' },
   ];
 
   const filteredStudents = students
     .filter((student) => {
       const nameStart = student.name.charAt(0).toLowerCase();
       return (
-        (nameFilter === "" || nameFilter === nameStart) &&
-        (learningPathFilter === "" ||
+        (nameFilter === '' || nameFilter === nameStart) &&
+        (learningPathFilter === '' ||
           learningPathFilter === student.learningPath) &&
-        (taskFilter === "" || taskFilter === student.task)
+        (taskFilter === '' || taskFilter === student.task)
       );
     })
     .filter((student) => {
-      if (selectedOption && selectedOption !== "") {
+      if (selectedOption && selectedOption !== '') {
         return (
           student.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
           student.learningPath === selectedOption
@@ -79,13 +79,13 @@ const CertficateTable = () => {
     <div>
       <div className={design.Students_search}>
         <input
-          type="text"
+          type='text'
           placeholder="Search student's name..."
           value={searchQuery}
           onChange={handleSearch}
         />
         <select value={selectedOption} onChange={handleDropdownChange}>
-          <option value="">Select Learning Path</option>
+          <option value=''>Select Learning Path</option>
           {learningPathOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -96,36 +96,27 @@ const CertficateTable = () => {
       <table className={design.student_table}>
         <thead>
           <tr>
-            <th>
-              <span>Name</span>
-            </th>
-            <th>
-              <span>Learning Path</span>
-            </th>
-            <th>
-              <span>Cohort</span>
-            </th>
-            <th>
-              <span>Status</span>
-            </th>
+            <th>Name</th>
+            <th>Learning Path</th>
+            <th>Cohort</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody className={design.StudentTable_body}>
           {getCurrentPageStudents().map((student, index) => (
             <tr key={index}>
               <Link
-                style={{ textDecoration: "none", color: "black" }}
+                style={{ textDecoration: 'none', color: 'black' }}
                 to={`/upload?name=${encodeURIComponent(student.name)}`}
               >
                 <td className={design.user_flex}>
-                  <img src={PROFILE} alt="" className={design.user_profile} />
-
+                  <img src={PROFILE} alt='' className={design.user_profile} />
                   {student.name}
                 </td>
               </Link>
               <td>
                 <Link
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: 'none', color: 'black' }}
                   to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
                   {student.learningPath}
@@ -141,7 +132,7 @@ const CertficateTable = () => {
               </td>
               <td>
                 <Link
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: 'none', color: 'black' }}
                   to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
                   {student.Cohort}
@@ -150,16 +141,16 @@ const CertficateTable = () => {
 
               <td>
                 <Link
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: 'none', color: 'black' }}
                   to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
                   <span
                     style={{
-                      backgroundColor: "#F5B9B1",
-                      borderRadius: "20px",
-                      padding: "10px",
-                      width: "30px",
-                      height: "30px",
+                      backgroundColor: '#F5B9B1',
+                      borderRadius: '20px',
+                      padding: '10px',
+                      width: '30px',
+                      height: '30px',
                     }}
                   >
                     {student.Status}
@@ -176,7 +167,7 @@ const CertficateTable = () => {
           count={totalPages}
           page={currentPage}
           onChange={handlePageChange}
-          shape="rounded"
+          shape='rounded'
           classes={{
             ul: design.pagination,
             root: design.paginationRoot,

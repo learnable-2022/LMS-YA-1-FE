@@ -46,19 +46,27 @@
   margin-bottom: 0.5rem;
 }
 .offscreen {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .login-input {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
+  border: 1px solid #737373;
 }
 
-.login-input[type="text"],
-.login-input[type="password"] {
-  width: 60%;
+.login-input[type='text'],
+.login-input[type='password'] {
+  width: 90%;
+}
+
+.login-input[type='text']:focus,
+.login-input[type='password']:focus {
+  outline: none;
+  box-shadow: 0 0 5px #0c4592;
+  border-color: #0c4592;
 }
 
 .login-label {
@@ -67,13 +75,19 @@
 
 .login-button {
   padding: 10px;
-  background-color: #565655;
+  background-color: #0c4592;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 8px;
+  opacity: 0.7;
   width: 90%;
   margin-top: 30px;
+}
+
+.login-button:hover {
+  opacity: 1;
+  transition: 0.4s ease;
 }
 
 .sign-up {
@@ -85,6 +99,16 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.login-footer a {
+  text-decoration: none;
+  color: #0c4592;
+  opacity: 0.7;
+}
+
+.login-footer a:hover {
+  opacity: 1;
 }
 
 .image-section {
@@ -102,7 +126,7 @@
 
 .password-toggle {
   position: absolute;
-  left: 330px;
+  right: 70px;
   top: 40%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -138,7 +162,7 @@
     width: 80%;
   }
 
-  login-button {
+  .login-button {
     width: 90%;
   }
 
