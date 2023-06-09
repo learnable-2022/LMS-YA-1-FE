@@ -1,0 +1,48 @@
+.Students_body {
+  display: flex;
+  /* gap: 50px; */
+  /* margin: 20px 10vw 70px 10vw; */
+}
+
+.Students_main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.Students_main h2 {
+  padding-left: 50px;
+  margin-top: 40px;
+}
+
+.Students_search {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.Students_search input,
+.Students_search select {
+  border: 1px solid #e1e1e4;
+  border-radius: 7px;
+  outline: none;
+  padding: 12px;
+  /* text-align: center; */
+  cursor: text;
+  margin-top: 20px;
+}
+
+.Students_search input {
+  width: 40%;
+}
+
+.Students_search select {
+  padding: 12px 20px;
+  width: 20%;
+  cursor: pointer;
+}
+
+.Students_table {
+  padding-left: 50px;
+  margin-top: 10px;
+}
