@@ -20,6 +20,12 @@
   width: 40%;
 }
 
+.Students_search input:focus {
+  border-color: #1164d3;
+  transition: 0.5s ease;
+  box-shadow: #1165d32a 0px 2px 8px 0px;
+}
+
 .Students_search select {
   padding: 12px 20px;
   width: 20%;
@@ -73,6 +79,12 @@
   cursor: pointer;
 }
 
+.StudentTable_body a {
+  text-decoration: none;
+  color: inherit;
+  /* color: #0D162A; */
+}
+
 .StudentTable_body tr:hover {
   background: #cfd0d4;
   transition: 0.7s ease;
@@ -97,8 +109,8 @@
 }
 
 .paginationSelected {
-  background-color: "#0A3775";
-  color: "#FFF";
+  background-color: '#0A3775';
+  color: '#FFF';
 }
 
 .learningPathDot {

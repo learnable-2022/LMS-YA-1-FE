@@ -6,13 +6,12 @@ import Upload from "../../../assets/upload.png";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import UserContext from "../../../context/UserContext";
 
-const UploadImage = ({ handleShow }) => {
+const UploadImage = ({ handleShow, name }) => {
   const { setImageData } = useContext(UserContext);
   const [selectedFile, setSelectedFile] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const fileInputRef = useRef(null);
 
-  const { pathName } = useParams();
   const navigate = useNavigate();
 
   const handleFileSelect = () => {
@@ -57,7 +56,7 @@ const UploadImage = ({ handleShow }) => {
       date: new Date().toUTCString().slice(5, 16),
     };
     setImageData(data);
-    setTimeout(() => navigate("/certificate/ImageRow"), 10);
+    setTimeout(() => navigate(`/certificate/${name}`), 10);
   };
 
   return (

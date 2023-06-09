@@ -34,14 +34,6 @@ const CertficateTable = () => {
     setTaskFilter(event.target.value);
   };
 
-  const nameOptions = [
-    { label: "A-E", range: ["A", "B", "C", "D", "E"] },
-    { label: "F-J", range: ["F", "G", "H", "I", "J"] },
-    { label: "K-O", range: ["K", "L", "M", "N", "O"] },
-    { label: "P-T", range: ["P", "Q", "R", "S", "T"] },
-    { label: "U-Z", range: ["U", "V", "W", "X", "Y", "Z"] },
-  ];
-
   const learningPathOptions = [
     { label: "Frontend", value: "Frontend", color: "red" },
     { label: "Backend", value: "Backend", color: "yellow" },
@@ -108,10 +100,7 @@ const CertficateTable = () => {
               <span>Name</span>
             </th>
             <th>
-           
-                <span >Learning Path</span>
-              
-             
+              <span>Learning Path</span>
             </th>
             <th>
               <span>Cohort</span>
@@ -137,7 +126,7 @@ const CertficateTable = () => {
               <td>
                 <Link
                   style={{ textDecoration: "none", color: "black" }}
-                  to={`/upload/${student.name}`}
+                  to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
                   {student.learningPath}
                   <span
@@ -153,7 +142,7 @@ const CertficateTable = () => {
               <td>
                 <Link
                   style={{ textDecoration: "none", color: "black" }}
-                  to={`/upload/${student.name}`}
+                  to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
                   {student.Cohort}
                 </Link>
@@ -162,7 +151,7 @@ const CertficateTable = () => {
               <td>
                 <Link
                   style={{ textDecoration: "none", color: "black" }}
-                  to={`/upload/${student.name}`}
+                  to={`/upload?name=${encodeURIComponent(student.name)}`}
                 >
                   <span>{student.Status}</span>
                 </Link>

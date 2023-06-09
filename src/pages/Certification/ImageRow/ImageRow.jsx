@@ -1,19 +1,28 @@
 import styles from "./ImageRow.module.css";
-import { useParams, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
 import ImageUploadPreview from "../../../components/ImageUploadPreview/imageUploadPreview";
 import UserContext from "../../../context/UserContext";
 
 function ImageRow() {
   const { imageData } = useContext(UserContext);
+  const { name } = useParams();
   const navigate = useNavigate();
-  const { week } = useParams();
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(name);
+  }, [name]);
 
   return (
     <div className={styles["videos-row"]}>
       <h1>
-        <span onClick={() => navigate("/certificate")}> certificate &gt; </span>
-        &gt; {week}
+        <span
+          style={{ fontWeight: "bold" }}
+          onClick={() => navigate("/certificate")}
+        >
+          certificate
+        </span>
       </h1>
 
       <article className={styles["videos-container-title"]}>

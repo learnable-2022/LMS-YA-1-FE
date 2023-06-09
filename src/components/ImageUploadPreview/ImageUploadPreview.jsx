@@ -10,7 +10,7 @@ function ImageUploadPreview({ imagePrev, fileName, date }) {
         alt="Uploaded Image"
         className={styles["image-preview"]}
       />
-      <p>File Name: {fileName}</p>
+      {/* <p>File Name: {fileName}</p> */}
       <section className={styles["file-name-container"]}>
         <p className={styles["file-name"]}>{fileName}</p>
         <div>

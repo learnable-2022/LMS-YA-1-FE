@@ -33,8 +33,12 @@ const Sidebar = () => {
       setActiveItem("dashboard");
     } else if (location.pathname === "/students") {
       setActiveItem("students");
+    } else if (location.pathname === "/student-details/:name") {
+      setActiveItem("students");
     } else if (location.pathname === "/dashboard/leaderboard") {
       setActiveItem("leaderboard");
+    } else if (location.pathname === "/courses") {
+      setActiveItem("courses");
     } else if (location.pathname === "/dashboard/settings") {
       setActiveItem("settings");
     }
@@ -93,7 +97,7 @@ const Sidebar = () => {
               <img src={Enrolled} />
 
               <h3>Courses</h3>
-            </div>
+            </div>{" "}
           </Link>
         </div>
         <div>
@@ -132,9 +136,9 @@ const Sidebar = () => {
               <img src={Settings} />
 
               <h3>Settings</h3>
-            </div>{" "}
+            </div>
           </Link>
-        </div>{" "}
+        </div>
         <div className={design.Sidebar_tabs} onClick={handleLogout}>
           <img src={Logout} /> <h3>Log out</h3>
         </div>

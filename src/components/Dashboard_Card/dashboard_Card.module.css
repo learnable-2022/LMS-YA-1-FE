@@ -1,0 +1,13 @@
+.Dashboard_Card {
+  background: #ffffff;
+  padding: 20px 20px 10px 20px;
+  flex: 1;
+}
+.Dashboard_Card img {
+  width: 45px;
+}
+
+.Dashboard_Card h4 {
+  color: #9ea2aa;
+  margin: 10px 0 20px 0;
+}

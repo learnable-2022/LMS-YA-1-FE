@@ -5,7 +5,6 @@ import design from "./Cetification.module.css";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 import { useLocation, Link } from "react-router-dom";
-// import NotAdded from "../CourseUpload/NotAdded/NotAdded";
 import CertNotAdded from "./CertNotAdded";
 
 const CerticateUpload = () => {
