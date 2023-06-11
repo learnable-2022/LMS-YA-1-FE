@@ -1,6 +1,6 @@
 import styles from './ImageRow.module.css';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import ImageUploadPreview from '../../../../components/ImageUploadPreview/imageUploadPreview';
 import UserContext from '../../../../context/UserContext';
 
