@@ -192,7 +192,7 @@ function SFlowIV() {
               <input
                 type='text'
                 id='address'
-                placeholder='Victor'
+                placeholder='0xBBAC6AABCFEBACE'
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 autoComplete='off'
