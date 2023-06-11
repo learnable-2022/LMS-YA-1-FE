@@ -1,0 +1,99 @@
+.Dashboard_body {
+  display: flex;
+}
+
+.Dashboard_main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background: #f8f8f9;
+}
+
+.Dashboard_main h2 {
+  padding-left: 50px;
+  margin-top: 40px;
+}
+
+.Dashboard_center {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 50px 30px 0px 50px;
+}
+
+.Dashboard_Table {
+  background-color: #fff;
+  padding: 30px;
+  width: 60%;
+}
+
+.Dashboard_Leaderboard {
+  width: 40%;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.Dash_cards {
+  padding: 50px 30px 0 50px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.first_meter {
+  padding: 10px 30px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.04);
+}
+
+.Dash_cover {
+  background-color: #fff;
+  height: 77px;
+  position: absolute;
+  top: 290px;
+  left: 850px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  width: 150px;
+}
+
+.Dash_paragraph {
+  text-align: center;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 100%;
+  color: #0c4592;
+  margin-top: 40px;
+}
+
+.progress {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0 15px 10px 15px;
+  border-radius: 0 0 8px 8px;
+}
+
+.progress h3 {
+  display: none !important;
+}
+
+.progress div:first-child {
+  width: 100px;
+}
+
+.progressClass {
+  background-color: #6dc347 !important;
+}
+
+.meterClass {
+  background-color: #e2f3da !important;
+  height: 8px !important;
+  border-radius: 30px;
+}
+
+.spanStyle {
+  font-size: 20px;
+}

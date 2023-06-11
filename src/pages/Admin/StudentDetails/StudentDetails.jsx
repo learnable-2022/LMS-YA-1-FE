@@ -1,9 +1,32 @@
-import DashHeader from "../../../components/DashHeader/DashHeader";
-import Sidebar from "../../../layout/Sidebar/Sidebar";
-import TEST from "../../../assets/Tappi.png";
-import { Book, Cup, CertCap } from "../../../assets/studentDet";
-import design from "./studentDetails.module.css";
-const StudentDetails = () => {
+import DashHeader from '../../../components/DashHeader/DashHeader';
+import Sidebar from '../../../layout/Sidebar/Sidebar';
+import TEST from '../../../assets/Tappi.png';
+import REWARD from '../../../assets/rewards.png';
+import TASKS from '../../../assets/tasks.png';
+import COPY from '../../../assets/copy.png';
+import PropTypes from 'prop-types';
+import design from './studentDetails.module.css';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ScaleMeter from '../../../components/ScaleMeter/ScaleMeter';
+import MyTable from '../../../components/DetailTable/DetailTable';
+import { useParams, useNavigate } from 'react-router-dom';
+import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
+
+const StudentDetails = ({ students }) => {
+  const { name } = useParams();
+  const student = students.find((student) => student.name === name);
+  const number = student.grade;
+  const digit = 10;
+
+  const navigate = useNavigate();
+
+  function goBack() {
+    navigate(-1);
+  }
+
+  if (!student) {
+    return <div>Student not found.</div>;
+  }
   return (
     <div>
       <div className={design.Students_inner}>
@@ -11,48 +34,120 @@ const StudentDetails = () => {
           <Sidebar />
           <div className={design.Students_main}>
             <DashHeader
-              name="Tappi"
-              position="Program Co-ordinator"
+              name='Tappi'
+              position='Program Co-ordinator'
               img={TEST}
             />
-            <h2>Students </h2>
-            <div className={design.cards}>
-              <div className={design.card_item}>
-                <div className={design.card_top}>
-                  <img src={Book} />
-                  <p>
-                    <span>50</span>/100
-                  </p>
+            <div className={design.Students_inner_main}>
+              <h2>
+                <span onClick={goBack} style={{ cursor: 'pointer' }}>
+                  Students
+                </span>
+
+                <span className={design.chevron}>
+                  <ChevronRightIcon />
+                </span>
+                <span className={design.name}>{student.name}</span>
+              </h2>
+              <div className={design.Student_wrapper}>
+                <div className={design.Student_left}>
+                  <div className={design.Student_left_inner}>
+                    <ScaleMeter
+                      className={design.first_meter}
+                      title='Grade'
+                      width='250px'
+                      height='120px'
+                      titleStyle={{ marginBottom: '30px' }}
+                      number={number}
+                      meterColor='#BED7FA'
+                      progressColor='#0C4592'
+                      coverClass={design.coverage}
+                      paragraphStyle={design.paragraphStyling}
+                    />
+                    <div className={design.Student_card_right}>
+                      <div className={design.card_inner}>
+                        <img src={REWARD} alt='' className={design.icons} />
+                        <div>
+                          <h4>Total rewards earned</h4>
+                          <h3>
+                            <span>700</span>Gek
+                          </h3>
+                        </div>
+                      </div>
+                      <div className={design.card_inner2}>
+                        <div className={design.card_drop}>
+                          <img src={TASKS} alt='' className={design.icons} />
+                          <div>
+                            <h4>Tasks Completed</h4>
+                          </div>
+                        </div>
+                        <ScaleMeter2
+                          className={design.progress}
+                          width='200px'
+                          meterClass={design.meterClass}
+                          progressClass={design.progressClass}
+                          // digit={digit}
+                          number={digit}
+                          meterColor='#BED7FA'
+                          progressColor='#0C4592'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className={design.Student_bottom}>
+                    <h3>Tasks</h3>
+                    <div>
+                      <MyTable />
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p>Complete courses</p>
+                <div className={design.Student_right}>
+                  <div className={design.Student_right_title}>
+                    <h3>Personal details</h3>
+                    <p className={design.copy}>
+                      <span>
+                        <img src={COPY} />
+                      </span>
+                      Key
+                    </p>
+                  </div>
+
+                  <h4>Basic details</h4>
+                  <div className={design.Student_full_details}>
+                    <div className={design.fullname}>
+                      <p>
+                        First name: <span>{student.name}</span>
+                      </p>
+                      <p>
+                        Last name:<span>{student.name}</span>
+                      </p>
+                    </div>
+                    <p>
+                      Gender:<span>{student.name}</span>
+                    </p>
+                    <p>
+                      Learning track:<span>{student.learningPath}</span>
+                    </p>
+                    <p>
+                      Email address:<span>{student.name}</span>
+                    </p>
+                    <p>
+                      Phone number:<span>{student.name}</span>
+                    </p>
+                    <p>
+                      Address:<span>{student.name}</span>
+                    </p>
+                  </div>
+                  <h4>About</h4>
+                  <div className={design.Student_full_details}>
+                    <p>
+                      Personality test result:<span>{student.name}</span>
+                    </p>
+                    <p>
+                      Hobbies:<span>{student.name}</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className={design.card_item}>
-                <div className={design.card_top}>
-                  <img src={Cup} />
-                  <p>
-                    <span>5</span>/100
-                  </p>
-                </div>
-                <div>
-                  <p>Task completed</p>
-                </div>
-              </div>
-              <div className={design.card_item}>
-                <div className={design.card_top}>
-                  <img src={CertCap} />
-                  <p>
-                    <span>0</span>
-                  </p>
-                </div>
-                <div>
-                  <p>Complete courses</p>
-                </div>
-              </div>
-              <div className={design.card_item_last}>
-                <h3>55.5%</h3>
-                <p>Grade</p>
               </div>
             </div>
           </div>
@@ -62,4 +157,7 @@ const StudentDetails = () => {
   );
 };
 
+StudentDetails.propTypes = {
+  students: PropTypes.array,
+};
 export default StudentDetails;

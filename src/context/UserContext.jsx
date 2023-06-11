@@ -1,27 +1,27 @@
 import { createContext, useState } from "react";
-import productDesign from '../data/productDesign'
+import productDesign from "../data/productDesign";
 import frontEnd from "../data/frontEnd";
 
 const UserContext = createContext({});
 
-export const UserProvider = ({children}) =>{
-  const [user, setUser] = useState({})
-  const [courses, setCourses] = useState(
-    {
-      web3:[], 
-      backend:[],
-    }
-      )
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+  const [courses, setCourses] = useState({
+    web3: [],
+    backend: [],
+    frontend: frontEnd,
+    productDesign: productDesign,
+  });
 
-  courses['frontend'] = frontEnd
-  courses['productDesign'] = productDesign
+  const [imageData, setImageData] = useState(null);
 
-
-  return(
-    <UserContext.Provider value = {{user,  setUser, courses, setCourses}}>
-        {children}
+  return (
+    <UserContext.Provider
+      value={{ user, setUser, courses, setCourses, imageData, setImageData }}
+    >
+      {children}
     </UserContext.Provider>
-  )
-}
+  );
+};
 
-export default UserContext
+export default UserContext;
