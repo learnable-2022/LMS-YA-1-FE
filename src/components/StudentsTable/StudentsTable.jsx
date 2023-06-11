@@ -1,8 +1,10 @@
-import { useState } from "react";
-import design from "./studentsTable.module.css";
-import students from "../../data/Mock_Student";
-import Pagination from "@mui/material/Pagination";
-import PROFILE from "../../assets/Tappi.png";
+import { useState } from 'react';
+import students from '../../data/Mock_Student';
+import design from './studentsTable.module.css';
+import Pagination from '@mui/material/Pagination';
+import PROFILE from '../../assets/Tappi.png';
+// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // import { makeStyles } from "@mui/styles";
 
 const StudentTable = () => {
@@ -19,8 +21,8 @@ const StudentTable = () => {
   //   }));
 
   //   const classes = useStyles();
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -30,9 +32,9 @@ const StudentTable = () => {
     setSelectedOption(event.target.value);
   };
 
-  const [nameFilter, setNameFilter] = useState("");
-  const [learningPathFilter, setLearningPathFilter] = useState("");
-  const [taskFilter, setTaskFilter] = useState("");
+  const [nameFilter, setNameFilter] = useState('');
+  const [learningPathFilter, setLearningPathFilter] = useState('');
+  // const [taskFilter, setTaskFilter] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleNameFilterChange = (event) => {
@@ -43,43 +45,44 @@ const StudentTable = () => {
     setLearningPathFilter(event.target.value);
   };
 
-  const handleTaskFilterChange = (event) => {
-    setTaskFilter(event.target.value);
-  };
+  // const handleTaskFilterChange = (event) => {
+  //   setTaskFilter(event.target.value);
+  // };
 
   const nameOptions = [
-    { label: "A-E", range: ["A", "B", "C", "D", "E"] },
-    { label: "F-J", range: ["F", "G", "H", "I", "J"] },
-    { label: "K-O", range: ["K", "L", "M", "N", "O"] },
-    { label: "P-T", range: ["P", "Q", "R", "S", "T"] },
-    { label: "U-Z", range: ["U", "V", "W", "X", "Y", "Z"] },
+    { label: 'A-E', range: ['A', 'B', 'C', 'D', 'E'] },
+    { label: 'F-J', range: ['F', 'G', 'H', 'I', 'J'] },
+    { label: 'K-O', range: ['K', 'L', 'M', 'N', 'O'] },
+    { label: 'P-T', range: ['P', 'Q', 'R', 'S', 'T'] },
+    { label: 'U-Z', range: ['U', 'V', 'W', 'X', 'Y', 'Z'] },
   ];
 
   const learningPathOptions = [
-    { label: "Frontend", value: "Frontend", color: "red" },
-    { label: "Backend", value: "Backend", color: "yellow" },
-    { label: "Web3", value: "Web3", color: "green" },
-    { label: "Product Design", value: "Product Design", color: "orange" },
+    { label: 'Frontend', value: 'Frontend', color: 'red' },
+    { label: 'Backend', value: 'Backend', color: 'yellow' },
+    { label: 'Web3', value: 'Web3', color: 'green' },
+    { label: 'Product Design', value: 'Product Design', color: 'orange' },
   ];
 
-  const taskOptions = [
-    { label: "Project 1", value: "Project 1" },
-    { label: "Project 2", value: "Project 2" },
-    { label: "Project 3", value: "Project 3" },
-    { label: "Project 4", value: "Project 4" },
-  ];
+  // const taskOptions = [
+  //   { label: 'Project 1', value: 'Project 1' },
+  //   { label: 'Project 2', value: 'Project 2' },
+  //   { label: 'Project 3', value: 'Project 3' },
+  //   { label: 'Project 4', value: 'Project 4' },
+  // ];
   const filteredStudents = students
     .filter((student) => {
       const nameStart = student.name.charAt(0).toLowerCase();
       return (
-        (nameFilter === "" || nameFilter === nameStart) &&
-        (learningPathFilter === "" ||
-          learningPathFilter === student.learningPath) &&
-        (taskFilter === "" || taskFilter === student.task)
+        (nameFilter === '' || nameFilter === nameStart) &&
+        (learningPathFilter === '' ||
+          learningPathFilter === student.learningPath)
+        // &&
+        // (taskFilter === '' || taskFilter === student.task)
       );
     })
     .filter((student) => {
-      if (selectedOption && selectedOption !== "") {
+      if (selectedOption && selectedOption !== '') {
         return (
           student.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
           student.learningPath === selectedOption
@@ -104,13 +107,13 @@ const StudentTable = () => {
     <div>
       <div className={design.Students_search}>
         <input
-          type="text"
+          type='text'
           placeholder="Search student's name..."
           value={searchQuery}
           onChange={handleSearch}
         />
         <select value={selectedOption} onChange={handleDropdownChange}>
-          <option value="">Select Learning Path</option>
+          <option value=''>Select Learning Path</option>
           {learningPathOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -123,7 +126,7 @@ const StudentTable = () => {
           <tr>
             <th>
               <select value={nameFilter} onChange={handleNameFilterChange}>
-                <option value="">Name</option>
+                <option value=''>Name</option>
                 {nameOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
@@ -136,7 +139,7 @@ const StudentTable = () => {
                 value={learningPathFilter}
                 onChange={handleLearningPathFilterChange}
               >
-                <option value="">Learning Path</option>
+                <option value=''>Learning Path</option>
                 {learningPathOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
@@ -162,22 +165,36 @@ const StudentTable = () => {
           {getCurrentPageStudents().map((student, index) => (
             <tr key={index}>
               <td className={design.user_flex}>
-                <img src={PROFILE} alt="" className={design.user_profile} />
-                {student.name}
+                <img src={PROFILE} alt='' className={design.user_profile} />
+                <Link to={`/student-details/${student.name}`}>
+                  {student.name}
+                </Link>
               </td>
               <td>
-                {student.learningPath}
-                <span
-                  className={design.learningPathDot}
-                  style={{
-                    backgroundColor: learningPathOptions.find(
-                      (option) => option.value === student.learningPath
-                    ).color,
-                  }}
-                ></span>
+                {' '}
+                <Link to={`/student-details/${student.name}`}>
+                  {student.learningPath}
+                  <span
+                    className={design.learningPathDot}
+                    style={{
+                      backgroundColor: learningPathOptions.find(
+                        (option) => option.value === student.learningPath
+                      ).color,
+                    }}
+                  ></span>
+                </Link>
               </td>
-              <td>{student.totalScore}</td>
-              <td>{student.grade}</td>
+              <td>
+                <Link to={`/student-details/${student.name}`}>
+                  {student.totalScore}{' '}
+                </Link>
+              </td>
+              <td>
+                {' '}
+                <Link to={`/student-details/${student.name}`}>
+                  {student.grade}{' '}
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -189,7 +206,7 @@ const StudentTable = () => {
           count={totalPages}
           page={currentPage}
           onChange={handlePageChange}
-          shape="rounded"
+          shape='rounded'
           classes={{
             ul: design.pagination,
             root: design.paginationRoot,
@@ -201,5 +218,9 @@ const StudentTable = () => {
     </div>
   );
 };
+
+// StudentTable.propTypes = {
+//   item: PropTypes.object,
+// };
 
 export default StudentTable;

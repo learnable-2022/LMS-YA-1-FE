@@ -1,0 +1,24 @@
+.dashboard-layout {
+  display: flex;
+  flex-direction: row;
+  background: #f8f8f9;
+}
+
+.dashboard-layout main {
+  width: 80%;
+}
+
+.dashboard-layout main .header {
+  background: #ffff;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-layout .aside {
+    display: none;
+  }
+
+  .choices-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

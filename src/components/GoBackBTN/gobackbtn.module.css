@@ -1,4 +1,4 @@
-.go-back-btn{
+.go-back-btn {
   border: none;
   cursor: pointer;
   border-radius: 10px;
@@ -11,12 +11,17 @@
   flex-direction: row;
 }
 
-.arrow{
+.arrow {
   font-size: 20px;
   margin-right: 4px;
-} 
+}
 
-.arrow{
+.arrow {
   font-size: 20px;
   margin-right: 4px;
+}
+
+.go-back-btn:hover {
+  color: #0c4592;
+  transition: 0.4s ease;
 }

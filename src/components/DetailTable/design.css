@@ -1,0 +1,17 @@
+.status {
+  border-radius: 50px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.custom-table {
+  /* border-collapse: separate;
+  border-spacing: 0 10px; */
+  margin-top: 20px;
+}
+
+.custom-table th {
+  background: #f8f8f9;
+  margin-bottom: 10px;
+  border: 0;
+}
