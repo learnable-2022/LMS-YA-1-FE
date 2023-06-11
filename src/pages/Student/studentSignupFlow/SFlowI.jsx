@@ -4,7 +4,7 @@ import { useState, useContext } from 'react';
 import styles from './studentsFlow.module.css';
 import logo from '../../../assets/geek-union.png';
 import img from '../../../assets/StudentSignup.png';
-import user from '../../../assets/user.png';
+import userImg from '../../../assets/user.png';
 import teacher from '../../../assets/buildings.png';
 import UserContext from '../../../context/UserContext';
 
@@ -42,7 +42,7 @@ function SFlowI() {
 
           <div className={styles['user-choice']}>
             <figure>
-              <img src={user} alt='' />
+              <img src={userImg} alt='' />
             </figure>
             <article>
               <p className={styles['user']}>I am a student</p>
