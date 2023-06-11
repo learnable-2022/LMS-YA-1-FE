@@ -1,14 +1,13 @@
 import styles from './ImageRow.module.css';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useContext, useEffect } from 'react';
-import ImageUploadPreview from '../../../../components/ImageUploadPreview/imageUploadPreview';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import ImageUploadPreview from '../../../../components/ImageUploadPreview/ImageUploadPreview';
 import UserContext from '../../../../context/UserContext';
 
 function ImageRow() {
   const { imageData } = useContext(UserContext);
   const { name } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     console.log(name);
