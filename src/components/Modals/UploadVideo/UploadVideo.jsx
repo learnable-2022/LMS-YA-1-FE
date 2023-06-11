@@ -61,7 +61,6 @@ const UploadVideo = ({ handleShow }) => {
   
 
 
-
   const handleUpload = () => {
     const data = {videoPrev: selectedFile,  date: new Date().toUTCString().slice(5, 16)  }
 
