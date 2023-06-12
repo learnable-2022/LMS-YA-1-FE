@@ -7,7 +7,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useLocation, Link } from "react-router-dom";
 import CertNotAdded from "./CertNotAdded";
 
-const CerticateUpload = () => {
+const CerticateUpload = ({ geekNft }) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const name = searchParams.get("name");
@@ -40,7 +40,6 @@ const CerticateUpload = () => {
               <span> {name}</span>
             </h2>
             <CertNotAdded />
-          
           </div>
         </div>
       </div>

@@ -1,19 +1,19 @@
-import DashHeader from '../../../components/DashHeader/DashHeader';
-import Sidebar from '../../../layout/Sidebar/Sidebar';
-import design from './dashboard.module.css';
-import TEST from '../../../assets/Tappi.png';
-import GROUP from '../../../assets/group.png';
-import REWARD from '../../../assets/rewards.png';
-import TASKS from '../../../assets/tasks.png';
-import DashTable from '../../../components/DashTable/DashTable';
-import ScaleMeter from '../../../components/ScaleMeter/ScaleMeter';
-import Dashboard_Card from '../../../components/Dashboard_Card/Dashboard_Card';
-import students from '../../../data/Mock_Student';
-import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
-import DashChart from '../../../components/DashChart/DashChart';
-import LeaderTable from '../../../components/LeaderTable/LeaderTable';
+import DashHeader from "../../../components/DashHeader/DashHeader";
+import Sidebar from "../../../layout/Sidebar/Sidebar";
+import design from "./dashboard.module.css";
+import TEST from "../../../assets/Tappi.png";
+import GROUP from "../../../assets/group.png";
+import REWARD from "../../../assets/rewards.png";
+import TASKS from "../../../assets/tasks.png";
+import DashTable from "../../../components/DashTable/DashTable";
+import ScaleMeter from "../../../components/ScaleMeter/ScaleMeter";
+import Dashboard_Card from "../../../components/Dashboard_Card/Dashboard_Card";
+import students from "../../../data/Mock_Student";
+import ScaleMeter2 from "../../../components/ScaleMeter_2/ScaleMeter";
+import DashChart from "../../../components/DashChart/DashChart";
+import LeaderTable from "../../../components/LeaderTable/LeaderTable";
 
-const Dashboard = () => {
+const Dashboard = ({ WebHandler, account }) => {
   const number = 40;
   const numOfStudents = students.length;
 
@@ -34,54 +34,56 @@ const Dashboard = () => {
           <Sidebar />
           <div className={design.Dashboard_main}>
             <DashHeader
-              style={{ background: '#fff' }}
-              name='Tappi'
-              position='Program Co-ordinator'
+              style={{ background: "#fff" }}
+              name="Tappi"
+              position="Program Co-ordinator"
               img={TEST}
+              WebHandler={WebHandler}
+              account={account}
             />
             <h2>Dashboard</h2>
             <div className={design.Dash_cards}>
               <Dashboard_Card
-                style={{ borderRadius: '8px ' }}
+                style={{ borderRadius: "8px " }}
                 icon={GROUP}
-                title='Total registered students'
+                title="Total registered students"
                 text={numOfStudents}
               />
               <Dashboard_Card
-                style={{ borderRadius: '8px ' }}
+                style={{ borderRadius: "8px " }}
                 icon={REWARD}
-                title='Total rewards earned'
+                title="Total rewards earned"
                 text={numOfStudents}
-                spanner='Gek'
+                spanner="Gek"
                 spanStyle={design.spanStyle}
               />
               <ScaleMeter
                 className={design.first_meter}
-                title='Weekly tasks submitted'
+                title="Weekly tasks submitted"
                 number={number}
-                width='200px'
-                titleStyle={{ marginBottom: '20px' }}
-                height='100px'
-                meterColor='#BED7FA'
-                progressColor='#0C4592'
+                width="200px"
+                titleStyle={{ marginBottom: "20px" }}
+                height="100px"
+                meterColor="#BED7FA"
+                progressColor="#0C4592"
                 coverClass={design.Dash_cover}
                 paragraphStyle={design.Dash_paragraph}
               />
               <div>
                 <Dashboard_Card
                   icon={TASKS}
-                  style={{ borderRadius: '8px 8px 0 0', paddingBottom: '20px' }}
-                  title='Total completed tasks'
+                  style={{ borderRadius: "8px 8px 0 0", paddingBottom: "20px" }}
+                  title="Total completed tasks"
                 />
                 <ScaleMeter2
                   className={design.progress}
-                  width='200px'
+                  width="200px"
                   meterClass={design.meterClass}
                   progressClass={design.progressClass}
                   // digit={digit}
                   number={number}
-                  meterColor='#BED7FA'
-                  progressColor='#0C4592'
+                  meterColor="#BED7FA"
+                  progressColor="#0C4592"
                 />
               </div>
             </div>

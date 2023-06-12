@@ -1,5 +1,7 @@
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-const ConnectButton = () => {
+import Button from "@mui/material/Button";
+
+const ConnectButton = ({ WebHandler, account }) => {
   return (
     <div>
       <button
@@ -14,7 +16,18 @@ const ConnectButton = () => {
           cursor: "pointer",
         }}
       >
-        <AccountBalanceWalletOutlinedIcon /> Connect Wallet
+        {account ? (
+          <Button startIcon={<AccountBalanceWalletOutlinedIcon />}>
+            {account.slice(0, 5) + "..." + account.slice(38, 42)}
+          </Button>
+        ) : (
+          <Button
+            startIcon={<AccountBalanceWalletOutlinedIcon />}
+            onClick={WebHandler}
+          >
+            Connect Wallet
+          </Button>
+        )}
       </button>
     </div>
   );

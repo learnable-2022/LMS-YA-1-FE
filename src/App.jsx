@@ -1,4 +1,3 @@
-
 import Certification from "./pages/Certification/Certification";
 import CerticateUpload from "./pages/Certification/CertificateUpload";
 // import Test from "./components/Modals/Test/Test";
@@ -23,16 +22,67 @@ import students from "./data/Mock_Student";
 import AddWeek from "./components/Modals/AddWeek/AddWeek";
 import UploadVideo from "./components/Modals/UploadVideo/UploadVideo";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard";
-
+import { useCallback, useEffect, useState } from "react";
+import { ethers } from "ethers";
+import geekNftAbi from "../src/contractsData/abis/GeekNFT.json";
+import geekNftAddress from "../src/contractsData/abis/GeekNFT-address.json";
+import geekTokenAbi from "../src/contractsData/abis/GeekToken.json";
+import geekTokenAddress from "../src/contractsData/abis/GeekToken-address.json";
 
 function App() {
+  const [account, setAccount] = useState(null);
+  const [geekNft, setgeekNft] = useState(null);
+  const [geekToken, setgeekToken] = useState(null);
+
+  const WebHandler = useCallback(async () => {
+    // get the account in metamask
+    if (typeof window.ethereum !== "undefined") {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setAccount(accounts[0]);
+
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      // Get Signer
+      const signer = provider.getSigner();
+
+      // Helps Changes account when user switch accounts
+      window.ethereum.on("accountsChanged", async function (accounts) {
+        setAccount(account[0]);
+        await WebHandler();
+      });
+
+      // Get Contracts
+      const geekNftContract = new ethers.Contract(
+        geekNftAddress.address,
+        geekNftAbi.abi,
+        signer
+      );
+      setgeekNft(geekNftContract);
+
+      const geekTokenContract = new ethers.Contract(
+        geekTokenAddress.address,
+        geekTokenAbi.abi,
+        signer
+      );
+      setgeekToken(geekTokenContract);
+    } else {
+      alert("MetaMask Not Installed");
+    }
+  }, [account]);
+  useEffect(() => {
+    WebHandler();
+    console.log(geekNft, geekToken);
+  }, [WebHandler]);
   return (
     <>
       <Routes>
-
         <Route path="/" element={<Home />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={<Dashboard WebHandler={WebHandler} account={account} />}
+        />
         <Route path="/students" element={<Students />} />
         <Route
           path="/student-details/:name"
@@ -54,11 +104,10 @@ function App() {
             element={<VideoNotAdded />}
           />
           <Route path="videos-row/:pathName/:week" element={<VideosRow />} />
-     
         </Route>
         <Route path="/certificate" element={<Certification />} />
         <Route path="/certificate/ImageRow/" element={<ImageRow />} />
-        <Route path="/upload" element={<CerticateUpload  />} />
+        <Route path="/upload" element={<CerticateUpload geekNft={geekNft} />} />
       </Routes>
     </>
   );
