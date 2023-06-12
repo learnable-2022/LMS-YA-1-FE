@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useContext, useRef, useEffect } from 'react';
 import styles from './studentsFlow.module.css';
 import logo from '../../../assets/geek-union.png';
-import img from '../../../assets/side-img.png';
+import img from '../../../assets/StudentSignup.png';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import GoBackBTN from '../../../components/GoBackBTN/GoBackBTN';
 import UserContext from '../../../context/UserContext';
@@ -90,8 +90,8 @@ function SFlowIV() {
         setErrMessage('No Server Response');
       } else if (err.response?.status === 409) {
         setErrMessage('Username or Email Taken');
-      } else {
-        setErrMessage('Registration Failed');
+      } else if (err.response?.status === 400) {
+        setErrMessage(err.response.data.message);
       }
       errRef.current.focus();
     }
@@ -192,7 +192,7 @@ function SFlowIV() {
               <input
                 type='text'
                 id='address'
-                placeholder='Victor'
+                placeholder='0xBBAC6AABCFEBACE'
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 autoComplete='off'

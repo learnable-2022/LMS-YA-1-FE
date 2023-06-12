@@ -2,7 +2,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import styles from './studentsFlow.module.css';
 import logo from '../../../assets/geek-union.png';
-import img from '../../../assets/side-img.png';
+import img from '../../../assets/StudentSignup.png';
 import GoBackBTN from '../../../components/GoBackBTN/GoBackBTN';
 import UserContext from '../../../context/UserContext';
 

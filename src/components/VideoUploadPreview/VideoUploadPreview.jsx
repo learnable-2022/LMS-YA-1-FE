@@ -13,11 +13,16 @@ function VideoUploadPreview({videoPrev, fileName, date }) {
         */
       }
       
-
-      <video controls>
-          <source src={URL.createObjectURL(videoPrev)} />
-      </video>
+      {
+        
+          <video controls>
+            <source src={URL.createObjectURL(videoPrev)} />
+          </video>
+      }
+    
       
+      
+
 
       <section className={styles['file-name-container']}>
         <p className={styles['file-name']}>{fileName}</p>

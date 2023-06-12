@@ -29,20 +29,20 @@ const Sidebar = () => {
 
   // update activeItem based on current location
   useEffect(() => {
-
-    if (location.pathname === "/dashboard") {
-      setActiveItem("dashboard");
-    } else if (location.pathname === "/students") {
-      setActiveItem("students");
-    } else if (location.pathname === "/student-details/:name") {
-      setActiveItem("students");
-    } else if (location.pathname === "/dashboard/leaderboard") {
-      setActiveItem("leaderboard");
-    } else if (location.pathname === "/courses") {
-      setActiveItem("courses");
-    } else if (location.pathname === "/dashboard/settings") {
-      setActiveItem("settings");
-
+    if (location.pathname === '/dashboard') {
+      setActiveItem('dashboard');
+    } else if (location.pathname === '/students') {
+      setActiveItem('students');
+    } else if (location.pathname === '/student-details/:name') {
+      setActiveItem('students');
+    } else if (location.pathname === '/dashboard/leaderboard') {
+      setActiveItem('leaderboard');
+    } else if (location.pathname === '/courses') {
+      setActiveItem('courses');
+    } else if (location.pathname === '/certificate') {
+      setActiveItem('certificate');
+    } else if (location.pathname === '/dashboard/settings') {
+      setActiveItem('settings');
     }
   }, [location]);
 
@@ -118,17 +118,14 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-
-            to="/certificate"
-            style={activeItem === "certificate" ? activeLinkStyle : {}}
+            to='/certificate'
+            style={activeItem === 'certificate' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Certification} />
 
-
               <h3>Certificates</h3>
             </div>
-
           </Link>
         </div>
         <div>
@@ -141,11 +138,9 @@ const Sidebar = () => {
               <img src={Settings} />
 
               <h3>Settings</h3>
-
             </div>
           </Link>
         </div>
-
         <div className={design.Sidebar_tabs} onClick={handleLogout}>
           <img src={Logout} /> <h3>Log out</h3>
         </div>

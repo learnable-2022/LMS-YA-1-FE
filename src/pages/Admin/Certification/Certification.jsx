@@ -1,9 +1,9 @@
-import DashHeader from "../../components/DashHeader/DashHeader";
-import Sidebar from "../../layout/Sidebar/Sidebar";
-import TEST from "../../assets/Tappi.png";
-import design from "./Cetification.module.css";
-import CertficateTable from "../../components/CertificateTable/CertficateTable";
-import { Link } from "react-router-dom";
+import DashHeader from '../../../components/DashHeader/DashHeader';
+import Sidebar from '../../../layout/Sidebar/Sidebar';
+import TEST from '../../../assets/Tappi.png';
+import design from './Cetification.module.css';
+import CertficateTable from '../../../components/CertificateTable/CertficateTable';
+import { Link } from 'react-router-dom';
 
 const Certification = () => {
   return (
@@ -13,14 +13,14 @@ const Certification = () => {
           <Sidebar />
           <div className={design.Students_main}>
             <DashHeader
-              name="Tappi"
-              position="Program Co-ordinator"
+              name='Tappi'
+              position='Program Co-ordinator'
               img={TEST}
             />
 
             <Link
-              to="/certificate"
-              style={{ textDecoration: "none", color: "black" }}
+              to='/certificate'
+              style={{ textDecoration: 'none', color: 'black' }}
             >
               <h2>Certificates</h2>
             </Link>

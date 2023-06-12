@@ -1,4 +1,4 @@
-.signup-pg-1{
+.signup-pg-1 {
   display: flex;
   flex-direction: row;
   align-items: top;
@@ -7,17 +7,17 @@
   height: 100vh;
 }
 
-.signup-pg-1 .right-section-1{
-  width: 45vw;  
+.signup-pg-1 .right-section-1 {
+  width: 50vw;
 }
 
-.signup-pg-1 .right-section-1 img{
+.signup-pg-1 .right-section-1 img {
   width: 100%;
   height: 100%;
 }
 
-.signup-pg-1 .left-section-1{
-  width: 55vw;
+.signup-pg-1 .left-section-1 {
+  width: 50vw;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -26,19 +26,20 @@
   padding-top: 34px;
   padding-bottom: 2px;
 }
- .signup-pg-1 .left-section-1 .logo{
+
+.signup-pg-1 .left-section-1 .logo {
   height: 50.65px;
   width: 59px;
- }
+}
 
-.signup-pg-1 .left-section-1 .title{
+.signup-pg-1 .left-section-1 .title {
   width: 473px;
   font-size: 38px;
   font-weight: 700;
   margin-top: 8px;
 }
 
-.signup-pg-1 .left-section-1 .subtitle{
+.signup-pg-1 .left-section-1 .subtitle {
   width: 299px;
   font-size: 16px;
   font-weight: 400;
@@ -47,11 +48,11 @@
   margin-bottom: 8px;
 }
 
-.signup-pg-1 .left-section-1 .user-choice-container-1{
+.signup-pg-1 .left-section-1 .user-choice-container-1 {
   width: 490px;
   margin-top: 35px;
 }
-.left-section-1 .user-choice-container-1 .instruction-1{
+.left-section-1 .user-choice-container-1 .instruction-1 {
   font-weight: 600;
   font-size: 20px;
   color: black;
@@ -59,18 +60,18 @@
   margin-left: 8px;
 }
 
-.user-choice-container-1 figure{
+.user-choice-container-1 figure {
   height: 60px;
   width: 60px;
   margin-right: 10px;
   border-radius: 10px;
 }
 
-.user-choice-container-1 figure img{
+.user-choice-container-1 figure img {
   height: 90%;
 }
 
-.user-choice-container-1 .user-choice{
+.user-choice-container-1 .user-choice {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -85,13 +86,18 @@
   margin-left: 8px;
 }
 
-.user-choice-container-1 .user-choice article{
+.user-choice-container-1 .user-choice:hover {
+  box-shadow: 0 0 5px #0c4592;
+  border: 1px solid #0c4592;
+}
+
+.user-choice-container-1 .user-choice article {
   height: 100%;
   width: 295px;
   margin-right: 60px;
 }
 
-.user-choice-container-1 .user-choice .user{
+.user-choice-container-1 .user-choice .user {
   width: 190px;
   font-size: 22px;
   font-size: 400;
@@ -100,30 +106,30 @@
   margin-bottom: 2px;
 }
 
-.user-choice-container-1 .user-choice .intention{
+.user-choice-container-1 .user-choice .intention {
   font-size: 16px;
   width: 350px;
   color: #737373;
   text-align: left;
 }
 
-.user-choice-container-1 .user-choice .radio{
+.user-choice-container-1 .user-choice .radio {
   color: blue;
   background: red;
   height: 30px;
 }
 
- .left-section-1 .user-choice-container-1 .next-btn{
+.left-section-1 .user-choice-container-1 .next-btn {
   margin-top: 15px;
   width: 476px;
- }
+}
 
- .signup-pg-1 .form-1{
+.signup-pg-1 .form-1 {
   margin-left: 28px;
- }
+}
 
 .left-section-1 .user-choice-container-1,
-.signup-pg-1 .form-1{
+.signup-pg-1 .form-1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -133,36 +139,42 @@
   margin-bottom: 38px;
 }
 
-
 .form-3 section div input,
 .form-2 section div input,
-.form-1 input{
+.form-1 input {
   width: 372px;
   border-radius: 10px;
   padding: 12px 24px;
   border: 1px solid #737373;
   color: #737373;
   font-size: 16px;
-  font-weight: 300;  
+  font-weight: 300;
   text-align: left;
   margin-bottom: 12px;
 }
 
+.form-3 section div input[type='text']:focus,
+.form-2 section div input[type='text']:focus,
+.form-1 input[type='text']:focus {
+  border-color: #0c4592;
+  outline: none;
+  box-shadow: 0 0 5px #0c4592;
+}
+
 .form-1 label,
 .left-section-1 .form-3 section div label,
-.left-section-1 .form-2 section div label{
+.left-section-1 .form-2 section div label {
   font-size: 18px;
   font-weight: 700;
   color: black;
   margin-bottom: 12px;
 }
 .left-section-1 .form-3 section div input,
-.left-section-1 .form-2 section div input{
+.left-section-1 .form-2 section div input {
   height: 44px;
-  
 }
 
-.form-1 p{
+.form-1 p {
   text-align: left;
   width: 100%;
   font-size: 16px;
@@ -175,28 +187,28 @@
 .left-section-1 .user-choice-container-1 .next-btn,
 .form-3 button,
 .form-2 button,
-.form-1 button{
+.form-1 button {
   width: 100%;
   cursor: pointer;
   border-radius: 10px;
   height: 46px;
-  background: #565655;
+  background: #0c4592;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 400;
   font-size: 16px;
   transition: all 0.4s linear;
 }
 
-.user-choice-container-1 button:hover
-.form-3 button:hover,
+.user-choice-container-1 button:hover .form-3 button:hover,
+.left-section-1 .user-choice-container-1 .next-btn:hover,
 .form-2 button:hover,
-.form-1 button:hover{
+.form-1 button:hover {
   opacity: 0.7;
 }
 
 .left-section-1 .form-3,
-.left-section-1 .form-2{
+.left-section-1 .form-2 {
   margin-bottom: 48px;
 }
 /*----------------------------------------------------------------------------------*/
@@ -218,11 +230,11 @@
 }
 
 .form-3 section div input,
-.form-2 section div input{
+.form-2 section div input {
   width: 100%;
 }
 
-.form-2 p{
+.form-2 p {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -233,11 +245,11 @@
   transition: all 0.4s linear;
 }
 
-.form-2 p:hover{
- font-weight: 700;
+.form-2 p:hover {
+  font-weight: 700;
 }
 
-.left-section-1 .form-3 .checkbox-container{
+.left-section-1 .form-3 .checkbox-container {
   transform: translateY(-28px);
   width: 420px;
 }
@@ -247,7 +259,7 @@
   margin-right: 10px;
 }
 
-.left-section-1 .form-3 p{
+.left-section-1 .form-3 p {
   text-align: left;
   display: inline;
   height: 22px;
@@ -257,23 +269,19 @@
   color: #565655;
 }
 
-
-.form-3 .view-pswd{
+.form-3 .view-pswd {
   margin-left: 210px;
   transform: translateY(-40px);
   cursor: pointer;
 }
 
-
-
-
 /*----------------------------------------------------------------------------------*/
 
-.sign-up-footer{
+.sign-up-footer {
   width: 52%;
 }
 
-.sign-up-footer .progress-container{
+.sign-up-footer .progress-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -282,49 +290,47 @@
 }
 
 .sign-up-footer .current,
-.sign-up-footer .progress{
+.sign-up-footer .progress {
   height: 8px;
   width: 50px;
-  background: #D9D9D9;
+  background: #0c4592;
+  opacity: 0.3;
   margin-right: 10px;
 }
 
-.sign-up-footer .current{
-  background: #909090;
+.sign-up-footer .current {
+  background: #0c4592;
+  opacity: 1;
 }
 
-.sign-up-footer p{
+.sign-up-footer p {
   width: 100%;
   font-size: 20px;
   font-weight: 400;
   text-align: center;
   color: #737373;
-  letter-spacing: .6px;
+  letter-spacing: 0.6px;
 }
 
-.sign-up-footer .login-link{
+.sign-up-footer .login-link {
   margin-left: 6px;
   color: black;
   cursor: pointer;
-  
 }
-
-
 
 /*----------------------------------Mobile---------------------------------------------*/
 @media screen and (max-width: 768px) {
-
   .signup-pg-1 {
     flex-direction: column;
     height: 100vh;
   }
 
   .right-section-1 {
-      display: none;
-      background: #f7f7f7;
+    display: none;
+    background: #f7f7f7;
   }
 
-  .signup-pg-1 .left-section-1{
+  .signup-pg-1 .left-section-1 {
     width: 100%;
     display: block;
     padding-top: 15px;
@@ -334,92 +340,87 @@
     height: 100vh;
   }
 
-  
-
-  .signup-pg-1 .left-section-1 .title{
+  .signup-pg-1 .left-section-1 .title {
     width: 100%;
     font-size: 38px;
   }
 
-  .signup-pg-1 .left-section-1 .subtitle{
-      width: 100%;
-      text-align: center;
+  .signup-pg-1 .left-section-1 .subtitle {
+    width: 100%;
+    text-align: center;
   }
-  .signup-pg-1 .left-section-1 .user-choice-container-1{
+  .signup-pg-1 .left-section-1 .user-choice-container-1 {
     width: 100%;
   }
 
-  .user-choice-container-1 figure{
+  .user-choice-container-1 figure {
     height: 40px;
     width: 40px;
     margin-right: 4px;
   }
 
-  .user-choice-container-1 .user-choice{
+  .user-choice-container-1 .user-choice {
     width: 100%;
     height: 100px;
     align-items: center;
-   
-    
   }
 
-  .user-choice-container-1 .user-choice article{
+  .user-choice-container-1 .user-choice article {
     margin-right: 2px;
     width: 300px;
   }
 
-    .user-choice-container-1 .user-choice .intention{
-      width: 250px;
-    }
-  
- /*---------------------------------------------------------------------------------------------------------*/
- .left-section-1 .form-3,
- .left-section-1 .form-2{
-  width: 100%;
- } 
+  .user-choice-container-1 .user-choice .intention {
+    width: 250px;
+  }
 
- .left-section-1 .form-1{
+  /*---------------------------------------------------------------------------------------------------------*/
+  .left-section-1 .form-3,
+  .left-section-1 .form-2 {
+    width: 100%;
+  }
+
+  .left-section-1 .form-1 {
     width: 90%;
     padding: 0 0;
   }
 
-  .left-section-1 .form-1 input{
+  .left-section-1 .form-1 input {
     width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 11px 24px;
   }
-  
-  .left-section-1 .form-1 p{
-      width: 90%;
-    }
+
+  .left-section-1 .form-1 p {
+    width: 90%;
+  }
 
   .form-2 button,
-  .left-section-1 .form-1 button{
+  .left-section-1 .form-1 button {
     height: 42px;
     width: 90%;
   }
 
   .left-section-1 .form-2 section,
-  .left-section-1 .form-3 section{
+  .left-section-1 .form-3 section {
     display: flex;
     flex-direction: column;
-
   }
 
   .left-section-1 .form-2 input,
-  .left-section-1 .form-3 input{
+  .left-section-1 .form-3 input {
     padding: 11px 24px;
     margin-bottom: 2px;
     width: 100%;
   }
 
-  .left-section-1 .form-3 p{
+  .left-section-1 .form-3 p {
     text-align: center;
     margin-bottom: 20px;
   }
 
-  .left-section-1 .form-3 .checkbox-container{
+  .left-section-1 .form-3 .checkbox-container {
     width: 89vw;
     display: flex;
     flex-direction: column;
@@ -429,32 +430,28 @@
     margin-bottom: 20px;
   }
 
-  .left-section-1 .form-3 .checkbox{
-     margin-bottom: 8px;
-     display: inline-block;
-    
-    }
+  .left-section-1 .form-3 .checkbox {
+    margin-bottom: 8px;
+    display: inline-block;
+  }
 
-  .left-section-1 .form-3 .checkbox-container p{
+  .left-section-1 .form-3 .checkbox-container p {
     display: block;
   }
 
-  .form-3 .view-pswd{
-   transform: translateY(-32px);
-   margin-left: 350px;
+  .form-3 .view-pswd {
+    transform: translateY(-32px);
+    margin-left: 350px;
   }
 
   /*-----------------------------------------------------------------------------------------*/
-  .sign-up-footer{
+  .sign-up-footer {
     width: 100%;
   }
-  .sign-up-footer p{
+  .sign-up-footer p {
     text-align: center;
   }
-
 }
-
-
 
 /*----------------------------------------------------------------------------------------------*/
 .left-section-1 .form-3 div .suggestions {
@@ -498,7 +495,6 @@
   font-weight: bolder;
 }
 
-
 .errmsg {
   background-color: lightpink;
   color: firebrick;
@@ -507,7 +503,7 @@
   margin-bottom: 0.5rem;
 }
 
-.successmsg{
+.successmsg {
   font-weight: bold;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
@@ -515,3 +511,10 @@
   color: #fff;
 }
 
+.login-link {
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: #0c4592;
+}
