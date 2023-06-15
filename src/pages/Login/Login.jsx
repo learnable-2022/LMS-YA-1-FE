@@ -7,10 +7,13 @@ import { Link } from 'react-router-dom';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import axios from 'axios';
 
+import LinkPage from './LinkPage';
+import jwtDecode from 'jwt-decode';
+
 const LOGIN_URL = 'https://lms-zwhm.onrender.com/api/v1/auth/';
 
 const LoginPage = () => {
-  const { setUser } = useContext(UserContext);
+  const { auth, setAuth } = useContext(UserContext);
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -40,16 +43,18 @@ const LoginPage = () => {
     try {
       const response = await axios.post(
         LOGIN_URL,
-        JSON.stringify({ userName: 'kixic', password: '123456' }),
+        JSON.stringify({ userName, password }),
         {
           headers: { 'Content-Type': 'application/json' },
         }
       );
-      console.log(JSON.stringify(response?.data));
+      
+      console.log(jwtDecode(response?.data?.token))
+      setAuth(jwtDecode(response?.data?.token))
       // console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setUser({ userName, password, roles, accessToken });
+      
+
+      
 
       setUserName('');
       setPassword('');
@@ -73,8 +78,10 @@ const LoginPage = () => {
       {success ? (
         <section>
           <h1>You are logged in </h1>
+          {console.log(auth?.role)}
+
           <br />
-          <p>go bavk home</p>
+          <LinkPage />
         </section>
       ) : (
         <section>
