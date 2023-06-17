@@ -3,7 +3,10 @@ import design from "./dashHeader.module.css";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import ConnectButton from "../ConnectButton/ConnectButton";
 
-const DashHeader = ({ img, name, position, style, WebHandler, account }) => {
+const DashHeader = ({ img, name, position, style, onGeeknft }) => {
+  const handleConnectButton = (tokenValue, nftValue) => {
+    onGeeknft(nftValue);
+  };
   return (
     <div className={design.DashHeader} style={style}>
       <div className={design.DashHeader_divide}></div>
@@ -15,7 +18,7 @@ const DashHeader = ({ img, name, position, style, WebHandler, account }) => {
           <h3>{name}</h3>
           <p>{position}</p>
         </div>
-        <ConnectButton WebHandler={WebHandler} account={account} />
+        <ConnectButton onConnected={handleConnectButton} />
       </div>
     </div>
   );
