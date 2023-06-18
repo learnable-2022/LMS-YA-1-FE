@@ -28,9 +28,9 @@ import EduRegIII from './pages/Admin/educatorSignupFlow/EduRegIII';
 import EduRegIV from './pages/Admin/educatorSignupFlow/EduRegIV';
 
 import PublicRoutes from './pages/Login/PublicRoutes';
-import StudentsDash from './pages/Student/studentSignupFlow/StudentsDash';
-import LinkPage from './pages/Login/LinkPage';
-import UnAuthorized from './pages/Login/UnAuthorized';
+import StudentsDash from './pages/Student/studentsDash/StudentsDash';
+import LinkPage from './pages/LinkPage/LinkPage'
+import UnAuthorized from './pages/UnAuthorized/UnAuthorized';
 import UserRoute from './pages/Login/UserRoute';
 
 const ROLES = {

@@ -3,22 +3,16 @@ import { Navigate, Outlet } from 'react-router-dom'
 import UserContext from '../../context/UserContext'
 
 
-function UserRoute({role}) {
+function UserRoute({ role }) {
   const { auth } = useContext(UserContext)
 
-  // To activate the admin panel sign in with an account created with the backend witha role property of Admin
-  // uncomment the code below and navigate to dashboard
-  // auth.role = admin
-  // auth.firstName = Tappi
-
-
-  if (auth?.role === role){
+  if (auth?.role === role || auth?.role === 'admin' ) {
     return <Outlet />
-  }else if(auth?.firstName) {
-    return <Navigate to= {"/unauthorized"} />
+  } else if (auth?._id) {
+    return <Navigate to={"/unauthorized"} />
   }
-  else{
-    return <Navigate to= {"/login"} />
+  else {
+    return <Navigate to={"/login"} />
   }
 }
 

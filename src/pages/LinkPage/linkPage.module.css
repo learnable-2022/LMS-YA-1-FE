@@ -1,0 +1,109 @@
+.linkPage{
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: top;
+  background: #f7f7f7;
+  height: 100vh;
+}
+
+.linkPage .right-section{
+  width: 40vw;
+}
+
+.linkPage .right-section img{
+  width: 100%;
+  height: 100%;
+}
+
+.linkPage .left-section{
+  width: 50vw;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  text-align: center;
+  padding-top: 34px;
+  padding-bottom: 2px;
+}
+
+.linkPage .left-section .logo{
+  height: 50.65px;
+  width: 59px;
+}
+
+.linkPage .left-section .title{
+  width: 473px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 28px;
+}
+
+.linkPage .left-section .subtitle{
+  width: 299px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #737373;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.linkPage .left-section section{
+  margin-top: 115px;
+}
+
+.linkPage .left-section section .link{
+  background: #0c4592;
+  color: #ffff;
+  padding: 8px 150px;
+  margin-bottom: 20px;
+  border: 2px solid #0c4592;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.42 linear;
+}
+
+.linkPage .left-section section .link:hover{
+  background: #ffff;
+  color: #0c4592;
+}
+
+
+@media screen and (max-width: 768px){
+  .linkPage {
+      flex-direction: column;
+      height: 100vh;
+    }
+  
+  .linkPage .right-section{
+      display: none;
+      background: #f7f7f7;
+  }
+
+  .linkPage .left-section{
+      width: 100%;
+      display: block;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 12px;
+      padding-right: 12px;
+      height: 100vh;
+    }
+  
+  .linkPage .left-section .title {
+      width: 100%;
+      font-size: 38px;
+    }
+  
+  .linkPage .left-section .subtitle {
+      width: 100%;
+      text-align: center;
+  }
+
+  .linkPage .left-section section .link {
+      width: 90%;
+      padding: 8px 15px;
+      text-align: center;
+  }
+}

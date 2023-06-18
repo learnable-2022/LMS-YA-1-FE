@@ -9,6 +9,8 @@ https://lms-zwhm.onrender.com/api/v1/auth/
             password: '123456'
 }
 
+STUDENT ACCOUNTS
+
 vic.jsx
 123456
 
@@ -36,10 +38,14 @@ vic.jsx
 8. dwighty
 12345678Aa$
 
-7. CHIKE
-12345Abec@
 
 
+ADMIN ACCOUNTS
+1. marc.boehm
+12345
+
+2. paul25
+12345
 
 
 ETH addresses
