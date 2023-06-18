@@ -1,0 +1,63 @@
+.students-dash{
+  background: #0c4592;
+  color: #ffffff;
+  height: 100vh;
+  padding: 0px 0px;
+  padding-left: 70px;
+  padding-top: 40px; 
+}
+
+.students-dash img{
+  margin-top: 40px;
+  border: 1px solid #eceaea;
+  background: #ffff;
+  border-radius: 16px;
+  height: 180px;
+  padding: 15px;
+}
+.students-dash h3{
+  margin-top: 60px;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.students-dash p{
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 120px;
+  
+}
+
+.students-dash section{
+  display: flex;
+
+}
+
+.students-dash button{
+  color: #0c4592;
+  background: #eceaea;
+  padding: 10px 30px;
+  text-decoration: none;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.42 linear;
+  margin-right: 17px;
+}
+
+.students-dash button:hover{
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px){
+  .students-dash{
+    padding-top: 20px;
+    padding: 0px 20px;
+  }
+
+  .students-dash button{
+    padding: 13px 20px;
+  }
+
+}

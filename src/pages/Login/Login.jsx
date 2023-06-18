@@ -1,18 +1,23 @@
 import { useState, useRef, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import styles from './Login.module.css';
 import Img from '../../assets/StudentSignup.png';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { CircularProgress } from '@mui/material';
 import axios from 'axios';
+
+// import LinkPage from './LinkPage';
+import jwtDecode from 'jwt-decode';
 
 const LOGIN_URL = 'https://lms-zwhm.onrender.com/api/v1/auth/';
 
 const LoginPage = () => {
-  const { setUser } = useContext(UserContext);
-
+  const { auth, setAuth } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
 
   const userRef = useRef();
   const errRef = useRef();
@@ -20,6 +25,7 @@ const LoginPage = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
@@ -38,23 +44,25 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
+        setLoading(true);
+        const response = await axios.post(
         LOGIN_URL,
-        JSON.stringify({ userName: 'kixic', password: '123456' }),
+        JSON.stringify({ userName, password }),
         {
           headers: { 'Content-Type': 'application/json' },
         }
       );
-      console.log(JSON.stringify(response?.data));
-      // console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setUser({ userName, password, roles, accessToken });
+      
+      console.log(jwtDecode(response?.data?.token))
 
+      setAuth(jwtDecode(response?.data?.token))
+      auth['token'] = response?.data?.token
       setUserName('');
       setPassword('');
       setSuccess(true);
+      setTimeout(() => navigate('/linkpage'), 10)
     } catch (error) {
+      setLoading(false);
       if (!error.response) {
         setErrorMsg('No Server Response');
       } else if (error.response?.status === 400) {
@@ -69,21 +77,13 @@ const LoginPage = () => {
   };
 
   return (
-    <>
-      {success ? (
-        <section>
-          <h1>You are logged in </h1>
-          <br />
-          <p>go bavk home</p>
-        </section>
-      ) : (
-        <section>
+      <section>
           <div className={styles['login-page']}>
             <div className={styles['login-section']}>
               <div className={styles.logoArea}>
                 <img src={logo} className={styles.logo} alt='' />
                 <h1>Login</h1>
-                <p>Sign up as either a student or facilitator</p>
+                <p>Sign in as either a student or facilitator</p>
               </div>
               <p
                 ref={errRef}
@@ -134,7 +134,11 @@ const LoginPage = () => {
                   <span> Remember me</span>
                 </p>
                 <button type='submit' className={styles['login-button']}>
-                  Login
+                  {loading ? (
+                      <CircularProgress style={{ color: '#fff' }} size={23} />
+                      ) : (
+                      'Login'
+                    )}
                 </button>
               </form>
               <div className={styles['login-footer']}>
@@ -152,9 +156,9 @@ const LoginPage = () => {
             </div>
           </div>
         </section>
-      )}
-    </>
-  );
-};
+      )    
+    }
+    
+
 
 export default LoginPage;
