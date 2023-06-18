@@ -90,8 +90,8 @@ function SFlowIV() {
         setErrMessage('No Server Response');
       } else if (err.response?.status === 409) {
         setErrMessage('Username or Email Taken');
-      } else {
-        setErrMessage('Registration Failed');
+      } else if (err.response?.status === 400) {
+        setErrMessage(err.response.data.message);
       }
       errRef.current.focus();
     }
@@ -192,7 +192,7 @@ function SFlowIV() {
               <input
                 type='text'
                 id='address'
-                placeholder='Victor'
+                placeholder='0xBBAC6AABCFEBACE'
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 autoComplete='off'

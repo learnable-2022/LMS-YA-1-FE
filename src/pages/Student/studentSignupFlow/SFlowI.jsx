@@ -1,13 +1,16 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import styles from './studentsFlow.module.css';
 import logo from '../../../assets/geek-union.png';
 import img from '../../../assets/StudentSignup.png';
-import user from '../../../assets/user.png';
+import userImg from '../../../assets/user.png';
 import teacher from '../../../assets/buildings.png';
+import UserContext from '../../../context/UserContext';
 
-function SFlowII() {
+function SFlowI() {
+  const { user } = useContext(UserContext);
+
   const [selectedOption, setSelectedOption] = useState('');
   const navigate = useNavigate();
 
@@ -17,8 +20,10 @@ function SFlowII() {
 
   const nextPage = () => {
     if (selectedOption === 'student') {
+      user['role'] = selectedOption;
       navigate('/student-signup-access-key');
     } else if (selectedOption === 'teacher') {
+      user['role'] = selectedOption;
       navigate('/edu-signup');
     }
   };
@@ -37,7 +42,7 @@ function SFlowII() {
 
           <div className={styles['user-choice']}>
             <figure>
-              <img src={user} alt='' />
+              <img src={userImg} alt='' />
             </figure>
             <article>
               <p className={styles['user']}>I am a student</p>
@@ -102,4 +107,4 @@ function SFlowII() {
   );
 }
 
-export default SFlowII;
+export default SFlowI;

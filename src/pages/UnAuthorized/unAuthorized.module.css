@@ -1,0 +1,49 @@
+.unAuth{
+  background: #eceaea;
+  height: 100vh;
+  padding: 20px 4vw;
+  position: relative;
+}
+
+
+
+.unAuth .icon-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.unAuth .icon-section figure img {
+  height: 240px;
+  width: 240px;
+}
+
+.unAuth .icon-section h1 {
+  font-size: 27px;
+  font-weight: 700;
+  color: #252D3F;
+  margin-bottom: 11px;
+  margin-top: 28px;
+}
+
+.unAuth .icon-section p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #0c4592;
+  cursor: pointer;
+}
+
+.unAuth .icon-section a{
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px){
+  .unAuth .icon-section a{
+    text-align: left;
+    margin-top: 60px;
+    margin-right: 30px;
+  }
+
+}
