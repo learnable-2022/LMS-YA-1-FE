@@ -3,13 +3,16 @@ import UserContext from '../../context/UserContext';
 import styles from './Login.module.css';
 import Img from '../../assets/StudentSignup.png';
 import logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
+import Button from '../../components/Button/Button';
 
 const LOGIN_URL = 'https://lms-zwhm.onrender.com/api/v1/auth/';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -21,6 +24,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -38,6 +42,8 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
+      setLoading(true);
+
       const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ userName: 'kixic', password: '123456' }),
@@ -54,6 +60,7 @@ const LoginPage = () => {
       setUserName('');
       setPassword('');
       setSuccess(true);
+      navigate('/admin-dashboard');
     } catch (error) {
       if (!error.response) {
         setErrorMsg('No Server Response');
@@ -65,6 +72,8 @@ const LoginPage = () => {
         setErrorMsg('Login Failed');
       }
       errRef.current.focus();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -133,9 +142,18 @@ const LoginPage = () => {
                   <input type='checkbox' required />
                   <span> Remember me</span>
                 </p>
-                <button type='submit' className={styles['login-button']}>
-                  Login
-                </button>
+
+                <Button
+                  style={{ width: '90%', padding: '10px', marginTop: '30px' }}
+                  content={
+                    loading ? (
+                      <CircularProgress style={{ color: '#fff' }} size={23} />
+                    ) : (
+                      'Login'
+                    )
+                  }
+                  disabled={loading}
+                />
               </form>
               <div className={styles['login-footer']}>
                 <p>

@@ -26,14 +26,23 @@ import Dashboard from './pages/Admin/Dashboard/Dashboard';
 import EduRegII from './pages/Admin/educatorSignupFlow/EduRegII';
 import EduRegIII from './pages/Admin/educatorSignupFlow/EduRegIII';
 import EduRegIV from './pages/Admin/educatorSignupFlow/EduRegIV';
+import Display from './components/Modals/Test/Test';
+import SDashboard from './pages/Student/Dashboard/Dashboard';
+import MyProfile from './pages/Admin/MyProfile/MyProfile';
+import Settings from './pages/Admin/Settings/Settings';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+        {/* <Route path='/' element={<Display />} /> */}
 
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/student-dashboard' element={<SDashboard />} />
+        <Route path='/profile' element={<MyProfile />} />
+        <Route path='/settings' element={<Settings />} />
+
+        <Route path='/admin-dashboard' element={<Dashboard />} />
         <Route path='/students' element={<Students />} />
         <Route
           path='/student-details/:name'
