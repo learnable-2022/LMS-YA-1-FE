@@ -18,7 +18,7 @@ const Settings = () => {
           Settings
         </h2>
         <div data-aos='zoom-in' data-aos-duration='1000'>
-          <h1>MVP 2.0 !! </h1>
+          <h1>Coming Soon !! </h1>
         </div>
       </div>
     </div>
