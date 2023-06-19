@@ -1,0 +1,23 @@
+.Settings_body {
+  display: flex;
+}
+
+.Settings_main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background: #bed7fa;
+}
+
+.Settings_main h2 {
+  padding-left: 50px;
+  margin-top: 40px;
+}
+
+.Settings_main h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  color: #0c4592;
+}

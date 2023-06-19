@@ -1,13 +1,16 @@
-import { useState, useRef, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { Web3Storage } from "web3.storage";
-import AddButton from "../../AddButton/AddButton";
-import design from "./uploadImage.module.css";
-import Upload from "../../../assets/upload.png";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import UserContext from "../../../context/UserContext";
+
+
+import { useState, useRef, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import AddButton from '../../AddButton/AddButton';
+import design from './UploadImage.module.css';
+import Upload from '../../../assets/upload.png';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import UserContext from '../../../context/UserContext';
+
 
 const UploadImage = ({ handleShow, name, geekNftValue, address }) => {
+
   const { setImageData } = useContext(UserContext);
   const [imageNft, setImageNft] = useState(null);
   const [tokenId, setTokenId] = useState(null);
