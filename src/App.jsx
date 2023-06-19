@@ -1,22 +1,28 @@
-import Certification from './pages/Admin/Certification/Certification';
-import CerticateUpload from './pages/Admin/Certification/CertificateUpload';
+import Certification from "./pages/Admin/Certification/Certification";
+import CerticateUpload from "./pages/Admin/Certification/CertificateUpload";
 // import Test from "./components/Modals/Test/Test";
-import ImageRow from './pages/Admin/Certification/ImageRow/ImageRow';
-import Students from './pages/Admin/Students/Students';
-import Home from './pages/Home/Home';
-import { Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/Login/Login';
-import SFlowI from './pages/Student/studentSignupFlow/SFlowI';
-import SFlowII from './pages/Student/studentSignupFlow/SFlowII';
-import SFlowIII from './pages/Student/studentSignupFlow/SFlowIII';
-import SFlowIV from './pages/Student/studentSignupFlow/SFlowIV';
-import StudentDetails from './pages/Admin/StudentDetails/StudentDetails';
-import Layout from './pages/Admin/CourseUpload/DashboardLayout/DashboardLayout';
-import CoursePgI from './pages/Admin/CourseUpload/CoursePgI/CoursePgI';
-import NotAdded from './pages/Admin/CourseUpload/NotAdded/NotAdded';
-import VideoNotAdded from './pages/Admin/CourseUpload/VideoNotAdded/VideoNotAdded';
-import ThumbnailRow from './pages/Admin/CourseUpload/ThumbnailRow/ThumbnailRow';
-import VideosRow from './pages/Admin/CourseUpload/VideosRow/VideosRow';
+import ImageRow from "./pages/Admin/Certification/ImageRow/ImageRow";
+import Students from "./pages/Admin/Students/Students";
+import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/Login/Login";
+import SFlowI from "./pages/Student/studentSignupFlow/SFlowI";
+import SFlowII from "./pages/Student/studentSignupFlow/SFlowII";
+import SFlowIII from "./pages/Student/studentSignupFlow/SFlowIII";
+import SFlowIV from "./pages/Student/studentSignupFlow/SFlowIV";
+import StudentDetails from "./pages/Admin/StudentDetails/StudentDetails";
+import Layout from "./pages/Admin/CourseUpload/DashboardLayout/DashboardLayout";
+import CoursePgI from "./pages/Admin/CourseUpload/CoursePgI/CoursePgI";
+import NotAdded from "./pages/Admin/CourseUpload/NotAdded/NotAdded";
+import VideoNotAdded from "./pages/Admin/CourseUpload/VideoNotAdded/VideoNotAdded";
+import ThumbnailRow from "./pages/Admin/CourseUpload/ThumbnailRow/ThumbnailRow";
+import VideosRow from "./pages/Admin/CourseUpload/VideosRow/VideosRow";
+
+
+import students from "./data/Mock_Student";
+import AddWeek from "./components/Modals/AddWeek/AddWeek";
+import UploadVideo from "./components/Modals/UploadVideo/UploadVideo";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 
 import students from './data/Mock_Student';
 import AddWeek from './components/Modals/AddWeek/AddWeek';
@@ -29,9 +35,10 @@ import Settings from './pages/Admin/Settings/Settings';
 import StudentsDash from './pages/Student/studentsDash/StudentsDash';
 import SDashboard from './pages/Student/Dashboard/Dashboard';
 
-import EduRegII from './pages/Admin/educatorSignupFlow/EduRegII';
-import EduRegIII from './pages/Admin/educatorSignupFlow/EduRegIII';
-import EduRegIV from './pages/Admin/educatorSignupFlow/EduRegIV';
+
+import EduRegII from "./pages/Admin/educatorSignupFlow/EduRegII";
+import EduRegIII from "./pages/Admin/educatorSignupFlow/EduRegIII";
+import EduRegIV from "./pages/Admin/educatorSignupFlow/EduRegIV";
 
 import PublicRoutes from './pages/Login/PublicRoutes';
 import LinkPage from './pages/LinkPage/LinkPage';
@@ -41,12 +48,14 @@ import UserRoute from './pages/Login/UserRoute';
 const ROLES = {
   User: 'student',
   Admin: 'admin',
+
 };
 
 function App() {
   return (
     <>
       <Routes>
+
         <Route path='/' element={<PublicRoutes />}>
           <Route path='' element={<Home />} />
           <Route path='edu-signup' element={<EduRegII />} />
