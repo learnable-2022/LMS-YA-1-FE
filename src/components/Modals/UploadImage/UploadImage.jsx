@@ -1,7 +1,7 @@
 import { useState, useRef, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AddButton from '../../AddButton/AddButton';
-import design from './uploadImage.module.css';
+import design from './UploadImage.module.css';
 import Upload from '../../../assets/upload.png';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import UserContext from '../../../context/UserContext';
