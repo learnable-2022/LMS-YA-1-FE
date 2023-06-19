@@ -24,7 +24,7 @@ function SFlowI() {
       navigate('/student-signup-access-key');
     } else if (selectedOption === 'teacher') {
       user['role'] = selectedOption;
-      navigate('/edu-signup');
+      navigate('/login');
     }
   };
 
