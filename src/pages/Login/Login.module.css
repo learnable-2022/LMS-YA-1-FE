@@ -73,7 +73,7 @@
   margin: 10px;
 }
 
-/* .login-button {
+.login-button {
   padding: 10px;
   background-color: #0c4592;
   color: white;
@@ -88,7 +88,7 @@
 .login-button:hover {
   opacity: 1;
   transition: 0.4s ease;
-} */
+}
 
 .sign-up {
   color: #737373;

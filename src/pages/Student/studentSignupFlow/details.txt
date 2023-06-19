@@ -9,8 +9,13 @@ https://lms-zwhm.onrender.com/api/v1/auth/
             password: '123456'
 }
 
+STUDENT ACCOUNTS
+
 vic.jsx
 123456
+
+'kixic'
+'123456'
 
 1. cathy
 12345678Aa$
@@ -30,11 +35,17 @@ vic.jsx
 6. orally
 12345678Aa$
 
+8. dwighty
+12345678Aa$
 
-7. CHIKE
-12345Abec@
 
 
+ADMIN ACCOUNTS
+1. marc.boehm
+12345
+
+2. paul25
+12345
 
 
 ETH addresses
@@ -66,47 +77,3 @@ console.log(decoded);
  *   exp: 1393286893,
  *   iat: 1393268893  }
  */
-
-
-
- import { useLocation, Navigate, Outlet } from "react-router-dom";
-import AuthContext from '../context/AuthProvider';
-import { useContext } from 'react';
-
-
-function privateRoutes({role}) {
-  const { auth } = useContext(AuthContext);
-  const { location } = useLocation();
-
-  return (
-        auth?.roles?.find(role => allowedRoles?.includes(role))
-            ? <Outlet />
-            : auth?.user
-                ? <Navigate to="/unauthorized" state={{ from: location }} replace />
-                : <Navigate to="/login" state={{ from: location }} replace />
-    );
-  
-}
-
-
-
-
-export default privateRoutes
-
-
-
-import { Outlet } from 'react-router-dom';
-
-
-function PublicRoutes() {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  )
-}
-
-export default PublicRoutes
-
-
-
