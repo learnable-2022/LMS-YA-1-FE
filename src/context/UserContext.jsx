@@ -6,6 +6,10 @@ const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [auth, setAuth] = useState({});
+
+  
+
   const [courses, setCourses] = useState({
     web3: [],
     backend: [],
@@ -17,7 +21,7 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, courses, setCourses, imageData, setImageData }}
+      value={{ user, setUser, courses, setCourses, imageData, setImageData, auth, setAuth }}
     >
       {children}
     </UserContext.Provider>
