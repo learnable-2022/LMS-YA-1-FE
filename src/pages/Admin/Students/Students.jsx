@@ -16,9 +16,15 @@ const Students = () => {
               position='Program Co-ordinator'
               img={TEST}
             />
-            <h2>Students</h2>
+            <h2 data-aos='zoom-in' data-aos-duration='1000'>
+              Students
+            </h2>
 
-            <div className={design.Students_table}>
+            <div
+              className={design.Students_table}
+              data-aos='zoom-in'
+              data-aos-duration='1000'
+            >
               <StudentTable />
             </div>
           </div>

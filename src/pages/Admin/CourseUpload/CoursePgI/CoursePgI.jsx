@@ -7,7 +7,11 @@ import CourseChoice from '../../../../components/CourseChoice/CourseChoice';
 
 function CoursePgI() {
   return (
-    <div className={styles['choices-page']}>
+    <div
+      className={styles['choices-page']}
+      data-aos='zoom-in'
+      data-aos-duration='1000'
+    >
       <h1>Courses</h1>
       <section className={styles['choices-container']}>
         <CourseChoice

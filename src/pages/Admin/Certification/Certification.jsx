@@ -22,10 +22,16 @@ const Certification = () => {
               to='/certificate'
               style={{ textDecoration: 'none', color: 'black' }}
             >
-              <h2>Certificates</h2>
+              <h2 data-aos='zoom-in' data-aos-duration='1000'>
+                Certificates
+              </h2>
             </Link>
 
-            <div className={design.Students_table}>
+            <div
+              className={design.Students_table}
+              data-aos='zoom-in'
+              data-aos-duration='1000'
+            >
               <CertficateTable />
             </div>
           </div>

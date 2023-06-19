@@ -12,43 +12,44 @@ function LinkPage() {
   const { auth } = useContext(UserContext);
 
   const signOut = () => {
-    navigate('/login')
-    setAuth(null)
-  }
-  
-
+    navigate('/login');
+    setAuth(null);
+  };
 
   return (
     <div className={styles['linkPage']}>
-      
       <figure className={styles['right-section']}>
         <img src={img} alt='' />
       </figure>
 
-
       <div className={styles['left-section']}>
         <img className={styles['logo']} src={logo} alt='logo' />
-        <h1 className={styles['title']}> Welcome {auth.firstName} {auth.lastName}</h1>
-        <p className={styles['subtitle']}>Navigate through Geek either as a Student or an Admin</p>
+        <h1 className={styles['title']}>
+          {' '}
+          Welcome {auth.firstName} {auth.lastName}
+        </h1>
+        <p className={styles['subtitle']}>
+          Navigate through Geek either as a Student or an Admin
+        </p>
 
         <section>
           <p> </p>
-          
+
           <div
             onClick={() => navigate('/studentsDash')}
-            className={styles['link']}>
+            className={styles['link']}
+          >
             Student
           </div>
 
           <div
-            onClick={() => navigate('/dashboard')}
-            className={styles['link']}>
+            onClick={() => navigate('/admin-dashboard')}
+            className={styles['link']}
+          >
             Admin
           </div>
 
-          <div
-            onClick={signOut}
-            className={styles['link']}>
+          <div onClick={signOut} className={styles['link']}>
             Sign Out
           </div>
         </section>
