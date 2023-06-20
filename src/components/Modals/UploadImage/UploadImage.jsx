@@ -1,16 +1,13 @@
-
-
-import { useState, useRef, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import AddButton from '../../AddButton/AddButton';
-import design from './UploadImage.module.css';
-import Upload from '../../../assets/upload.png';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import UserContext from '../../../context/UserContext';
-
+import { useState, useRef, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import AddButton from "../../AddButton/AddButton";
+import design from "./UploadImage.module.css";
+import Upload from "../../../assets/upload.png";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import UserContext from "../../../context/UserContext";
+import { Web3Storage } from "web3.storage";
 
 const UploadImage = ({ handleShow, name, geekNftValue, address }) => {
-
   const { setImageData } = useContext(UserContext);
   const [imageNft, setImageNft] = useState(null);
   const [tokenId, setTokenId] = useState(null);
@@ -84,7 +81,10 @@ const UploadImage = ({ handleShow, name, geekNftValue, address }) => {
       if (address == "0x0000000000000000000000000000000000000000") {
         alert("Invalid wallet address");
       } else {
-        await geekNftValue.sendCertificate(address, imageNft);
+        await geekNftValue.sendCertificate(
+          "0x9Fe6A1A762337f76305E0284F2caCE289eFCF7bc",
+          imageNft
+        );
         const tokenId = (
           await geekNftValue.certificateTrack(address)
         ).toString();
