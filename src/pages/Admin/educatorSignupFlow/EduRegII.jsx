@@ -9,7 +9,7 @@ import GoBackBTN from '../../../components/GoBackBTN/GoBackBTN';
 function EduRegII() {
   const navigate = useNavigate();
   const nextPage = () => {
-    navigate('/educator-enter-otp');
+    navigate('/login');
   };
 
   return (

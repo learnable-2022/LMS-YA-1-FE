@@ -17,7 +17,7 @@ const LOGIN_URL = 'https://lms-zwhm.onrender.com/api/v1/auth/';
 const LoginPage = () => {
   const { auth, setAuth } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const userRef = useRef();
   const errRef = useRef();
@@ -44,23 +44,23 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-        setLoading(true);
-        const response = await axios.post(
+      setLoading(true);
+      const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ userName, password }),
         {
           headers: { 'Content-Type': 'application/json' },
         }
       );
-      
-      console.log(jwtDecode(response?.data?.token))
 
-      setAuth(jwtDecode(response?.data?.token))
-      auth['token'] = response?.data?.token
+      console.log(jwtDecode(response?.data?.token));
+
+      setAuth(jwtDecode(response?.data?.token));
+      auth['token'] = response?.data?.token;
       setUserName('');
       setPassword('');
       setSuccess(true);
-      setTimeout(() => navigate('/linkpage'), 10)
+      setTimeout(() => navigate('/linkpage'), 10);
     } catch (error) {
       setLoading(false);
       if (!error.response) {
@@ -77,88 +77,82 @@ const LoginPage = () => {
   };
 
   return (
-      <section>
-          <div className={styles['login-page']}>
-            <div className={styles['login-section']}>
-              <div className={styles.logoArea}>
-                <img src={logo} className={styles.logo} alt='' />
-                <h1>Login</h1>
-                <p>Sign in as either a student or facilitator</p>
-              </div>
-              <p
-                ref={errRef}
-                className={`${styles.errorMsg} ${
-                  errorMsg ? styles.errorMsg : styles.offscreen
-                }`}
-                aria-live='assertive'
-              >
-                {errorMsg}
-              </p>
-              <form className={styles['login-form']} onSubmit={handleSubmit}>
-                <label htmlFor='userName' className={styles['login-label']}>
-                  Username
-                </label>
-                <input
-                  className={styles['login-input']}
-                  type='text'
-                  id='userName'
-                  ref={userRef}
-                  autoComplete='off'
-                  placeholder='Victor'
-                  onChange={(e) => setUserName(e.target.value)}
-                  value={userName}
-                  required
-                />
-                <label htmlFor='password' className={styles['login-label']}>
-                  Password
-                </label>
-                <div className={styles['password-input-container']}>
-                  <input
-                    className={styles['login-input']}
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder='*********'
-                    id='password'
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                    required
-                  />
-                  <span
-                    className={styles['password-toggle']}
-                    onClick={togglePasswordVisibility}
-                  >
-                    <RemoveRedEyeIcon />
-                  </span>
-                </div>
-                <p>
-                  <input type='checkbox' required />
-                  <span> Remember me</span>
-                </p>
-                <button type='submit' className={styles['login-button']}>
-                  {loading ? (
-                      <CircularProgress style={{ color: '#fff' }} size={23} />
-                      ) : (
-                      'Login'
-                    )}
-                </button>
-              </form>
-              <div className={styles['login-footer']}>
-                <p>
-                  Don’t have an account? <Link to='/signup'>Sign up</Link>
-                </p>
-              </div>
-            </div>
-            <div className={styles['image-section']}>
-              <img
-                src={Img}
-                className={styles['login-img']}
-                alt='Login Image'
-              />
-            </div>
+    <section>
+      <div className={styles['login-page']}>
+        <div className={styles['login-section']}>
+          <div className={styles.logoArea}>
+            <img src={logo} className={styles.logo} alt='' />
+            <h1>Login</h1>
+            <p>Sign in as either a student or facilitator</p>
           </div>
-        </section>
-      )    
-    }
-    
-
+          <p
+            ref={errRef}
+            className={`${styles.errorMsg} ${
+              errorMsg ? styles.errorMsg : styles.offscreen
+            }`}
+            aria-live='assertive'
+          >
+            {errorMsg}
+          </p>
+          <form className={styles['login-form']} onSubmit={handleSubmit}>
+            <label htmlFor='userName' className={styles['login-label']}>
+              Username
+            </label>
+            <input
+              className={styles['login-input']}
+              type='text'
+              id='userName'
+              ref={userRef}
+              autoComplete='off'
+              placeholder='victor'
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
+              required
+            />
+            <label htmlFor='password' className={styles['login-label']}>
+              Password
+            </label>
+            <div className={styles['password-input-container']}>
+              <input
+                className={styles['login-input']}
+                type={showPassword ? 'text' : 'password'}
+                placeholder='*********'
+                id='password'
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required
+              />
+              <span
+                className={styles['password-toggle']}
+                onClick={togglePasswordVisibility}
+              >
+                <RemoveRedEyeIcon />
+              </span>
+            </div>
+            <p>
+              <input type='checkbox' />
+              <span> Remember me</span>
+            </p>
+            <button type='submit' className={styles['login-button']}>
+              {loading ? (
+                <CircularProgress style={{ color: '#fff' }} size={23} />
+              ) : (
+                'Login'
+              )}
+            </button>
+          </form>
+          <div className={styles['login-footer']}>
+            <p>
+              Don’t have an account? <Link to='/signup'>Sign up</Link>
+            </p>
+          </div>
+        </div>
+        <div className={styles['image-section']}>
+          <img src={Img} className={styles['login-img']} alt='Login Image' />
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default LoginPage;

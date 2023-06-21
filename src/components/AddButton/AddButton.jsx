@@ -1,5 +1,5 @@
-import design from './addButton.module.css';
-import PropTypes from 'prop-types';
+import design from "./addButton.module.css";
+import PropTypes from "prop-types";
 
 const AddButton = ({ style, content, onClick, id }) => {
   return (

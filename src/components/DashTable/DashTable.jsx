@@ -1,17 +1,35 @@
 import design from './dashTable.module.css';
-import PROFILE from '../../assets/Tappi.png';
+// import PROFILE from '../../assets/Tappi.png';
 import EastIcon from '@mui/icons-material/East';
-import students from '../../data/Mock_Student';
+// import students from '../../data/Mock_Student';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const DashTable = () => {
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
+      );
+      const data = await response.json();
+      setStudents(data.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   const visibleStudents = students.slice(0, 10);
 
   const learningPathOptions = [
-    { label: 'Frontend', value: 'Frontend', color: 'red' },
-    { label: 'Backend', value: 'Backend', color: 'yellow' },
-    { label: 'Web3', value: 'Web3', color: 'green' },
-    { label: 'Product Design', value: 'Product Design', color: 'orange' },
+    { label: 'frontend', value: 'frontend', color: 'red' },
+    { label: 'backend', value: 'backend', color: 'yellow' },
+    { label: 'web3', value: 'web3', color: 'green' },
+    { label: 'product design', value: 'product design', color: 'orange' },
   ];
 
   return (
@@ -25,27 +43,41 @@ const DashTable = () => {
           </tr>
         </thead>
         <tbody className={design.StudentTable_body}>
-          {visibleStudents.map((student, index) => (
-            <tr key={index}>
-              <td className={design.user_flex}>
-                <img src={PROFILE} alt='' className={design.user_profile} />
-
-                {student.name}
-              </td>
-              <td>
-                {student.learningPath}
-                <span
-                  className={design.learningPathDot}
-                  style={{
-                    backgroundColor: learningPathOptions.find(
-                      (option) => option.value === student.learningPath
-                    ).color,
-                  }}
-                ></span>
-              </td>
-              <td>{student.grade}</td>
-            </tr>
-          ))}
+          {visibleStudents.map((student, index) => {
+            const firstName = student.firstName;
+            const lastName = student.lastName;
+            const learningTrack = student.learningTrack;
+            const capitalizedFirstName =
+              firstName.charAt(0).toUpperCase() + firstName.slice(1);
+            const capitalizedLastName =
+              lastName.charAt(0).toUpperCase() + lastName.slice(1);
+            const capitalizedLearningTrack =
+              learningTrack.charAt(0).toUpperCase() + learningTrack.slice(1);
+            return (
+              <tr key={index}>
+                <td className={design.user_flex}>
+                  <img
+                    src={student.avatarUrl}
+                    alt=''
+                    className={design.user_profile}
+                  />
+                  {capitalizedFirstName} {capitalizedLastName}
+                </td>
+                <td>
+                  {capitalizedLearningTrack}
+                  <span
+                    className={design.learningPathDot}
+                    style={{
+                      backgroundColor: learningPathOptions.find(
+                        (option) => option.value === student.learningTrack
+                      ).color,
+                    }}
+                  ></span>
+                </td>
+                <td>{Math.round(student.grade)}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
       <div className={design.DashTable_bottom}>

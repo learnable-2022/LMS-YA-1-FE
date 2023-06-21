@@ -3,13 +3,32 @@ import PROFILE from '../../assets/Tappi.png';
 import GREEN from '../../assets/star1.png';
 import YELLOW from '../../assets/star2.png';
 import GREY from '../../assets/greyStar.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import students from '../../data/Mock_Student';
 
 const LeaderTable = () => {
   const [learningPath, setLearningPath] = useState('Frontend');
+  // const [students, setStudents] = useState([]);
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       'https://lms-zwhm.onrender.com/api/v1/users/scores'
+  //     );
+  //     const data = await response.json();
+
+  //     setStudents(data);
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
 
   const filterStudents = students.filter(
+    // (student) => student.student[0].learningTrack === learningPath
     (student) => student.learningPath === learningPath
   );
   const sortedStudents = filterStudents.sort((a, b) => b.grade - a.grade);
@@ -30,23 +49,24 @@ const LeaderTable = () => {
   };
 
   const learningPathOptions = [
-    { label: 'Frontend', value: 'Frontend', color: 'red' },
-    { label: 'Backend', value: 'Backend', color: 'yellow' },
-    { label: 'Web3', value: 'Web3', color: 'green' },
-    { label: 'Product Design', value: 'Product Design', color: 'orange' },
+    { label: 'frontend', value: 'frontend', color: 'red' },
+    { label: 'backend', value: 'backend', color: 'yellow' },
+    { label: 'web3', value: 'web3', color: 'green' },
+    { label: 'product design', value: 'product design', color: 'orange' },
   ];
 
+  const selectedOption = learningPathOptions.find(
+    (option) => option.value === learningPath
+  );
+
+  const backgroundColor = selectedOption ? selectedOption.color : '';
   return (
     <div className={design.LeaderTable}>
       <h3>
         {learningPath}
         <span
           className={design.learningPathDot}
-          style={{
-            backgroundColor: learningPathOptions.find(
-              (option) => option.value === learningPath
-            ).color,
-          }}
+          style={{ backgroundColor }}
         ></span>
       </h3>
 
@@ -59,17 +79,27 @@ const LeaderTable = () => {
           </tr>
         </thead>
         <tbody className={design.StudentTable_body}>
-          {top5Students.map((student, index) => (
-            <tr key={index}>
-              <td>{renderStarImage(index + 1)}</td>
-              <td className={design.user_flex}>
-                <img src={PROFILE} alt='' className={design.user_profile} />
+          {/* {top5Students.map((student, index) => (
+           
+          ))} */}
 
-                {student.name}
-              </td>
-              <td>{student.grade}</td>
+          {top5Students.length > 0 ? (
+            top5Students.map((student, index) => (
+              <tr key={index}>
+                <td>{renderStarImage(index + 1)}</td>
+                <td className={design.user_flex}>
+                  <img src={PROFILE} alt='' className={design.user_profile} />
+
+                  {student.name}
+                </td>
+                <td>{Math.round(student.grade)}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan='3'>Loading...</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
       <div className={design.LeaderTable_bottom}>

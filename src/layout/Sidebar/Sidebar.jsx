@@ -29,8 +29,10 @@ const Sidebar = () => {
 
   // update activeItem based on current location
   useEffect(() => {
-    if (location.pathname === '/dashboard') {
+    if (location.pathname === '/admin-dashboard') {
       setActiveItem('dashboard');
+    } else if (location.pathname === '/profile') {
+      setActiveItem('profile');
     } else if (location.pathname === '/students') {
       setActiveItem('students');
     } else if (location.pathname === '/student-details/:name') {
@@ -41,7 +43,7 @@ const Sidebar = () => {
       setActiveItem('courses');
     } else if (location.pathname === '/certificate') {
       setActiveItem('certificate');
-    } else if (location.pathname === '/dashboard/settings') {
+    } else if (location.pathname === '/settings') {
       setActiveItem('settings');
     }
   }, [location]);
@@ -65,7 +67,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to='/dashboard'
+            to='/admin-dashboard'
             style={activeItem === 'dashboard' ? activeLinkStyle : {}}
           >
             {' '}
@@ -79,8 +81,8 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to='wallet'
-            style={activeItem === 'wallet' ? activeLinkStyle : {}}
+            to='/profile'
+            style={activeItem === 'profile' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
               <img src={Profile} />
@@ -131,7 +133,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to='settings'
+            to='/settings'
             style={activeItem === 'settings' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
