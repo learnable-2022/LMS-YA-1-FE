@@ -1,6 +1,7 @@
 import styles from './unAuthorized.module.css'
 import { Link } from 'react-router-dom';
 import NOTADDED from '../../assets/notAdded.png'
+import GoBackBTN from '../../components/GoBackBTN/GoBackBTN';
 
 
 function unAuthorized() {
@@ -12,8 +13,8 @@ function unAuthorized() {
         <figure>
           <img src={NOTADDED} alt='icon' />
         </figure>
-        <h1>OOPS! Looks like you do not have access to the Admin Page</h1>
-        <Link to='/studentsDash'><p>Go back to the students page</p> </Link>
+        <h1>OOPS! Looks like you do not have access to the Requested Page</h1>
+        <GoBackBTN />
       </section>
 
     </div>

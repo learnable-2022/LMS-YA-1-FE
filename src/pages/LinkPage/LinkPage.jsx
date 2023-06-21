@@ -12,9 +12,11 @@ function LinkPage() {
   const { auth, setAuth } = useContext(UserContext);
 
   const signOut = () => {
-    navigate('/login');
-    setAuth(null);
-  };
+    navigate('/login')
+    sessionStorage.clear()
+  }
+  
+
 
   return (
     <div className={styles['linkPage']}>
