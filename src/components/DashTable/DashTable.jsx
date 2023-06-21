@@ -1,9 +1,9 @@
-import design from "./dashTable.module.css";
-import PROFILE from "../../assets/Tappi.png";
-import EastIcon from "@mui/icons-material/East";
+import design from './dashTable.module.css';
+// import PROFILE from '../../assets/Tappi.png';
+import EastIcon from '@mui/icons-material/East';
 // import students from '../../data/Mock_Student';
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const DashTable = () => {
   const [students, setStudents] = useState([]);
@@ -15,38 +15,22 @@ const DashTable = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://lms-zwhm.onrender.com/api/v1/users/scores"
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
       );
       const data = await response.json();
-
-      const sortedScores = data.sort((a, b) => {
-        const studentA = a.student[0];
-        const studentB = b.student[0];
-        if (studentA._id < studentB._id) return -1;
-        if (studentA._id > studentB._id) return 1;
-        return 0;
-      });
-      setStudents(sortedScores);
-
-      // setStudents(data);
-      // console.log(data);
+      setStudents(data.data);
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
     }
   };
   const visibleStudents = students.slice(0, 10);
 
   const learningPathOptions = [
-    { label: "frontend", value: "frontend", color: "red" },
-    { label: "backend", value: "backend", color: "yellow" },
-    { label: "web3", value: "web3", color: "green" },
-    { label: "product design", value: "product design", color: "orange" },
+    { label: 'frontend', value: 'frontend', color: 'red' },
+    { label: 'backend', value: 'backend', color: 'yellow' },
+    { label: 'web3', value: 'web3', color: 'green' },
+    { label: 'product design', value: 'product design', color: 'orange' },
   ];
-
-  const handleViewAllStudents = () => {
-    window.scrollTo(0, 0);
-    history.push("/students");
-  };
 
   return (
     <div>
@@ -60,9 +44,9 @@ const DashTable = () => {
         </thead>
         <tbody className={design.StudentTable_body}>
           {visibleStudents.map((student, index) => {
-            const firstName = student.student[0].firstName;
-            const lastName = student.student[0].lastName;
-            const learningTrack = student.student[0].learningTrack;
+            const firstName = student.firstName;
+            const lastName = student.lastName;
+            const learningTrack = student.learningTrack;
             const capitalizedFirstName =
               firstName.charAt(0).toUpperCase() + firstName.slice(1);
             const capitalizedLastName =
@@ -72,7 +56,11 @@ const DashTable = () => {
             return (
               <tr key={index}>
                 <td className={design.user_flex}>
-                  <img src={PROFILE} alt="" className={design.user_profile} />
+                  <img
+                    src={student.avatarUrl}
+                    alt=''
+                    className={design.user_profile}
+                  />
                   {capitalizedFirstName} {capitalizedLastName}
                 </td>
                 <td>
@@ -81,8 +69,7 @@ const DashTable = () => {
                     className={design.learningPathDot}
                     style={{
                       backgroundColor: learningPathOptions.find(
-                        (option) =>
-                          option.value === student.student[0].learningTrack
+                        (option) => option.value === student.learningTrack
                       ).color,
                     }}
                   ></span>
@@ -95,14 +82,10 @@ const DashTable = () => {
       </table>
       <div className={design.DashTable_bottom}>
         <div></div>
-        <Link
-          to="/students"
-          onClick={handleViewAllStudents}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to='/students' style={{ textDecoration: 'none' }}>
           <p>
-            View all{" "}
-            <span style={{ margin: "10px 0 0 10px" }}>
+            View all{' '}
+            <span style={{ margin: '10px 0 0 10px' }}>
               <EastIcon />
             </span>
           </p>

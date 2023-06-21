@@ -27,8 +27,7 @@ const MyTable = () => {
   const rows = [
     { week: 1, task: 'Task 1', score: 80, status: 'Completed' },
     { week: 2, task: 'Task 2', score: 75, status: 'Incomplete' },
-    // Add mock data for remaining rows...
-    // ...
+
     { week: 20, task: 'Task 20', score: 90, status: 'Null' },
   ];
 

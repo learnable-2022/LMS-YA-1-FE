@@ -14,7 +14,8 @@ import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
 
 const StudentDetails = ({ students }) => {
   const { name } = useParams();
-  const student = students.find((student) => student.name === name);
+  const student = students.find((student) => student.firstName === name);
+  // const studentTask = students.find((student) => student.tasks === task);
   const number = student.grade;
   const digit = 10;
 
@@ -27,6 +28,11 @@ const StudentDetails = ({ students }) => {
   if (!student) {
     return <div>Student not found.</div>;
   }
+
+  const learningTrack = student.learningTrack;
+
+  const capitalizedLearningTrack =
+    learningTrack.charAt(0).toUpperCase() + learningTrack.slice(1);
   return (
     <div>
       <div className={design.Students_inner}>
@@ -47,7 +53,7 @@ const StudentDetails = ({ students }) => {
                 <span className={design.chevron}>
                   <ChevronRightIcon />
                 </span>
-                <span className={design.name}>{student.name}</span>
+                <span className={design.name}>{student.firstName}</span>
               </h2>
               <div className={design.Student_wrapper}>
                 <div className={design.Student_left}>
@@ -116,35 +122,39 @@ const StudentDetails = ({ students }) => {
                   <div className={design.Student_full_details}>
                     <div className={design.fullname}>
                       <p>
-                        First name: <span>{student.name}</span>
+                        First name: <span>{student.firstName}</span>
                       </p>
                       <p>
-                        Last name:<span>{student.name}</span>
+                        Last name:<span>{student.lastName}</span>
                       </p>
                     </div>
+                    {/* <p>
+                      Gender:<span>{student.firstName}</span>
+                    </p> */}
                     <p>
-                      Gender:<span>{student.name}</span>
+                      Username:<span>{student.username}</span>
                     </p>
                     <p>
-                      Learning track:<span>{student.learningPath}</span>
+                      Learning track:
+                      <span>{capitalizedLearningTrack}</span>
                     </p>
                     <p>
-                      Email address:<span>{student.name}</span>
+                      Email address:
+                      <span style={{ fontSize: '15px' }}>{student.email}</span>
                     </p>
+
                     <p>
-                      Phone number:<span>{student.name}</span>
-                    </p>
-                    <p>
-                      Address:<span>{student.name}</span>
+                      Address:<span>{student.firstName}</span>
                     </p>
                   </div>
                   <h4>About</h4>
                   <div className={design.Student_full_details}>
                     <p>
-                      Personality test result:<span>{student.name}</span>
+                      Personality test result:
+                      <span>{student.firstName}</span>
                     </p>
                     <p>
-                      Hobbies:<span>{student.name}</span>
+                      Hobbies:<span>{student.firstName}</span>
                     </p>
                   </div>
                 </div>
