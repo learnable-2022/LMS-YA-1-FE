@@ -167,13 +167,13 @@ function Display() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    fetchSecondData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchSecondData = async () => {
     try {
       const response = await fetch(
-        'https://lms-zwhm.onrender.com/api/v1/users'
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
       );
       const data = await response.json();
       setStudents(data.data);
@@ -188,13 +188,14 @@ function Display() {
       <h1>Students</h1>
       <ul>
         {students.map((student) => (
-          <li key={student.id}>
-            {/* {student.student[0].firstName} <br /> */}
+          <li key={student._id}>
+            {student.firstName} <br />
             {/* {student.student[0].lastName} */}
             <br />
             {/* {Math.round(student.grade)} */}
             <br />
-            {student.firstName}
+            {/* {student.avatarU} */}
+            <img src={student.avatarUrl} />
             <hr />
           </li>
         ))}

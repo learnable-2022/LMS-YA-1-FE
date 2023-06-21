@@ -4,6 +4,7 @@ import design from './dashboard.module.css';
 import TEST from '../../../assets/Tappi.png';
 import GROUP from '../../../assets/group.png';
 import REWARD from '../../../assets/rewards.png';
+// import { useEffect, useState } from 'react';
 import TASKS from '../../../assets/tasks.png';
 import DashTable from '../../../components/DashTable/DashTable';
 import ScaleMeter from '../../../components/ScaleMeter/ScaleMeter';
@@ -14,6 +15,23 @@ import DashChart from '../../../components/DashChart/DashChart';
 import LeaderTable from '../../../components/LeaderTable/LeaderTable';
 
 const Dashboard = () => {
+  // const [student, setStudents] = useState([]);
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       'https://lms-zwhm.onrender.com/api/v1/users/students'
+  //     );
+  //     const data = await response.json();
+  //     setStudents(data.data);
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
   const number = 40;
   const numOfStudents = students.length;
 
@@ -23,9 +41,13 @@ const Dashboard = () => {
   const position2 = topStudents[1].grade;
   const position3 = topStudents[2].grade;
 
-  const student1 = topStudents[0].name;
-  const student2 = topStudents[1].name;
-  const student3 = topStudents[2].name;
+  const student1 = topStudents[0].firstName;
+  const student2 = topStudents[1].firstName;
+  const student3 = topStudents[2].firstName;
+
+  const picture1 = topStudents[0].avatarUrl;
+  const picture2 = topStudents[1].avatarUrl;
+  const picture3 = topStudents[2].avatarUrl;
 
   return (
     <div>
@@ -52,7 +74,7 @@ const Dashboard = () => {
                 icon={REWARD}
                 title='Total rewards earned'
                 text={numOfStudents}
-                spanner='Gek'
+                spanner='GEK'
                 spanStyle={design.spanStyle}
               />
               <ScaleMeter
@@ -99,6 +121,9 @@ const Dashboard = () => {
                   student1={student1}
                   student2={student2}
                   student3={student3}
+                  picture1={picture1}
+                  picture2={picture2}
+                  picture3={picture3}
                 />
                 <LeaderTable />
               </div>

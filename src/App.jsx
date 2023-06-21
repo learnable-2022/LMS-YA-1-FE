@@ -18,7 +18,7 @@ import VideoNotAdded from './pages/Admin/CourseUpload/VideoNotAdded/VideoNotAdde
 import ThumbnailRow from './pages/Admin/CourseUpload/ThumbnailRow/ThumbnailRow';
 import VideosRow from './pages/Admin/CourseUpload/VideosRow/VideosRow';
 
-import students from './data/Mock_Student';
+// import students from './data/Mock_Student';
 import AddWeek from './components/Modals/AddWeek/AddWeek';
 import UploadVideo from './components/Modals/UploadVideo/UploadVideo';
 
@@ -38,15 +38,38 @@ import LinkPage from './pages/LinkPage/LinkPage';
 import UnAuthorized from './pages/UnAuthorized/UnAuthorized';
 import UserRoute from './pages/Login/UserRoute';
 
+import { useEffect, useState } from 'react';
+
+// import Display from './components/Modals/Test/Test';
+
 const ROLES = {
   User: 'student',
   Admin: 'admin',
 };
 
 function App() {
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
+      );
+      const data = await response.json();
+      setStudents(data.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
     <>
       <Routes>
+        {/* <Route path='/' element={<Display />} /> */}
         <Route path='/' element={<PublicRoutes />}>
           <Route path='' element={<Home />} />
           <Route path='edu-signup' element={<EduRegII />} />

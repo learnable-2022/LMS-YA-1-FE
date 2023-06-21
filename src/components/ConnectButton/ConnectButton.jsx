@@ -1,19 +1,10 @@
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import design from './connectButton.module.css';
+
 const ConnectButton = () => {
   return (
     <div>
-      <button
-        style={{
-          backgroundColor: "#BED7FA",
-          padding: "10px",
-          border: "none",
-          borderRadius: "10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-        }}
-      >
+      <button className={design.connectBtn}>
         <AccountBalanceWalletOutlinedIcon /> Connect Wallet
       </button>
     </div>

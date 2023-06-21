@@ -130,7 +130,7 @@ const LoginPage = () => {
               </span>
             </div>
             <p>
-              <input type='checkbox' required />
+              <input type='checkbox' />
               <span> Remember me</span>
             </p>
             <button type='submit' className={styles['login-button']}>
