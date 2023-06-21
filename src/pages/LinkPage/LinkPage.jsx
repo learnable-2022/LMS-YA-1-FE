@@ -13,7 +13,7 @@ function LinkPage() {
 
   const signOut = () => {
     navigate('/login')
-    setAuth(null)
+    sessionStorage.clear()
   }
   
 
