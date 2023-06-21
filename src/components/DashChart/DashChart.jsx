@@ -9,6 +9,9 @@ const DashChart = ({
   position1,
   position2,
   position3,
+  picture1,
+  picture2,
+  picture3,
   //   student1,
   //   student2,
   //   student3,
@@ -54,7 +57,7 @@ const DashChart = ({
         </div>
         {/* <p>{student2}</p> */}
 
-        <img src={TEST} className={design.DashCart_User} />
+        <img src={picture2} className={design.DashCart_User} />
       </div>
       <div className={design.DashChart_items}>
         <div style={progressStyle1} className={`${design.rotate}`}>
@@ -63,7 +66,7 @@ const DashChart = ({
         </div>
         {/* <p>{student1}</p> */}
 
-        <img src={TEST} className={design.DashCart_User} />
+        <img src={picture1} className={design.DashCart_User} />
       </div>
       {/* <div> */}
       <div className={design.DashChart_items}>
@@ -73,7 +76,7 @@ const DashChart = ({
           <p>{`${position3}% `}</p>
         </div>
         {/* <p>{student3}</p> */}
-        <img src={TEST} className={design.DashCart_User} />
+        <img src={picture3} className={design.DashCart_User} />
       </div>
       {/* </div> */}
     </div>
@@ -81,12 +84,15 @@ const DashChart = ({
 };
 
 DashChart.propTypes = {
-  position1: PropTypes.object,
-  position2: PropTypes.object,
-  position3: PropTypes.object,
+  position1: PropTypes.number,
+  position2: PropTypes.number,
+  position3: PropTypes.number,
   student1: PropTypes.object,
   student2: PropTypes.object,
   student3: PropTypes.object,
+  picture1: PropTypes.object,
+  picture2: PropTypes.object,
+  picture3: PropTypes.object,
 };
 
 export default DashChart;

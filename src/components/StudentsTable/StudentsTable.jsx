@@ -1,26 +1,31 @@
-import { useState } from 'react';
-import students from '../../data/Mock_Student';
+import { useState, useEffect } from 'react';
+// import students from '../../data/Mock_Student';
 import design from './studentsTable.module.css';
 import Pagination from '@mui/material/Pagination';
-import PROFILE from '../../assets/Tappi.png';
+// import PROFILE from '../../assets/Tappi.png';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 // import { makeStyles } from "@mui/styles";
 
 const StudentTable = () => {
-  //   const useStyles = makeStyles(() => ({
-  //     pagination: {
-  //       "& .MuiPaginationItem-root": {
-  //         backgroundColor: "transparent",
-  //         "&.Mui-selected": {
-  //           backgroundColor: "#0A3775",
-  //           color: "#FFF",
-  //         },
-  //       },
-  //     },
-  //   }));
+  const [students, setStudents] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  //   const classes = useStyles();
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
+      );
+      const data = await response.json();
+      setStudents(data.data);
+      // console.log(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
 
@@ -45,10 +50,6 @@ const StudentTable = () => {
     setLearningPathFilter(event.target.value);
   };
 
-  // const handleTaskFilterChange = (event) => {
-  //   setTaskFilter(event.target.value);
-  // };
-
   const nameOptions = [
     { label: 'A-E', range: ['A', 'B', 'C', 'D', 'E'] },
     { label: 'F-J', range: ['F', 'G', 'H', 'I', 'J'] },
@@ -58,25 +59,19 @@ const StudentTable = () => {
   ];
 
   const learningPathOptions = [
-    { label: 'Frontend', value: 'Frontend', color: 'red' },
-    { label: 'Backend', value: 'Backend', color: 'yellow' },
-    { label: 'Web3', value: 'Web3', color: 'green' },
-    { label: 'Product Design', value: 'Product Design', color: 'orange' },
+    { label: 'frontend', value: 'frontend', color: 'red' },
+    { label: 'backend', value: 'backend', color: 'yellow' },
+    { label: 'web3', value: 'web3', color: 'green' },
+    { label: 'product design', value: 'product design', color: 'orange' },
   ];
 
-  // const taskOptions = [
-  //   { label: 'Project 1', value: 'Project 1' },
-  //   { label: 'Project 2', value: 'Project 2' },
-  //   { label: 'Project 3', value: 'Project 3' },
-  //   { label: 'Project 4', value: 'Project 4' },
-  // ];
   const filteredStudents = students
     .filter((student) => {
-      const nameStart = student.name.charAt(0).toLowerCase();
+      const nameStart = student.firstName.charAt(0).toLowerCase();
       return (
         (nameFilter === '' || nameFilter === nameStart) &&
         (learningPathFilter === '' ||
-          learningPathFilter === student.learningPath)
+          learningPathFilter === student.learningTrack)
         // &&
         // (taskFilter === '' || taskFilter === student.task)
       );
@@ -84,11 +79,13 @@ const StudentTable = () => {
     .filter((student) => {
       if (selectedOption && selectedOption !== '') {
         return (
-          student.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-          student.learningPath === selectedOption
+          student.firstName.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          student.learningTrack === selectedOption
         );
       } else {
-        return student.name.toLowerCase().includes(searchQuery.toLowerCase());
+        return student.firstName
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
       }
     });
 
@@ -147,56 +144,72 @@ const StudentTable = () => {
                 ))}
               </select>
             </th>
-            {/* <th>
-              <select value={taskFilter} onChange={handleTaskFilterChange}>
-                <option value="">Task</option>
-                {taskOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </th> */}
             <th className={design.Grade}>Total scores</th>
             <th className={design.Grade}>Grade</th>
           </tr>
         </thead>
         <tbody className={design.StudentTable_body}>
-          {getCurrentPageStudents().map((student, index) => (
-            <tr key={index}>
-              <td className={design.user_flex}>
-                <img src={PROFILE} alt='' className={design.user_profile} />
-                <Link to={`/student-details/${student.name}`}>
-                  {student.name}
-                </Link>
-              </td>
-              <td>
-                {' '}
-                <Link to={`/student-details/${student.name}`}>
-                  {student.learningPath}
-                  <span
-                    className={design.learningPathDot}
-                    style={{
-                      backgroundColor: learningPathOptions.find(
-                        (option) => option.value === student.learningPath
-                      ).color,
-                    }}
-                  ></span>
-                </Link>
-              </td>
-              <td>
-                <Link to={`/student-details/${student.name}`}>
-                  {student.totalScore}{' '}
-                </Link>
-              </td>
-              <td>
-                {' '}
-                <Link to={`/student-details/${student.name}`}>
-                  {student.grade}{' '}
-                </Link>
+          {getCurrentPageStudents().length > 0 ? (
+            getCurrentPageStudents().map((student, index) => {
+              const firstName = student.firstName;
+              const lastName = student.lastName;
+              const learningTrack = student.learningTrack;
+              const capitalizedFirstName =
+                firstName.charAt(0).toUpperCase() + firstName.slice(1);
+              const capitalizedLastName =
+                lastName.charAt(0).toUpperCase() + lastName.slice(1);
+              const capitalizedLearningTrack =
+                learningTrack.charAt(0).toUpperCase() + learningTrack.slice(1);
+              return (
+                <tr key={index}>
+                  <td className={design.user_flex}>
+                    <img
+                      src={student.avatarUrl}
+                      alt=''
+                      className={design.user_profile}
+                    />
+                    <Link to={`/student-details/${student.firstName}`}>
+                      {capitalizedFirstName} {capitalizedLastName}
+                    </Link>
+                  </td>
+                  <td>
+                    {' '}
+                    <Link to={`/student-details/${student.firstName}`}>
+                      {capitalizedLearningTrack}
+                      <span
+                        className={design.learningPathDot}
+                        style={{
+                          backgroundColor: learningPathOptions.find(
+                            (option) => option.value === student.learningTrack
+                          ).color,
+                        }}
+                      ></span>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to={`/student-details/${student.firstName}`}>
+                      {student.totalScore}{' '}
+                    </Link>
+                  </td>
+                  <td>
+                    {' '}
+                    <Link to={`/student-details/${student.firstName}`}>
+                      {Math.round(student.grade)}{' '}
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr>
+              <td
+                colSpan='4'
+                style={{ textAlign: 'center', padding: '20px auto' }}
+              >
+                Loading...
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
       <div className={design.pageIt}>
