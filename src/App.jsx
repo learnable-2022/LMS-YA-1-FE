@@ -42,10 +42,6 @@ import { useEffect, useState } from 'react';
 
 // import Display from './components/Modals/Test/Test';
 
-import { useEffect, useState } from 'react';
-
-// import Display from './components/Modals/Test/Test';
-
 const ROLES = {
   User: 'student',
   Admin: 'admin',
