@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import design from './dashHeader.module.css';
 import Bell from '../../assets/Bell.png';
 import ConnectButton from '../ConnectButton/ConnectButton';
-const DashHeader = ({ img, name, position, style, onGeeknft }) => {
+const DashHeader = ({ position, style, onGeeknft }) => {
   const handleConnectButton = (tokenValue, nftValue) => {
     onGeeknft(nftValue);
   };
@@ -28,9 +28,8 @@ const DashHeader = ({ img, name, position, style, onGeeknft }) => {
 };
 
 DashHeader.propTypes = {
-  img: PropTypes.string,
   style: PropTypes.object,
-  name: PropTypes.string,
   position: PropTypes.string,
+  onGeeknft: PropTypes.func,
 };
 export default DashHeader;

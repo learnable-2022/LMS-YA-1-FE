@@ -1,7 +1,6 @@
 import DashHeader from '../../../components/DashHeader/DashHeader';
 import Sidebar from '../../../layout/Sidebar/Sidebar';
 import design from './dashboard.module.css';
-import TEST from '../../../assets/Tappi.png';
 import GROUP from '../../../assets/group.png';
 import REWARD from '../../../assets/rewards.png';
 // import { useEffect, useState } from 'react';
@@ -12,6 +11,7 @@ import Dashboard_Card from '../../../components/Dashboard_Card/Dashboard_Card';
 import students from '../../../data/Mock_Student';
 import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
 import DashChart from '../../../components/DashChart/DashChart';
+import PropTypes from 'prop-types';
 import LeaderTable from '../../../components/LeaderTable/LeaderTable';
 
 const Dashboard = ({ WebHandler, account }) => {
@@ -57,9 +57,7 @@ const Dashboard = ({ WebHandler, account }) => {
           <div className={design.Dashboard_main}>
             <DashHeader
               style={{ background: '#fff' }}
-              name='Tappi'
               position='Program Co-ordinator'
-              img={TEST}
               WebHandler={WebHandler}
               account={account}
             />
@@ -135,6 +133,11 @@ const Dashboard = ({ WebHandler, account }) => {
       </div>
     </div>
   );
+};
+
+Dashboard.propTypes = {
+  WebHandler: PropTypes.object,
+  account: PropTypes.object,
 };
 
 export default Dashboard;
