@@ -14,7 +14,7 @@ import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
 import DashChart from '../../../components/DashChart/DashChart';
 import LeaderTable from '../../../components/LeaderTable/LeaderTable';
 
-const Dashboard = () => {
+const Dashboard = ({ WebHandler, account }) => {
   // const [student, setStudents] = useState([]);
 
   // useEffect(() => {
@@ -60,6 +60,8 @@ const Dashboard = () => {
               name='Tappi'
               position='Program Co-ordinator'
               img={TEST}
+              WebHandler={WebHandler}
+              account={account}
             />
             <h2>Dashboard</h2>
             <div className={design.Dash_cards}>

@@ -1,5 +1,5 @@
-import design from './dashboard_Card.module.css';
-import PropTypes from 'prop-types';
+import design from "./dashboard_Card.module.css";
+import PropTypes from "prop-types";
 
 const Dashboard_Card = ({ icon, title, text, style, spanner, spanStyle }) => {
   return (

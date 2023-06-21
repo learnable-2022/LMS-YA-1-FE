@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import design from './dashHeader.module.css';
 import Bell from '../../assets/Bell.png';
 import ConnectButton from '../ConnectButton/ConnectButton';
-
-const DashHeader = ({ img, name, position, style }) => {
+const DashHeader = ({ img, name, position, style, onGeeknft }) => {
+  const handleConnectButton = (tokenValue, nftValue) => {
+    onGeeknft(nftValue);
+  };
   const { auth, setAuth } = useContext(UserContext);
   return (
     <div className={design.DashHeader} style={style}>
@@ -19,7 +21,7 @@ const DashHeader = ({ img, name, position, style }) => {
           </h3>
           <p>{position}</p>
         </div>
-        <ConnectButton />
+        <ConnectButton onConnected={handleConnectButton} />
       </div>
     </div>
   );
