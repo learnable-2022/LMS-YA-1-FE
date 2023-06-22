@@ -12,7 +12,7 @@ const CerticateUpload = () => {
   const [geekNftValue, setgeekNftValue] = useState(null);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const name = searchParams.get("name");
+  const fisrtName = searchParams.get("firstName");
   const handleGeeknft = (nftValue) => {
     setgeekNftValue(nftValue);
   };
@@ -43,9 +43,9 @@ const CerticateUpload = () => {
               </Link>
 
               <KeyboardArrowRightIcon />
-              <span> {name}</span>
+              <span> {fisrtName}</span>
             </h2>
-            <CertNotAdded name={name} geekNftValue={geekNftValue} />
+            <CertNotAdded name={fisrtName} geekNftValue={geekNftValue} />
           </div>
         </div>
       </div>
