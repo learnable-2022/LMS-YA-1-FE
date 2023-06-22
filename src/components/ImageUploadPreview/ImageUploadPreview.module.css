@@ -11,20 +11,9 @@
   margin-bottom: 20px;
   border-bottom: 1px solid #9ea2aa;
 }
-
-.upload-card video {
-  margin-left: 30px;
-  height: 100%;
-  width: 227.69px;
-  background: #252d3f;
-}
-
-.upload-card video source {
-  width: 227.69px;
-}
 .upload-card .file-name-container {
   margin-left: 30px;
-  width: 51%;
+  width: 30%;
 }
 
 .upload-card .file-name-container .file-name {
@@ -32,27 +21,29 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 1%;
+  margin-left: 50px;
 }
 
-.upload-card .file-name-container div {
+.upload-card .upload-card-icon {
   display: flex;
   width: 145px;
   justify-content: space-between;
   margin-top: 10px;
 }
 
-.upload-card .file-name-container div span {
+.upload-card .upload-card-icon span {
   color: #0c4592;
   cursor: pointer;
   font-size: 11px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 70px;
+  margin-left: 40px;
 }
 
-.upload-card .file-name-container div span .icon {
+.upload-card .upload-card-icon span .icon {
   font-size: 20px;
   margin-right: 4px;
 }
@@ -63,6 +54,6 @@
 }
 
 .upload-card .date {
-  margin-left: 10px;
+  margin-left: 150px;
   font-size: 14px;
 }
