@@ -1,12 +1,14 @@
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import Button from "@mui/material/Button";
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import design from './connectButton.module.css';
 
-import { ethers } from "ethers";
-import { useCallback, useEffect, useState } from "react";
-import geekNftAbi from "../../contractsData/abis/GeekNFT.json";
-import geekNftAddress from "../../contractsData/abis/GeekNFT-address.json";
-import geekTokenAbi from "../../contractsData/abis/GeekToken.json";
-import geekTokenAddress from "../../contractsData/abis/GeekToken-address.json";
+import Button from '@mui/material/Button';
+
+import { ethers } from 'ethers';
+import { useCallback, useEffect, useState } from 'react';
+import geekNftAbi from '../../contractsData/abis/GeekNFT.json';
+import geekNftAddress from '../../contractsData/abis/GeekNFT-address.json';
+import geekTokenAbi from '../../contractsData/abis/GeekToken.json';
+import geekTokenAddress from '../../contractsData/abis/GeekToken-address.json';
 
 const ConnectButton = ({ onConnected }) => {
   const [account, setAccount] = useState(null);
@@ -15,9 +17,9 @@ const ConnectButton = ({ onConnected }) => {
 
   const WebHandler = useCallback(async () => {
     // get the account in metamask
-    if (typeof window.ethereum !== "undefined") {
+    if (typeof window.ethereum !== 'undefined') {
       const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
+        method: 'eth_requestAccounts',
       });
       setAccount(accounts[0]);
 
@@ -26,7 +28,7 @@ const ConnectButton = ({ onConnected }) => {
       const signer = provider.getSigner();
 
       // Helps Changes account when user switch accounts
-      window.ethereum.on("accountsChanged", async function (accounts) {
+      window.ethereum.on('accountsChanged', async function (accounts) {
         setAccount(account[0]);
         await WebHandler();
       });
@@ -48,7 +50,7 @@ const ConnectButton = ({ onConnected }) => {
 
       onConnected(geekToken, geekNft);
     } else {
-      alert("MetaMask Not Installed");
+      alert('MetaMask Not Installed');
     }
   }, [account]);
   useEffect(() => {
@@ -57,30 +59,8 @@ const ConnectButton = ({ onConnected }) => {
 
   return (
     <div>
-      <button
-        style={{
-          backgroundColor: "#BED7FA",
-          padding: "10px",
-          border: "none",
-          borderRadius: "10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-        }}
-      >
-        {account ? (
-          <Button startIcon={<AccountBalanceWalletOutlinedIcon />}>
-            {account.slice(0, 5) + "..." + account.slice(38, 42)}
-          </Button>
-        ) : (
-          <Button
-            startIcon={<AccountBalanceWalletOutlinedIcon />}
-            onClick={WebHandler}
-          >
-            Connect Wallet
-          </Button>
-        )}
+      <button className={design.connectBtn}>
+        <AccountBalanceWalletOutlinedIcon /> Connect Wallet
       </button>
     </div>
   );
