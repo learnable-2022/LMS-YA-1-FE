@@ -6,6 +6,7 @@ import Upload from "../../../assets/upload.png";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import UserContext from "../../../context/UserContext";
 import { Web3Storage } from "web3.storage";
+import { Modal, Button } from "@mui/material";
 
 const UploadImage = ({
   handleShow,
@@ -20,6 +21,9 @@ const UploadImage = ({
   const fileInputRef = useRef(null);
   const [imageNft, setImageNft] = useState(null);
   const [tokenId, setTokenId] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+  const [imagePreview, setImagePreview] = useState(null);
 
   const navigate = useNavigate();
 
@@ -34,14 +38,13 @@ const UploadImage = ({
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      if (file.type.startsWith("image/")) {
-        setSelectedFile(file);
-        // console.log("Uploaded image:", file);
-      } else {
-        // console.log("Please select an image file.");
-      }
-    }
+    setSelectedFile(file);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImagePreview(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleDrop = (event) => {
@@ -69,6 +72,9 @@ const UploadImage = ({
     const fileInput = fileInputRef.current;
     const cid = await web3Storage.put(fileInput.files);
     const pathResult = fileInput.files[0].name;
+    setModalContent("");
+
+    setModalOpen(true);
 
     setImageNft(`https://${cid}.ipfs.w3s.link/${pathResult}`);
 
@@ -77,10 +83,10 @@ const UploadImage = ({
     data.append("studentId", studentId);
     try {
       if (imageNft == null) {
-        alert("Oops, try again network issue");
+        setModalContent("Oops, try again network issue");
       } else {
         if (address == "0x0000000000000000000000000000000000000000") {
-          alert("Invalid wallet address");
+          setModalContent("Invalid wallet address");
         } else {
           if ((await geekNftValue.studentCertificateStatus(address)) == true) {
             alert("Oops!! Student has been certified");
@@ -106,6 +112,7 @@ const UploadImage = ({
             if (response.ok) {
               const responseData = await response.json();
               setImageData(responseData);
+              setModalContent("Certificate has been sent to Student");
               setTimeout(() => navigate(`/certificate/ImageRow/`));
             }
           }
@@ -114,6 +121,9 @@ const UploadImage = ({
     } catch (error) {
       console.error(error);
     }
+  };
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -152,9 +162,52 @@ const UploadImage = ({
             accept="image/*"
             onChange={handleFileChange}
           />
+          {selectedFile && (
+            <div>
+              <img
+                src={imagePreview}
+                style={{ width: "150px", height: "110px", marginTop: "10px" }}
+                alt="Selected Image"
+              />
+            </div>
+          )}
         </p>
-      </div>{" "}
+      </div>
+
       <AddButton content="Save" onClick={handleUpload} />
+      <Modal
+        open={modalOpen}
+        onClose={closeModal}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          height: "100vh",
+          marginLeft: "120px",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "20px",
+            borderRadius: "8px",
+            width: "400px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h2 id="modal-title" style={{ color: "white", textAlign: "center" }}>
+            Upload Status
+          </h2>
+          <p id="modal-description">{modalContent}</p>
+          <Button onClick={closeModal}>Close</Button>
+        </div>
+      </Modal>
     </div>
   );
 };
