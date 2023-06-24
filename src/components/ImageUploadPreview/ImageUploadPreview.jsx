@@ -9,7 +9,7 @@ function ImageUploadPreview({ imagePrev, fileName, date }) {
         src={imagePrev}
         alt="Uploaded Image"
         className={styles["image-preview"]}
-        style={{ width: "150px", height: "155px" }}
+        style={{ width: "180px", height: "180px" }}
       />
       <section className={styles["file-name-container"]}>
         <p
@@ -18,15 +18,15 @@ function ImageUploadPreview({ imagePrev, fileName, date }) {
         >
           {truncateFileName(fileName)}
         </p>
+        <div>
+          <span>
+            <RiEyeLine className={styles["icon"]} /> <p>View</p>{" "}
+          </span>
+          <span>
+            <RiDeleteBin6Line className={styles["icon"]} /> <p>Remove</p>{" "}
+          </span>
+        </div>
       </section>
-      <div className={styles["upload-card-icon"]}>
-        <span>
-          <RiEyeLine className={styles["icon"]} /> <p>View</p>{" "}
-        </span>
-        <span>
-          <RiDeleteBin6Line className={styles["icon"]} /> <p>Remove</p>{" "}
-        </span>
-      </div>
 
       <p className={styles["date"]}>{date}</p>
     </div>
@@ -36,14 +36,13 @@ function ImageUploadPreview({ imagePrev, fileName, date }) {
 ImageUploadPreview.propTypes = {
   imagePrev: PropTypes.string.isRequired,
   fileName: PropTypes.string,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string,
 };
-
 
 export default ImageUploadPreview;
 
 function truncateFileName(fileName) {
-  const maxLength = 20; 
+  const maxLength = 20;
   if (fileName.length <= maxLength) {
     return fileName;
   }
