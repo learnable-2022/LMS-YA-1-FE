@@ -186,9 +186,22 @@ const CertficateTable = () => {
                       {student.cohort}
                     </Link>
                   </td>
+
                   <td>
                     <Link
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{
+                        backgroundColor: student.hasCertificate
+                          ? "#C5E7B5"
+                          : "#F5B9B1",
+                        padding: student.hasCertificate
+                          ? "10px 22px"
+                          : "10px 40px",
+                        borderRadius: "20px",
+                        width: "100px",
+                        height: "30px",
+                        textDecoration: "none",
+                        color: "black",
+                      }}
                       to={`${certificationRoute}?firstName=${encodeURIComponent(
                         student.firstName
                       )}&studentId=${encodeURIComponent(student._id)}`}
