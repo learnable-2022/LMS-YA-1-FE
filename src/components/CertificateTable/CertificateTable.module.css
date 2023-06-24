@@ -60,6 +60,8 @@
 .student_table thead > tr > th {
   padding: 15px 0 25px 0;
   cursor: pointer;
+  color: #6E737F;
+  background-color: #F8F8F9;
 }
 
 .student_table thead > tr > th:first-child {
@@ -72,6 +74,9 @@
 
 .student_table thead > tr > th:nth-child(3) {
   padding-left: 7px;
+}
+.student_table thead > tr > th:last-child {
+  padding-left: 20px;
 }
 
 .StudentTable_body tr {
@@ -109,8 +114,8 @@
 }
 
 .paginationSelected {
-  background-color: '#0A3775';
-  color: '#FFF';
+  background-color: "#0A3775";
+  color: "#FFF";
 }
 
 .learningPathDot {
