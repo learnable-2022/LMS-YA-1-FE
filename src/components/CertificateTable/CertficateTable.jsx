@@ -24,7 +24,7 @@ const CertficateTable = () => {
       setLoading(false);
     } catch (error) {
       console.error("Error:", error);
-      setLoading(false);
+      setLoading(true);
     }
   };
 
@@ -137,6 +137,10 @@ const CertficateTable = () => {
                 firstName.charAt(0).toUpperCase() + firstName.slice(1);
               const capitalizedLearningTrack =
                 learningTrack.charAt(0).toUpperCase() + learningTrack.slice(1);
+              const certificationRoute = student.hasCertificate
+                ? "/certificate/ImageRow/"
+                : "/upload";
+
               return (
                 <tr key={index}>
                   <td className={design.user_flex}>
@@ -147,9 +151,9 @@ const CertficateTable = () => {
                     />
                     <Link
                       style={{ textDecoration: "none", color: "black" }}
-                      to={`/upload?firstName=${encodeURIComponent(
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
                         student.firstName
-                      )}`}
+                      )}&studentId=${encodeURIComponent(student._id)}`}
                     >
                       {capitalizedFirstName}
                     </Link>
@@ -157,9 +161,9 @@ const CertficateTable = () => {
                   <td>
                     <Link
                       style={{ textDecoration: "none", color: "black" }}
-                      to={`/upload?firstName=${encodeURIComponent(
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
                         student.firstName
-                      )}`}
+                      )}&studentId=${encodeURIComponent(student._id)}`}
                     >
                       {capitalizedLearningTrack}
                       <span
@@ -175,9 +179,9 @@ const CertficateTable = () => {
                   <td>
                     <Link
                       style={{ textDecoration: "none", color: "black" }}
-                      to={`/upload?firstName=${encodeURIComponent(
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
                         student.firstName
-                      )}`}
+                      )}&studentId=${encodeURIComponent(student._id)}`}
                     >
                       {student.cohort}
                     </Link>
@@ -185,9 +189,9 @@ const CertficateTable = () => {
                   <td>
                     <Link
                       style={{ textDecoration: "none", color: "black" }}
-                      to={`/upload?name=${encodeURIComponent(
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
                         student.firstName
-                      )}`}
+                      )}&studentId=${encodeURIComponent(student._id)}`}
                     >
                       {student.hasCertificate ? "Certified" : "Null"}
                     </Link>

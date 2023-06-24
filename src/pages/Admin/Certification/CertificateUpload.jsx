@@ -6,16 +6,19 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 import { useLocation, Link } from "react-router-dom";
 import CertNotAdded from "./CertNotAdded";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CerticateUpload = () => {
-  const [geekNftValue, setgeekNftValue] = useState(null);
+  const [geekNftValue, setGeekNftValue] = useState(null);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const fisrtName = searchParams.get("firstName");
+  const firstName = searchParams.get("firstName");
+  const studentId = searchParams.get("studentId");
+
   const handleGeeknft = (nftValue) => {
-    setgeekNftValue(nftValue);
+    setGeekNftValue(nftValue);
   };
+
   return (
     <div>
       <div className={design.Students_inner}>
@@ -32,7 +35,7 @@ const CerticateUpload = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                cusor: "pointer",
+                cursor: "pointer",
               }}
             >
               <Link
@@ -41,15 +44,19 @@ const CerticateUpload = () => {
               >
                 <span>Certificates</span>
               </Link>
-
               <KeyboardArrowRightIcon />
-              <span> {fisrtName}</span>
+              <span>{firstName}</span>
             </h2>
-            <CertNotAdded name={fisrtName} geekNftValue={geekNftValue} />
+            <CertNotAdded
+              firstName={firstName}
+              studentId={studentId}
+              geekNftValue={geekNftValue}
+            />
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default CerticateUpload;
