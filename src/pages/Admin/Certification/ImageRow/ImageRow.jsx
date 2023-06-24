@@ -1,5 +1,5 @@
 import styles from "./ImageRow.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import ImageUploadPreview from "../../../../components/ImageUploadPreview/ImageUploadPreview";
 import UserContext from "../../../../context/UserContext";
@@ -12,6 +12,8 @@ function ImageRow() {
   const [avatarUrl, setAvatarUrl] = useState("");
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
+
+  const navigate = useNavigate();
 
   const location = useLocation();
 
@@ -72,6 +74,7 @@ function ImageRow() {
                 marginLeft: "40px",
                 marginTop: "20px",
               }}
+              onClick={() => navigate("/certificate")}
             >
               Certificates
             </h1>
