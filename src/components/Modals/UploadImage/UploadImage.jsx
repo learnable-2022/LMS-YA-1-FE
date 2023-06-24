@@ -76,38 +76,39 @@ const UploadImage = ({
     data.append("image", selectedFile);
     data.append("studentId", studentId);
     try {
-      const response = await fetch(
-        "https://lms-zwhm.onrender.com/api/v1/certificates/",
-        {
-          method: "POST",
-          body: data,
-          headers: {
-            "x-auth-token":
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY3OThmOWViNjk4OTU0MzYzMWE0NTQiLCJpc0FkbWluIjp0cnVlLCJmaXJzdE5hbWUiOiJNYXJjIiwibGFzdE5hbWUiOiJCb2VobSIsImVtYWlsIjoibWFyYy5ib2VobUBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImF2YXRhclVybCI6Imh0dHBzOi8vYXBpLmRpY2ViZWFyLmNvbS81LngvY3Jvb2RsZXMtbmV1dHJhbC9zdmc_c2VlZD1tYXJjLWE3ZnVyLWJvZWhtLWlkaWI1LWV4YW1wbGUtYTdmdXItY29tJnNpemU9MjAwJnJhZGl1cz01MCIsInRvdGFsU2NvcmUiOjAsImhhc0NlcnRpZmljYXRlIjpmYWxzZSwidGl0bGUiOiJQcm9ncmFtIENvcmRpbmF0b3IiLCJjb2hvcnQiOiIyMDIyIiwiaWF0IjoxNjg3NTE0ODU5fQ.BDU1r0_7gKM-4YlwpQoetI-pqs9zIUuQzHEkDuxXneE",
-          },
-        }
-      );
-      if (response.ok) {
-        const responseData = await response.json();
-        setImageData(responseData);
-        setTimeout(() => navigate(`/certificate/ImageRow/`));
-      }
-
       if (imageNft == null) {
-        // alert("Oops, try again");
+        alert("Oops, try again network issue");
       } else {
         if (address == "0x0000000000000000000000000000000000000000") {
           alert("Invalid wallet address");
         } else {
-          // await geekNftValue.sendCertificate(
-          //   "0xC1b634853Cb333D3aD8663715b08f41A3Aec47cc",
-          //   imageNft
-          // );
-          // const tokenId = (
-          //   await geekNftValue.certificateTrack(address)
-          // ).toString();
-          // setTokenId(tokenId);
-          // console.log(tokenId);
+          if ((await geekNftValue.studentCertificateStatus(address)) == true) {
+            alert("Oops!! Student has been certified");
+          } else {
+            await geekNftValue.sendCertificate(address, imageNft);
+            const tokenId = (
+              await geekNftValue.certificateTrack(address)
+            ).toString();
+            setTokenId(tokenId);
+            console.log(tokenId);
+            const response = await fetch(
+              "https://lms-zwhm.onrender.com/api/v1/certificates/",
+              {
+                method: "POST",
+                body: data,
+                headers: {
+                  "x-auth-token":
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY3OThmOWViNjk4OTU0MzYzMWE0NTQiLCJpc0FkbWluIjp0cnVlLCJmaXJzdE5hbWUiOiJNYXJjIiwibGFzdE5hbWUiOiJCb2VobSIsImVtYWlsIjoibWFyYy5ib2VobUBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImF2YXRhclVybCI6Imh0dHBzOi8vYXBpLmRpY2ViZWFyLmNvbS81LngvY3Jvb2RsZXMtbmV1dHJhbC9zdmc_c2VlZD1tYXJjLWE3ZnVyLWJvZWhtLWlkaWI1LWV4YW1wbGUtYTdmdXItY29tJnNpemU9MjAwJnJhZGl1cz01MCIsInRvdGFsU2NvcmUiOjAsImhhc0NlcnRpZmljYXRlIjpmYWxzZSwidGl0bGUiOiJQcm9ncmFtIENvcmRpbmF0b3IiLCJjb2hvcnQiOiIyMDIyIiwiaWF0IjoxNjg3NTE0ODU5fQ.BDU1r0_7gKM-4YlwpQoetI-pqs9zIUuQzHEkDuxXneE",
+                },
+              }
+            );
+
+            if (response.ok) {
+              const responseData = await response.json();
+              setImageData(responseData);
+              setTimeout(() => navigate(`/certificate/ImageRow/`));
+            }
+          }
         }
       }
     } catch (error) {
