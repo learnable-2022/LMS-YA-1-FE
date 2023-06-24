@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import UserContext from '../../context/UserContext';
-import PropTypes from 'prop-types';
-import design from './dashHeader.module.css';
-import Bell from '../../assets/Bell.png';
-import ConnectButton from '../ConnectButton/ConnectButton';
+import { useContext } from "react";
+import UserContext from "../../context/UserContext";
+import PropTypes from "prop-types";
+import design from "./dashHeader.module.css";
+import Bell from "../../assets/Bell.png";
+import ConnectButton from "../ConnectButton/ConnectButton";
 const DashHeader = ({ position, style, onGeeknft }) => {
   const handleConnectButton = (tokenValue, nftValue) => {
     onGeeknft(nftValue);

@@ -4,7 +4,7 @@ import UploadImage from "../../../components/Modals/UploadImage/UploadImage";
 import { useState } from "react";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 
-function CertNotAdded({ studentId }) {
+function CertNotAdded({ studentId, geekNftValue, address }) {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -27,6 +27,8 @@ function CertNotAdded({ studentId }) {
           <UploadImage
             handleShow={() => setIsVisible(false)}
             studentId={studentId}
+            geekNftValue={geekNftValue}
+            address={address}
           />
         ) : null}
       </div>

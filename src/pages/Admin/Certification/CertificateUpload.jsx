@@ -10,10 +10,20 @@ import { useEffect, useState } from "react";
 
 const CerticateUpload = () => {
   const [geekNftValue, setGeekNftValue] = useState(null);
+  const [address, setAddress] = useState(null);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const firstName = searchParams.get("firstName");
   const studentId = searchParams.get("studentId");
+
+  fetch(`https://lms-zwhm.onrender.com/api/v1/users/${studentId}`)
+    .then((response) => response.json())
+    .then((result) => {
+      setAddress(result.data.eth);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
 
   const handleGeeknft = (nftValue) => {
     setGeekNftValue(nftValue);
@@ -51,6 +61,7 @@ const CerticateUpload = () => {
               firstName={firstName}
               studentId={studentId}
               geekNftValue={geekNftValue}
+              address={address}
             />
           </div>
         </div>
