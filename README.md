@@ -40,7 +40,7 @@ It is a Learning Management System designed to help improve the learning experie
    `npm install`
 
 3. Run the server
-   `npm start`
+   `npm run dev`
 
 ## Contact
 
