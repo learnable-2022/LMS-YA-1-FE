@@ -1,5 +1,5 @@
 import styles from "./ImageRow.module.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import ImageUploadPreview from "../../../../components/ImageUploadPreview/ImageUploadPreview";
 import UserContext from "../../../../context/UserContext";
@@ -9,30 +9,38 @@ import TEST from "../../../../assets/Tappi.png";
 
 function ImageRow() {
   const { imageData } = useContext(UserContext);
-  const navigate = useNavigate();
   const [avatarUrl, setAvatarUrl] = useState("");
   const [date, setDate] = useState("");
+  const [name, setName] = useState("");
 
-  const fileName = imageData?.image?.name || "";
+  const location = useLocation();
+
+  const searchParams = new URLSearchParams(location.search);
+  const firstName = searchParams.get("firstName");
+  const studentId = searchParams.get("studentId");
+
+  const fileName = name || imageData?.image?.name || "";
 
   useEffect(() => {
     const fetchImageUrl = async () => {
       try {
         const response = await fetch(
-          "https://lms-zwhm.onrender.com/api/v1/certificates/",
+          `https://lms-zwhm.onrender.com/api/v1/certificates/user/${studentId}`,
           {
             method: "GET",
           }
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("Fetched data:", data);
-          const certificateUrl = data[0]?.certificateUrl || "";
-          console.log("Certificate URL:", certificateUrl);
-          setAvatarUrl(certificateUrl);
-          setDate(new Date().toUTCString().slice(5, 16));
-        } else {
-          console.error("Failed to fetch image URL");
+
+          if (data && data.success && data.data) {
+            const { certificateUrl } = data.data;
+            setAvatarUrl(certificateUrl || "");
+            setDate(new Date().toUTCString().slice(5, 16));
+            setName(firstName);
+          } else {
+            console.error("Invalid data format or missing data");
+          }
         }
       } catch (error) {
         console.error(error);
@@ -40,7 +48,7 @@ function ImageRow() {
     };
 
     fetchImageUrl();
-  }, []);
+  }, [firstName, studentId]);
 
   return (
     <div className={styles["image-row"]}>
@@ -54,8 +62,9 @@ function ImageRow() {
               img={TEST}
             />
 
-            <Link
-              to="/certificate"
+            <h1
+              data-aos="zoom-in"
+              data-aos-duration="1000"
               style={{
                 textDecoration: "none",
                 color: "black",
@@ -64,10 +73,8 @@ function ImageRow() {
                 marginTop: "20px",
               }}
             >
-              <h1 data-aos="zoom-in" data-aos-duration="1000">
-                Certificates
-              </h1>
-            </Link>
+              Certificates
+            </h1>
 
             <article className={styles["image-container-title"]}>
               <span className={styles["learning-material"]}>Image</span>

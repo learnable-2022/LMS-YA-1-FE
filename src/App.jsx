@@ -118,7 +118,7 @@ function App() {
           {/* <Route path="/certificate/ImageRow/" element={<ImageRow />} /> */}
           <Route path="/upload" element={<CerticateUpload />} />
           <Route path="/certificate/ImageRow/" element={<ImageRow />} />
-          {/* <Route path="/certificate/upload" element={<UploadImage />} /> */}
+        
         </Route>
       </Routes>
     </>
