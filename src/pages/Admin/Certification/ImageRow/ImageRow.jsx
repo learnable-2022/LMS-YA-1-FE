@@ -6,8 +6,9 @@ import UserContext from "../../../../context/UserContext";
 import DashHeader from "../../../../components/DashHeader/DashHeader";
 import Sidebar from "../../../../layout/Sidebar/Sidebar";
 import TEST from "../../../../assets/Tappi.png";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-function ImageRow() {
+const ImageRow = () => {
   const { imageData } = useContext(UserContext);
   const [avatarUrl, setAvatarUrl] = useState("");
   const [date, setDate] = useState("");
@@ -73,10 +74,15 @@ function ImageRow() {
                 fontWeight: "bold",
                 marginLeft: "40px",
                 marginTop: "20px",
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
               }}
               onClick={() => navigate("/certificate")}
             >
               Certificates
+              <KeyboardArrowRightIcon />
+              <span>{name}</span>
             </h1>
 
             <article className={styles["image-container-title"]}>
@@ -97,6 +103,6 @@ function ImageRow() {
       </div>
     </div>
   );
-}
+};
 
 export default ImageRow;

@@ -123,7 +123,6 @@ function App() {
             <Route path='videos-row/:pathName/:week' element={<VideosRow />} />
           </Route>
           <Route path='/certificate' element={<Certification />} />
-          {/* <Route path="/certificate/ImageRow/" element={<ImageRow />} /> */}
           <Route path='/upload' element={<CerticateUpload />} />
           <Route path='/certificate/ImageRow/' element={<ImageRow />} />
         </Route>

@@ -30,6 +30,7 @@
   margin: 20px 0 40px 0;
 }
 
+
 .UploadVideo input[type='text']:focus {
   border: 1.9px solid grey;
   outline: none;
