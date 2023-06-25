@@ -7,7 +7,7 @@ import DashHeader from "../../../../components/DashHeader/DashHeader";
 import Sidebar from "../../../../layout/Sidebar/Sidebar";
 import TEST from "../../../../assets/Tappi.png";
 
-function ImageRow() {
+const ImageRow = () => {
   const { imageData } = useContext(UserContext);
   const [avatarUrl, setAvatarUrl] = useState("");
   const [date, setDate] = useState("");
@@ -97,6 +97,6 @@ function ImageRow() {
       </div>
     </div>
   );
-}
+};
 
 export default ImageRow;
