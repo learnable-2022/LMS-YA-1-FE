@@ -18,14 +18,14 @@ function ImageUploadPreview({ imagePrev, fileName, date }) {
         >
           {truncateFileName(fileName)}
         </p>
-        <div>
+        {/* <div>
           <span>
             <RiEyeLine className={styles["icon"]} /> <p>View</p>{" "}
           </span>
           <span>
             <RiDeleteBin6Line className={styles["icon"]} /> <p>Remove</p>{" "}
           </span>
-        </div>
+        </div> */}
       </section>
 
       <p className={styles["date"]}>{date}</p>
