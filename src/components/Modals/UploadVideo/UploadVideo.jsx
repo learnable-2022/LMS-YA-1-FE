@@ -12,8 +12,10 @@ const UploadVideo = ({ handleShow }) => {
   const fileInputRef = useRef(null);
 
   const { pathName, week } = useParams()
-  const { courses } = useContext(UserContext)
+  const { courses, title } = useContext(UserContext)
   const navigate = useNavigate()
+
+  const token = JSON.parse(localStorage.getItem('token'))
 
   const handleFileSelect = () => {
     fileInputRef.current.click();
@@ -51,6 +53,9 @@ const UploadVideo = ({ handleShow }) => {
     setIsHovered(false);
   };
 
+  
+ 
+
   if(pathName === "Frontend" ){
     courses.frontend.map((item) => {
         if(item.timeFrame === week){
@@ -61,8 +66,32 @@ const UploadVideo = ({ handleShow }) => {
   
 
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     const data = {videoPrev: selectedFile,  date: new Date().toUTCString().slice(5, 16)  }
+
+    const webdata = new FormData();
+
+    // new Date().toUTCString().slice(5, 16)
+    
+  
+    webdata.append("learningTrack", pathName)
+    webdata.append("week", title.timeFrame)
+    webdata.append("courseTitle", title.courseTitle)
+    webdata.append("description", title.img)
+    webdata.append("video", selectedFile)
+   
+    console.log(title)
+    
+
+     const response = await fetch("https://lms-zwhm.onrender.com/api/v1/courses", {
+      method: "POST",
+      headers: { 
+        'x-auth-token': token
+      },
+      body: webdata,
+    })
+      .catch((error) => console.error(error))
+      console.log(response)
 
     if(pathName === "Frontend" ){
       courses.frontend.map((item) => {

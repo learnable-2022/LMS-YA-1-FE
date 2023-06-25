@@ -52,15 +52,17 @@ const LoginPage = () => {
           headers: { 'Content-Type': 'application/json' },
         }
       );
-
+      //console.log(response?.data)
       console.log(jwtDecode(response?.data?.token));
 
       setAuth(jwtDecode(response?.data?.token));
-      auth['token'] = response?.data?.token;
+      localStorage.setItem('token', JSON.stringify(response?.data?.token))
+      
       setUserName('');
       setPassword('');
       setSuccess(true);
       setTimeout(() => navigate('/linkpage'), 10);
+
     } catch (error) {
       setLoading(false);
       if (!error.response) {
