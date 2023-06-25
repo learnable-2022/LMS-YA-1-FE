@@ -11,9 +11,9 @@ const UploadVideo = ({ handleShow }) => {
   const [isHovered, setIsHovered] = useState(false);
   const fileInputRef = useRef(null);
 
-  const { pathName, week } = useParams()
-  const { courses } = useContext(UserContext)
-  const navigate = useNavigate()
+  const { pathName, week } = useParams();
+  const { courses } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleFileSelect = () => {
     fileInputRef.current.click();
@@ -51,94 +51,104 @@ const UploadVideo = ({ handleShow }) => {
     setIsHovered(false);
   };
 
-  if(pathName === "Frontend" ){
+  if (pathName === 'Frontend') {
     courses.frontend.map((item) => {
-        if(item.timeFrame === week){
-          
-        }
-      })
+      if (item.timeFrame === week) {
+      }
+    });
   }
-  
-
 
   const handleUpload = () => {
-    const data = {videoPrev: selectedFile,  date: new Date().toUTCString().slice(5, 16)  }
+    const data = {
+      videoPrev: selectedFile,
+      date: new Date().toUTCString().slice(5, 16),
+    };
 
-    if(pathName === "Frontend" ){
+    if (pathName === 'Frontend') {
       courses.frontend.map((item) => {
-        if(item.timeFrame === week){
-          data['fileName'] =  item.courseTitle + ".mp4"
-          item.videos.push(data)
-      }})
-    }else if (pathName === 'Product design'){
+        if (item.timeFrame === week) {
+          data['fileName'] = item.courseTitle + '.mp4';
+          item.videos.push(data);
+        }
+      });
+    } else if (pathName === 'Product design') {
       courses.productDesign.map((item) => {
-        if(item.timeFrame === week){
-          data['fileName'] =  item.courseTitle + ".mp4"
-          item.videos.push(data)
-      }})
-    }else if(pathName === 'Backend'){
+        if (item.timeFrame === week) {
+          data['fileName'] = item.courseTitle + '.mp4';
+          item.videos.push(data);
+        }
+      });
+    } else if (pathName === 'Backend') {
       courses.backend.map((item) => {
-        if(item.timeFrame === week){
-          data['fileName'] =  item.courseTitle + ".mp4"
-          item.videos.push(data)
-      }})
-    }else if(pathName === "Web 3"){
+        if (item.timeFrame === week) {
+          data['fileName'] = item.courseTitle + '.mp4';
+          item.videos.push(data);
+        }
+      });
+    } else if (pathName === 'Web 3') {
       courses.web3.map((item) => {
-        if(item.timeFrame === week){
-          data['fileName'] =  item.courseTitle + ".mp4"
-          item.videos.push(data)
-      }})
+        if (item.timeFrame === week) {
+          data['fileName'] = item.courseTitle + '.mp4';
+          item.videos.push(data);
+        }
+      });
     }
-    setTimeout(() =>  navigate('/courses/videos-row/' + pathName + '/' + week), 10)
-  }
-  
+    setTimeout(
+      () => navigate('/courses/videos-row/' + pathName + '/' + week),
+      10
+    );
+  };
 
   return (
-    <div className={design.UploadVideo}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <div></div>
-        <HighlightOffIcon
-          onClick={handleShow}
+    <div className={design.overlay}>
+      <div className={design.UploadVideo}>
+        <div
           style={{
-            cursor: 'pointer',
-            color: '#292D32',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
-        />
-      </div>
-      <div
-        className={`${design.upload} ${isHovered ? design.uploadHovered : ''}`}
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-      >
-        <img src={Upload} alt='' />
-
-        <p>
-          Drag & drop or <span onClick={handleFileSelect}>choose file</span> to
-          upload video.
-          <input
-            type='file'
-            ref={fileInputRef}
-            style={{ display: 'none' }}
-            accept='video/*'
-            onChange={handleFileChange}
+        >
+          <div></div>
+          <HighlightOffIcon
+            onClick={handleShow}
+            style={{
+              cursor: 'pointer',
+              color: '#292D32',
+            }}
           />
-        </p>
-      </div>{' '}
-      {selectedFile && (
-        <div>
-          <p>{selectedFile.name}</p>
         </div>
-      )}
-      <AddButton content='Save' onClick={handleUpload} />{' '}
+        <div
+          className={`${design.upload} ${
+            isHovered ? design.uploadHovered : ''
+          }`}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+        >
+          <img src={Upload} alt='' />
+
+          <p>
+            Drag & drop or <span onClick={handleFileSelect}>choose file</span>{' '}
+            to upload video.
+            <input
+              type='file'
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              accept='video/*'
+              onChange={handleFileChange}
+            />
+          </p>
+        </div>{' '}
+        {selectedFile && (
+          <div>
+            <p>{selectedFile.name}</p>
+          </div>
+        )}
+        <AddButton content='Save' onClick={handleUpload} />{' '}
+      </div>
     </div>
-  ) 
+  );
 };
 
 export default UploadVideo;

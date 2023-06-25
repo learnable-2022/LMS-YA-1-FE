@@ -43,11 +43,15 @@ const Sidebar = () => {
       setActiveItem('teams');
     } else if (location.pathname === '/meeting') {
       setActiveItem('meeting');
-    } else if (location.pathname === '/students') {
+    } else if (
+      location.pathname === '/students' ||
+      location.pathname.startsWith('/student-details/')
+    ) {
       setActiveItem('students');
-    } else if (location.pathname === '/student-details/:name') {
-      setActiveItem('students');
-    } else if (location.pathname === '/certificate') {
+    } else if (
+      location.pathname === '/certificate' ||
+      location.pathname.startsWith('/certificate')
+    ) {
       setActiveItem('certificate');
     } else if (location.pathname === '/chat') {
       setActiveItem('chat');

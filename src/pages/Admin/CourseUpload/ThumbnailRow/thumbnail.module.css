@@ -1,4 +1,4 @@
-.thumbnail-row{
+.thumbnail-row {
   padding: 20px 4vw;
   position: relative;
 }
@@ -14,10 +14,7 @@
   margin-bottom: 36px;
 }
 
-.thumbnail-row .thumbnails-container{
+.thumbnails-container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-wrap: wrap;
 }
