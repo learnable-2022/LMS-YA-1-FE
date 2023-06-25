@@ -1,8 +1,8 @@
 import Sidebar from '../../../layout/Sidebar/Sidebar';
-import design from './myProfile.module.css';
+import design from './teams.module.css';
 import DashHeader from '../../../components/DashHeader/DashHeader';
 
-const MyProfile = () => {
+const Teams = () => {
   return (
     <div className={design.Profile_body}>
       <Sidebar />
@@ -12,7 +12,7 @@ const MyProfile = () => {
           position='Program Co-ordinator'
         />
         <h2 data-aos='zoom-in' data-aos-duration='1000'>
-          Profile
+          Teams
         </h2>
         <div data-aos='zoom-in' data-aos-duration='1000'>
           <h1>Coming Soon !! </h1>
@@ -22,4 +22,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default Teams;

@@ -9,7 +9,7 @@
 }
 
 .SideLogo {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding: 10px;
   width: 150px;
   object-fit: cover;
@@ -31,8 +31,8 @@
   display: flex;
   align-items: center;
   color: #fff;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
   text-decoration: none;
   border-radius: 8px 0 0 8px;
   cursor: pointer;
@@ -41,6 +41,7 @@
 .Sidebar_tabs h3 {
   margin-left: 15px;
   font-weight: 500;
+  font-size: 17px;
 }
 
 .Sidebar_tabs_inner {

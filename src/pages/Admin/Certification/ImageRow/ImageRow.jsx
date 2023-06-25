@@ -6,6 +6,7 @@ import UserContext from "../../../../context/UserContext";
 import DashHeader from "../../../../components/DashHeader/DashHeader";
 import Sidebar from "../../../../layout/Sidebar/Sidebar";
 import TEST from "../../../../assets/Tappi.png";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const ImageRow = () => {
   const { imageData } = useContext(UserContext);
@@ -73,10 +74,15 @@ const ImageRow = () => {
                 fontWeight: "bold",
                 marginLeft: "40px",
                 marginTop: "20px",
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
               }}
               onClick={() => navigate("/certificate")}
             >
               Certificates
+              <KeyboardArrowRightIcon />
+              <span>{name}</span>
             </h1>
 
             <article className={styles["image-container-title"]}>
