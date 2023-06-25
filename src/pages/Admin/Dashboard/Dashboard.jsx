@@ -3,7 +3,7 @@ import Sidebar from '../../../layout/Sidebar/Sidebar';
 import design from './dashboard.module.css';
 import GROUP from '../../../assets/group.png';
 import REWARD from '../../../assets/rewards.png';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TASKS from '../../../assets/tasks.png';
 import DashTable from '../../../components/DashTable/DashTable';
 import ScaleMeter from '../../../components/ScaleMeter/ScaleMeter';
@@ -15,25 +15,25 @@ import PropTypes from 'prop-types';
 import LeaderTable from '../../../components/LeaderTable/LeaderTable';
 
 const Dashboard = ({ WebHandler, account }) => {
-  // const [student, setStudents] = useState([]);
+  const [student, setStudents] = useState([]);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       'https://lms-zwhm.onrender.com/api/v1/users/students'
-  //     );
-  //     const data = await response.json();
-  //     setStudents(data.data);
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
+      );
+      const data = await response.json();
+      setStudents(data.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   const number = 40;
-  const numOfStudents = students.length;
+  const numOfStudents = student.length;
 
   const topStudents = students.sort((a, b) => b.grade - a.grade).slice(0, 3);
 
