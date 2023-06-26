@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AddButton from '../../AddButton/AddButton';
 import design from './addWeek.module.css';
@@ -10,47 +10,22 @@ const AddWeek = ({ handleShow }) => {
   const { courses } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const token = JSON.parse(localStorage.getItem('token'));
-
   const [timeFrame, setTimeFrame] = useState('');
   const [courseTitle, setCourseTitle] = useState('');
   const [img, setImg] = useState('');
-  const [image, setImage] = useState('');
-  const fileInputRef = useRef(null);
 
   const handleThumbnailChange = (event) => {
     const file = event.target.files[0];
-    setImage(file);
-
     const reader = new FileReader();
-    reader.readAsDataURL(file);
     reader.onload = () => {
       setImg(reader.result);
     };
+    reader.readAsDataURL(file);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const data = { timeFrame, img, courseTitle, videos: [] };
-
-    const webdata = new FormData();
-    webdata.append('week', timeFrame);
-    webdata.append('image', image);
-    webdata.append('learningTrack', pathName);
-    webdata.append('courseTitle', courseTitle);
-
-    const response = await fetch(
-      'https://lms-zwhm.onrender.com/api/v1/thumbnails',
-      {
-        method: 'POST',
-        headers: {
-          'x-auth-token': token,
-        },
-        body: webdata,
-      }
-    ).catch((error) => console.error(error));
-
-    console.log(response);
 
     if (pathName === 'Frontend') {
       courses.frontend.push(data);
@@ -123,7 +98,6 @@ const AddWeek = ({ handleShow }) => {
             type='file'
             id='thumbnail'
             name='thumbnail'
-            ref={fileInputRef}
             required
             accept='image/*'
             onChange={handleThumbnailChange}
