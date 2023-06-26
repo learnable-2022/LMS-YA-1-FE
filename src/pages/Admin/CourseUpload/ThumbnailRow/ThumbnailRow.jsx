@@ -1,10 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
-import ThumbnailCard from "../../../../components/ThumbnailCard/ThumbnailCard";
-import styles from "./thumbnail.module.css";
-import AddBTN from "../../../../components/AddBTN/AddBTN";
-import AddWeek from "../../../../components/Modals/AddWeek/AddWeek";
-import { useState, useContext } from "react";
-import UserContext from "../../../../context/UserContext";
+import { useParams, useNavigate } from 'react-router-dom';
+import ThumbnailCard from '../../../../components/ThumbnailCard/ThumbnailCard';
+import styles from './thumbnail.module.css';
+import AddBTN from '../../../../components/AddBTN/AddBTN';
+import AddWeek from '../../../../components/Modals/AddWeek/AddWeek';
+import { useState, useContext } from 'react';
+import UserContext from '../../../../context/UserContext';
 
 function ThumbnailRow() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,25 +13,25 @@ function ThumbnailRow() {
   const { courses } = useContext(UserContext);
 
   let data;
-  if (pathName === "Product design") {
+  if (pathName === 'Product design') {
     data = courses.productDesign;
-  } else if (pathName === "Frontend") {
+  } else if (pathName === 'Frontend') {
     data = courses.frontend;
-  } else if (pathName === "Backend") {
+  } else if (pathName === 'Backend') {
     data = courses.backend;
-  } else if (pathName === "Web 3") {
+  } else if (pathName === 'Web 3') {
     data = courses.web3;
   }
 
   return (
-    <div className={styles["thumbnail-row"]}>
+    <div className={styles['thumbnail-row']}>
       <h1>
-        {" "}
-        <span onClick={() => navigate("/courses")}> Courses</span> &gt;{" "}
-        {pathName}{" "}
+        {' '}
+        <span onClick={() => navigate('/courses')}> Courses</span> &gt;{' '}
+        {pathName}{' '}
       </h1>
 
-      <section className={styles["thumbnails-container"]}>
+      <section className={styles['thumbnails-container']}>
         {data.length !== 0
           ? data.map((item, index) => (
               <ThumbnailCard

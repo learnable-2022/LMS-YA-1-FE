@@ -17,7 +17,6 @@ import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 
-
 const Sidebar = () => {
   const reloadPage = () => {
     window.location.reload();
