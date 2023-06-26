@@ -81,7 +81,7 @@ function VideosRow() {
             ? data.map((item, index) => (
                 <VideoUploadPreview
                   videoPrev={item.videoPrev}
-                  fileName={item.fileName}
+                  fileName={`${index + 1}. ` + item.fileName}
                   date={item.date}
                   key={index}
                 />
