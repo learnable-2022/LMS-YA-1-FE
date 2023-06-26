@@ -1,7 +1,7 @@
 .connectBtn {
-  background-color: #bed7fa;
+  background-color: #fff;
   padding: 7px 15px;
-  border: 2px solid #bed7fa;
+  border: 1px solid #bed7fa;
   border-radius: 7px;
   display: flex;
   align-items: center;

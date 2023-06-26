@@ -43,13 +43,19 @@
 
 .upload-btn {
   background-color: #0c4592;
+  border: 1px solid #0c4592;
   color: white;
   padding: 15px 18px;
-  border: none;
   border-radius: 5px;
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #fff;
+  color: #0c4592;
+  transition: 0.4s ease;
 }
 
 .upload-cont {

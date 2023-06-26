@@ -76,3 +76,8 @@
 .image-container-title .date {
   margin-left: 8px;
 }
+
+.image-container-title,
+.image-container {
+  padding-left: 50px;
+}
