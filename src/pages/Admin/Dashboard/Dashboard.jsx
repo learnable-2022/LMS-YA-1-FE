@@ -1,10 +1,9 @@
 import DashHeader from '../../../components/DashHeader/DashHeader';
 import Sidebar from '../../../layout/Sidebar/Sidebar';
 import design from './dashboard.module.css';
-import TEST from '../../../assets/Tappi.png';
 import GROUP from '../../../assets/group.png';
 import REWARD from '../../../assets/rewards.png';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TASKS from '../../../assets/tasks.png';
 import DashTable from '../../../components/DashTable/DashTable';
 import ScaleMeter from '../../../components/ScaleMeter/ScaleMeter';
@@ -12,28 +11,29 @@ import Dashboard_Card from '../../../components/Dashboard_Card/Dashboard_Card';
 import students from '../../../data/Mock_Student';
 import ScaleMeter2 from '../../../components/ScaleMeter_2/ScaleMeter';
 import DashChart from '../../../components/DashChart/DashChart';
+import PropTypes from 'prop-types';
 import LeaderTable from '../../../components/LeaderTable/LeaderTable';
 
 const Dashboard = ({ WebHandler, account }) => {
-  // const [student, setStudents] = useState([]);
+  const [student, setStudents] = useState([]);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       'https://lms-zwhm.onrender.com/api/v1/users/students'
-  //     );
-  //     const data = await response.json();
-  //     setStudents(data.data);
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        'https://lms-zwhm.onrender.com/api/v1/users/students'
+      );
+      const data = await response.json();
+      setStudents(data.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   const number = 40;
-  const numOfStudents = students.length;
+  const numOfStudents = student.length;
 
   const topStudents = students.sort((a, b) => b.grade - a.grade).slice(0, 3);
 
@@ -57,9 +57,7 @@ const Dashboard = ({ WebHandler, account }) => {
           <div className={design.Dashboard_main}>
             <DashHeader
               style={{ background: '#fff' }}
-              name='Tappi'
               position='Program Co-ordinator'
-              img={TEST}
               WebHandler={WebHandler}
               account={account}
             />
@@ -135,6 +133,11 @@ const Dashboard = ({ WebHandler, account }) => {
       </div>
     </div>
   );
+};
+
+Dashboard.propTypes = {
+  WebHandler: PropTypes.object,
+  account: PropTypes.object,
 };
 
 export default Dashboard;

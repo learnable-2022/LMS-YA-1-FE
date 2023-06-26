@@ -25,6 +25,10 @@ import UploadVideo from './components/Modals/UploadVideo/UploadVideo';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
 import MyProfile from './pages/Admin/MyProfile/MyProfile';
 import Settings from './pages/Admin/Settings/Settings';
+import Announcement from './pages/Admin/Announcement/Announcement';
+import Chat from './pages/Admin/Chat/Chat';
+import Meeting from './pages/Admin/Meeting/Meeting';
+import Teams from './pages/Admin/Teams/Teams';
 
 import StudentsDash from './pages/Student/studentsDash/StudentsDash';
 import SDashboard from './pages/Student/Dashboard/Dashboard';
@@ -37,10 +41,6 @@ import PublicRoutes from './pages/Login/PublicRoutes';
 import LinkPage from './pages/LinkPage/LinkPage';
 import UnAuthorized from './pages/UnAuthorized/UnAuthorized';
 import UserRoute from './pages/Login/UserRoute';
-
-import { useEffect, useState } from 'react';
-
-// import Display from './components/Modals/Test/Test';
 
 import { useEffect, useState } from 'react';
 
@@ -102,6 +102,10 @@ function App() {
           <Route path='/students' element={<Students />} />{' '}
           <Route path='/profile' element={<MyProfile />} />
           <Route path='/settings' element={<Settings />} />
+          <Route path='/announcement' element={<Announcement />} />
+          <Route path='/chat' element={<Chat />} />
+          <Route path='/meeting' element={<Meeting />} />
+          <Route path='/teams' element={<Teams />} />
           <Route
             path='/student-details/:name'
             element={<StudentDetails students={students} />}
@@ -119,8 +123,8 @@ function App() {
             <Route path='videos-row/:pathName/:week' element={<VideosRow />} />
           </Route>
           <Route path='/certificate' element={<Certification />} />
-          <Route path='/certificate/ImageRow/' element={<ImageRow />} />
           <Route path='/upload' element={<CerticateUpload />} />
+          <Route path='/certificate/ImageRow/' element={<ImageRow />} />
         </Route>
       </Routes>
     </>

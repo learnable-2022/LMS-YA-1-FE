@@ -6,16 +6,29 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 import { useLocation, Link } from "react-router-dom";
 import CertNotAdded from "./CertNotAdded";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CerticateUpload = () => {
-  const [geekNftValue, setgeekNftValue] = useState(null);
+  const [geekNftValue, setGeekNftValue] = useState(null);
+  const [address, setAddress] = useState(null);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const name = searchParams.get("name");
+  const firstName = searchParams.get("firstName");
+  const studentId = searchParams.get("studentId");
+
+  fetch(`https://lms-zwhm.onrender.com/api/v1/users/${studentId}`)
+    .then((response) => response.json())
+    .then((result) => {
+      setAddress(result.data.eth);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+
   const handleGeeknft = (nftValue) => {
-    setgeekNftValue(nftValue);
+    setGeekNftValue(nftValue);
   };
+
   return (
     <div>
       <div className={design.Students_inner}>
@@ -32,7 +45,7 @@ const CerticateUpload = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                cusor: "pointer",
+                cursor: "pointer",
               }}
             >
               <Link
@@ -41,15 +54,20 @@ const CerticateUpload = () => {
               >
                 <span>Certificates</span>
               </Link>
-
               <KeyboardArrowRightIcon />
-              <span> {name}</span>
+              <span>{firstName}</span>
             </h2>
-            <CertNotAdded name={name} geekNftValue={geekNftValue} />
+            <CertNotAdded
+              firstName={firstName}
+              studentId={studentId}
+              geekNftValue={geekNftValue}
+              address={address}
+            />
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default CerticateUpload;

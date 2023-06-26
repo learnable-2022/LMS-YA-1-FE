@@ -9,12 +9,14 @@ import img from '../../assets/EduSignup.png';
 
 function LinkPage() {
   const navigate = useNavigate();
-  const { auth } = useContext(UserContext);
+  const { auth, setAuth } = useContext(UserContext);
 
   const signOut = () => {
-    navigate('/login');
-    setAuth(null);
-  };
+    navigate('/login')
+    sessionStorage.clear()
+  }
+  
+
 
   return (
     <div className={styles['linkPage']}>

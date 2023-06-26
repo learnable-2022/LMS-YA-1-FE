@@ -12,6 +12,10 @@ import {
   Logout,
   LOGO,
 } from '../../assets/sideIcons.js';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 
 const Sidebar = () => {
   const reloadPage = () => {
@@ -31,18 +35,31 @@ const Sidebar = () => {
   useEffect(() => {
     if (location.pathname === '/admin-dashboard') {
       setActiveItem('dashboard');
+    } else if (location.pathname === '/announcement') {
+      setActiveItem('announcement');
+    } else if (
+      location.pathname === '/courses' ||
+      location.pathname.startsWith('/courses')
+    ) {
+      setActiveItem('courses');
+    } else if (location.pathname === '/teams') {
+      setActiveItem('teams');
+    } else if (location.pathname === '/meeting') {
+      setActiveItem('meeting');
+    } else if (
+      location.pathname === '/students' ||
+      location.pathname.startsWith('/student-details/')
+    ) {
+      setActiveItem('students');
+    } else if (
+      location.pathname === '/certificate' ||
+      location.pathname.startsWith('/certificate')
+    ) {
+      setActiveItem('certificate');
+    } else if (location.pathname === '/chat') {
+      setActiveItem('chat');
     } else if (location.pathname === '/profile') {
       setActiveItem('profile');
-    } else if (location.pathname === '/students') {
-      setActiveItem('students');
-    } else if (location.pathname === '/student-details/:name') {
-      setActiveItem('students');
-    } else if (location.pathname === '/dashboard/leaderboard') {
-      setActiveItem('leaderboard');
-    } else if (location.pathname === '/courses') {
-      setActiveItem('courses');
-    } else if (location.pathname === '/certificate') {
-      setActiveItem('certificate');
     } else if (location.pathname === '/settings') {
       setActiveItem('settings');
     }
@@ -81,13 +98,14 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to='/profile'
-            style={activeItem === 'profile' ? activeLinkStyle : {}}
+            to='/announcement'
+            style={activeItem === 'announcement' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
-              <img src={Profile} />
+              {/* <img src={Profile} /> */}
+              <CampaignOutlinedIcon />
 
-              <h3>My Profile</h3>
+              <h3>Announcements</h3>
             </div>
           </Link>
         </div>
@@ -101,6 +119,32 @@ const Sidebar = () => {
               <img src={Enrolled} />
 
               <h3>Courses</h3>
+            </div>{' '}
+          </Link>
+        </div>
+        <div>
+          <Link
+            className={design.Sidebar_tabs}
+            to='/teams'
+            style={activeItem === 'teams' ? activeLinkStyle : {}}
+          >
+            <div className={design.Sidebar_tabs_inner}>
+              <Diversity3Icon />
+
+              <h3>Teams</h3>
+            </div>{' '}
+          </Link>
+        </div>
+        <div>
+          <Link
+            className={design.Sidebar_tabs}
+            to='/meeting'
+            style={activeItem === 'meeting' ? activeLinkStyle : {}}
+          >
+            <div className={design.Sidebar_tabs_inner}>
+              <MeetingRoomOutlinedIcon />
+
+              <h3>Meeting</h3>
             </div>{' '}
           </Link>
         </div>
@@ -127,6 +171,33 @@ const Sidebar = () => {
               <img src={Certification} />
 
               <h3>Certificates</h3>
+            </div>
+          </Link>
+        </div>
+        <div>
+          <Link
+            className={design.Sidebar_tabs}
+            to='/chat'
+            style={activeItem === 'chat' ? activeLinkStyle : {}}
+          >
+            <div className={design.Sidebar_tabs_inner}>
+              {/* <img src={Students} /> */}
+              <ChatOutlinedIcon />
+
+              <h3>Chat</h3>
+            </div>{' '}
+          </Link>
+        </div>
+        <div>
+          <Link
+            className={design.Sidebar_tabs}
+            to='/profile'
+            style={activeItem === 'profile' ? activeLinkStyle : {}}
+          >
+            <div className={design.Sidebar_tabs_inner}>
+              <img src={Profile} />
+
+              <h3>My Profile</h3>
             </div>
           </Link>
         </div>

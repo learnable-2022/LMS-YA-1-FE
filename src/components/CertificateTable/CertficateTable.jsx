@@ -1,11 +1,33 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import design from "./CertificateTable.module.css";
-import students from "../../data/Mock_Student";
 import Pagination from "@mui/material/Pagination";
-import PROFILE from "../../assets/Tappi.png";
 import { Link } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
+import axios from "axios";
 
 const CertficateTable = () => {
+  const [students, setStudents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        "https://lms-zwhm.onrender.com/api/v1/users/students"
+      );
+      const data = response.data;
+      setStudents(data.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error:", error);
+      setLoading(true);
+    }
+  };
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -19,7 +41,6 @@ const CertficateTable = () => {
 
   const [nameFilter, setNameFilter] = useState("");
   const [learningPathFilter, setLearningPathFilter] = useState("");
-  const [taskFilter, setTaskFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleNameFilterChange = (event) => {
@@ -30,41 +51,37 @@ const CertficateTable = () => {
     setLearningPathFilter(event.target.value);
   };
 
-  const handleTaskFilterChange = (event) => {
-    setTaskFilter(event.target.value);
-  };
-
   const learningPathOptions = [
-    { label: "Frontend", value: "Frontend", color: "red" },
-    { label: "Backend", value: "Backend", color: "yellow" },
-    { label: "Web3", value: "Web3", color: "green" },
-    { label: "Product Design", value: "Product Design", color: "orange" },
+    { label: "frontend", value: "frontend", color: "red" },
+    { label: "backend", value: "backend", color: "yellow" },
+    { label: "web3", value: "web3", color: "green" },
+    { label: "product design", value: "product design", color: "orange" },
   ];
 
   const filteredStudents = students
     .filter((student) => {
-      const nameStart = student.name.charAt(0).toLowerCase();
+      const nameStart = student.firstName.charAt(0).toLowerCase();
       return (
         (nameFilter === "" || nameFilter === nameStart) &&
         (learningPathFilter === "" ||
-          learningPathFilter === student.learningPath) &&
-        (taskFilter === "" || taskFilter === student.task)
+          learningPathFilter === student.learningTrack)
       );
     })
     .filter((student) => {
       if (selectedOption && selectedOption !== "") {
         return (
-          student.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-          student.learningPath === selectedOption
+          student.firstName.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          student.learningTrack === selectedOption
         );
       } else {
-        return student.name.toLowerCase().includes(searchQuery.toLowerCase());
+        return student.firstName
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
       }
     });
 
   const studentsPerPage = 10;
   const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
-
   const getCurrentPageStudents = () => {
     const startIndex = (currentPage - 1) * studentsPerPage;
     const endIndex = startIndex + studentsPerPage;
@@ -103,62 +120,99 @@ const CertficateTable = () => {
           </tr>
         </thead>
         <tbody className={design.StudentTable_body}>
-          {getCurrentPageStudents().map((student, index) => (
-            <tr key={index}>
-              <Link
-                style={{ textDecoration: "none", color: "black" }}
-                to={`/upload?name=${encodeURIComponent(student.name)}`}
+          {loading ? (
+            <tr>
+              <td
+                colSpan="4"
+                style={{ textAlign: "center", padding: "20px auto" }}
               >
-                <td className={design.user_flex}>
-                  <img src={PROFILE} alt="" className={design.user_profile} />
-                  {student.name}
-                </td>
-              </Link>
-              <td>
-                <Link
-                  style={{ textDecoration: "none", color: "black" }}
-                  to={`/upload?name=${encodeURIComponent(student.name)}`}
-                >
-                  {student.learningPath}
-                  <span
-                    className={design.learningPathDot}
-                    style={{
-                      backgroundColor: learningPathOptions.find(
-                        (option) => option.value === student.learningPath
-                      ).color,
-                    }}
-                  ></span>
-                </Link>
-              </td>
-              <td>
-                <Link
-                  style={{ textDecoration: "none", color: "black" }}
-                  to={`/upload?name=${encodeURIComponent(student.name)}`}
-                >
-                  {student.Cohort}
-                </Link>
-              </td>
-
-              <td>
-                <Link
-                  style={{ textDecoration: "none", color: "black" }}
-                  to={`/upload?name=${encodeURIComponent(student.name)}`}
-                >
-                  <span
-                    style={{
-                      backgroundColor: "#F5B9B1",
-                      borderRadius: "20px",
-                      padding: "10px",
-                      width: "30px",
-                      height: "30px",
-                    }}
-                  >
-                    {student.Status}
-                  </span>
-                </Link>
+                <ClipLoader loading={true} color="#36d7b7" />
               </td>
             </tr>
-          ))}
+          ) : (
+            getCurrentPageStudents().map((student, index) => {
+              const firstName = student.firstName;
+              const learningTrack = student.learningTrack;
+              const capitalizedFirstName =
+                firstName.charAt(0).toUpperCase() + firstName.slice(1);
+              const capitalizedLearningTrack =
+                learningTrack.charAt(0).toUpperCase() + learningTrack.slice(1);
+              const certificationRoute = student.hasCertificate
+                ? "/certificate/ImageRow/"
+                : "/upload";
+
+              return (
+                <tr key={index}>
+                  <td className={design.user_flex}>
+                    <img
+                      src={student.avatarUrl}
+                      alt=""
+                      className={design.user_profile}
+                    />
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
+                        student.firstName
+                      )}&studentId=${encodeURIComponent(student._id)}`}
+                    >
+                      {capitalizedFirstName}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
+                        student.firstName
+                      )}&studentId=${encodeURIComponent(student._id)}`}
+                    >
+                      {capitalizedLearningTrack}
+                      <span
+                        className={design.learningPathDot}
+                        style={{
+                          backgroundColor: learningPathOptions.find(
+                            (option) => option.value === student.learningTrack
+                          ).color,
+                        }}
+                      ></span>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
+                        student.firstName
+                      )}&studentId=${encodeURIComponent(student._id)}`}
+                    >
+                      {student.cohort}
+                    </Link>
+                  </td>
+
+                  <td>
+                    <Link
+                      style={{
+                        backgroundColor: student.hasCertificate
+                          ? "#C5E7B5"
+                          : "#F5B9B1",
+                        padding: student.hasCertificate
+                          ? "10px 22px"
+                          : "10px 40px",
+                        borderRadius: "20px",
+                        width: "100px",
+                        height: "30px",
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                      to={`${certificationRoute}?firstName=${encodeURIComponent(
+                        student.firstName
+                      )}&studentId=${encodeURIComponent(student._id)}`}
+                    >
+                      {student.hasCertificate ? "Certified" : "Null"}
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
       <div className={design.pageIt}>

@@ -59,9 +59,17 @@ const ConnectButton = ({ onConnected }) => {
 
   return (
     <div>
-      <button className={design.connectBtn}>
-        <AccountBalanceWalletOutlinedIcon /> Connect Wallet
-      </button>
+      {account ? (
+        <button className={design.connectBtn}>
+          <AccountBalanceWalletOutlinedIcon />{' '}
+          {account.slice(0, 5) + '...' + account.slice(38, 42)}
+        </button>
+      ) : (
+        <button className={design.connectBtn}>
+          <AccountBalanceWalletOutlinedIcon onClick={WebHandler} /> Connect
+          Wallet
+        </button>
+      )}
     </div>
   );
 };

@@ -1,11 +1,11 @@
-import DashHeader from '../../../components/DashHeader/DashHeader';
-import Sidebar from '../../../layout/Sidebar/Sidebar';
-import TEST from '../../../assets/Tappi.png';
-import design from './Cetification.module.css';
-import CertficateTable from '../../../components/CertificateTable/CertficateTable';
-import { Link } from 'react-router-dom';
+import DashHeader from "../../../components/DashHeader/DashHeader";
+import Sidebar from "../../../layout/Sidebar/Sidebar";
+import TEST from "../../../assets/Tappi.png";
+import design from "./Cetification.module.css";
+import CertficateTable from "../../../components/CertificateTable/CertficateTable";
+import { Link } from "react-router-dom";
 
-const Certification = () => {
+const Certification = ({ handleGeeknft }) => {
   return (
     <div>
       <div className={design.Students_inner}>
@@ -13,24 +13,25 @@ const Certification = () => {
           <Sidebar />
           <div className={design.Students_main}>
             <DashHeader
-              name='Tappi'
-              position='Program Co-ordinator'
+              name="Tappi"
+              position="Program Co-ordinator"
               img={TEST}
+              onGeeknft={handleGeeknft}
             />
 
             <Link
-              to='/certificate'
-              style={{ textDecoration: 'none', color: 'black' }}
+              to="/certificate"
+              style={{ textDecoration: "none", color: "black" }}
             >
-              <h2 data-aos='zoom-in' data-aos-duration='1000'>
+              <h2 data-aos="zoom-in" data-aos-duration="1000">
                 Certificates
               </h2>
             </Link>
 
             <div
               className={design.Students_table}
-              data-aos='zoom-in'
-              data-aos-duration='1000'
+              data-aos="zoom-in"
+              data-aos-duration="1000"
             >
               <CertficateTable />
             </div>

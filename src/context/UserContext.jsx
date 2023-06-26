@@ -1,12 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import productDesign from "../data/productDesign";
 import frontEnd from "../data/frontEnd";
 
 const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
+
+  const getInitialState = () => {
+    const authString = sessionStorage.getItem("userAuth")
+    const authDetails = JSON.parse(authString)
+    return authDetails
+    }
+
   const [user, setUser] = useState({});
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(getInitialState);
+  const [title, setTitle] = useState({})
+  
+
+  useEffect(() => {
+    sessionStorage.setItem('userAuth', JSON.stringify(auth))
+    }, [auth])
 
   
 
@@ -21,7 +34,7 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, courses, setCourses, imageData, setImageData, auth, setAuth }}
+      value={{ user, setUser, courses, setCourses, imageData, setImageData, auth, setAuth, title, setTitle }}
     >
       {children}
     </UserContext.Provider>
