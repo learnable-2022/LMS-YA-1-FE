@@ -64,7 +64,9 @@ const UploadVideo = ({ handleShow }) => {
       date: new Date().toUTCString().slice(5, 16),
     };
 
+
     if (pathName === "Frontend") {
+
       courses.frontend.map((item) => {
         if (item.timeFrame === week) {
           data["fileName"] = item.courseTitle + ".mp4";
