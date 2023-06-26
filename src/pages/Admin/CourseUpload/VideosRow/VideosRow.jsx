@@ -1,10 +1,10 @@
-import styles from "./videosRow.module.css";
-import VideoUploadPreview from "../../../../components/VideoUploadPreview/VideoUploadPreview";
-import { useParams, useNavigate } from "react-router-dom";
-import AddBTN from "../../../../components/AddBTN/AddBTN";
-import UploadVideo from "../../../../components/Modals/UploadVideo/UploadVideo";
-import { useState, useContext } from "react";
-import UserContext from "../../../../context/UserContext";
+import styles from './videosRow.module.css';
+import VideoUploadPreview from '../../../../components/VideoUploadPreview/VideoUploadPreview';
+import { useParams, useNavigate } from 'react-router-dom';
+import AddBTN from '../../../../components/AddBTN/AddBTN';
+import UploadVideo from '../../../../components/Modals/UploadVideo/UploadVideo';
+import { useState, useContext } from 'react';
+import UserContext from '../../../../context/UserContext';
 
 function VideosRow() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,25 +13,25 @@ function VideosRow() {
   const { courses } = useContext(UserContext);
 
   let data;
-  if (pathName === "Product design") {
+  if (pathName === 'Product design') {
     courses.productDesign.map((item) => {
       if (item.timeFrame === week) {
         data = item.videos;
       }
     });
-  } else if (pathName === "Frontend") {
+  } else if (pathName === 'Frontend') {
     courses.frontend.map((item) => {
       if (item.timeFrame === week) {
         data = item.videos;
       }
     });
-  } else if (pathName === "Backend") {
+  } else if (pathName === 'Backend') {
     courses.backend.map((item) => {
       if (item.timeFrame === week) {
         data = item.videos;
       }
     });
-  } else if (pathName === "Web 3") {
+  } else if (pathName === 'Web 3') {
     courses.web3.map((item) => {
       if (item.timeFrame === week) {
         data = item.videos;
@@ -40,12 +40,12 @@ function VideosRow() {
   }
 
   return (
-    <div className={styles["videos-row"]}>
+    <div className={styles['videos-row']}>
       <h1>
-        <span onClick={() => navigate("/courses")}> Courses &gt; </span>
-        <span onClick={() => navigate("/courses/thumbnail-row/" + pathName)}>
+        <span onClick={() => navigate('/courses')}> Courses &gt; </span>
+        <span onClick={() => navigate('/courses/thumbnail-row/' + pathName)}>
           {pathName}
-        </span>{" "}
+        </span>{' '}
         &gt; {week}
       </h1>
 
@@ -53,16 +53,16 @@ function VideosRow() {
         <span>videos</span>
       </nav>
 
-      <article className={styles["videos-container-title"]}>
+      <article className={styles['videos-container-title']}>
         <span>
-          <input type="checkbox" />
+          <input type='checkbox' />
         </span>
-        <span className={styles["learning-material"]}>Learning material</span>
-        <span className={styles["file-name"]}>File name</span>
-        <span className={styles["date"]}>Date</span>
+        <span className={styles['learning-material']}>Learning material</span>
+        <span className={styles['file-name']}>File name</span>
+        <span className={styles['date']}>Date</span>
       </article>
 
-      <section className={styles["videos-container"]}>
+      <section className={styles['videos-container']}>
         {
           /*
         <VideoUploadPreview 
