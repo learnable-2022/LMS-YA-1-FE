@@ -33,6 +33,8 @@ const Dashboard = ({ WebHandler, account }) => {
     }
   };
   const number = 0;
+  const geek = 0;
+  const tasks = student.length;
   const numOfStudents = student.length;
 
   const topStudents = students.sort((a, b) => b.grade - a.grade).slice(0, 3);
@@ -73,7 +75,7 @@ const Dashboard = ({ WebHandler, account }) => {
                 style={{ borderRadius: '8px ' }}
                 icon={REWARD}
                 title='Total rewards earned'
-                text={number}
+                text={geek}
                 spanner='GEK'
                 spanStyle={design.spanStyle}
               />
@@ -101,7 +103,7 @@ const Dashboard = ({ WebHandler, account }) => {
                   meterClass={design.meterClass}
                   progressClass={design.progressClass}
                   // digit={digit}
-                  number={number}
+                  number={tasks}
                   meterColor='#BED7FA'
                   progressColor='#0C4592'
                 />

@@ -49,10 +49,10 @@ const LeaderTable = () => {
   };
 
   const learningPathOptions = [
-    { label: 'frontend', value: 'frontend', color: 'red' },
-    { label: 'backend', value: 'backend', color: 'yellow' },
-    { label: 'web3', value: 'web3', color: 'green' },
-    { label: 'product design', value: 'product design', color: 'orange' },
+    { label: 'Frontend', value: 'Frontend', color: 'red' },
+    { label: 'Backend', value: 'Backend', color: 'yellow' },
+    { label: 'Web3', value: 'Web3', color: 'green' },
+    { label: 'Product Design', value: 'Product Design', color: 'orange' },
   ];
 
   const selectedOption = learningPathOptions.find(
