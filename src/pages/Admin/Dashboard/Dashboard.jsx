@@ -32,7 +32,7 @@ const Dashboard = ({ WebHandler, account }) => {
       console.error('Error:', error);
     }
   };
-  const number = 40;
+  const number = 0;
   const numOfStudents = student.length;
 
   const topStudents = students.sort((a, b) => b.grade - a.grade).slice(0, 3);
@@ -73,7 +73,7 @@ const Dashboard = ({ WebHandler, account }) => {
                 style={{ borderRadius: '8px ' }}
                 icon={REWARD}
                 title='Total rewards earned'
-                text={numOfStudents}
+                text={number}
                 spanner='GEK'
                 spanStyle={design.spanStyle}
               />
