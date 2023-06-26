@@ -14,8 +14,8 @@ import {
 } from '../../assets/sideIcons.js';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
-import MessageIcon from '@mui/icons-material/Message';
-import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 
 const Sidebar = () => {
   const reloadPage = () => {
@@ -37,7 +37,10 @@ const Sidebar = () => {
       setActiveItem('dashboard');
     } else if (location.pathname === '/announcement') {
       setActiveItem('announcement');
-    } else if (location.pathname === '/courses') {
+    } else if (
+      location.pathname === '/courses' ||
+      location.pathname.startsWith('/courses')
+    ) {
       setActiveItem('courses');
     } else if (location.pathname === '/teams') {
       setActiveItem('teams');
@@ -139,7 +142,7 @@ const Sidebar = () => {
             style={activeItem === 'meeting' ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
-              <MeetingRoomIcon />
+              <MeetingRoomOutlinedIcon />
 
               <h3>Meeting</h3>
             </div>{' '}
@@ -179,7 +182,7 @@ const Sidebar = () => {
           >
             <div className={design.Sidebar_tabs_inner}>
               {/* <img src={Students} /> */}
-              <MessageIcon />
+              <ChatOutlinedIcon />
 
               <h3>Chat</h3>
             </div>{' '}
